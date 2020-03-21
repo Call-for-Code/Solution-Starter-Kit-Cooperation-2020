@@ -47,9 +47,11 @@ Mobile, Web and Cloud services enable rapid deployment of applications that can 
 
 ## The idea
 
+[WIP - I'm working on this (HN)]
 
 ## How it works
 
+[WIP - I'm working on this (HN)]
 
 ## Diagrams
 
