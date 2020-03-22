@@ -106,15 +106,24 @@ This solution starter idea combines machine learning and location services with 
 ### Prerequisite
 
 - Register for an [IBM Cloud](cloud.ibm.com/registration/) account.
+- Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
+- Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) account.
+- Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) (for iOS).
+    - [Node.js](https://nodejs.org/en/)
+    - [Watchman](https://facebook.github.io/watchman/docs/install.html)
+    - [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+    - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
+- Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Cooperaation-2020).
 
 ### Steps
 
-[WIP - needs refining]
-
 1. [Set up an instance of Watson Assistant](#1-set-up-an-instance-of-watson-assistant).
-
+1. [Generate an API Key from the HERE Developer Portal](#2-generate-an-api-key-from-the-here-developer-portal).
+1. [Run the server](#3-run-the-server).
+1. [Run the mobile application](#4-run-the-mobile-application).
 
 ### 1. Set up an instance of Watson Assistant
+
 Log in to IBM Cloud and provision a Watson Assistant instance.
 
 1. Provision an instance of **Watson Assistant** from the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant).
@@ -125,13 +134,56 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 1. Note the **Assistant ID** and **API Key**.
 1. Go to **Preview Link** to get a link to test and verify the dialog skill.
 
+### 2. Generate an API Key from the HERE Developer Portal
+
+The application uses HERE Location Services for maps, searching, and routing.
+
+To access these services, an API Key is required. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate a JavaScript API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
+
+### 3. Run the server
+
+To set up and launch the server application:
+
+1. Go to the `starter-kit/server-app` directory of the cloned repo.
+1. Copy the `.env.example` file in the `starter-kit/server-app` directory, and create a new file named `.env`.
+1. Edit the newly created `.env` file and update the `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant.
+1. Edit the **name** value in the `manifest.yml` file to your application name (for example, _my-app-name_).
+1. From a terminal:
+    1. Go to the `starter-kit/server-app` directory of the cloned repo.
+    1. Install the dependencies: `npm install`.
+    1. Launch the server application locally or deploy to IBM Cloud:
+        - To run locally:
+            1. Start the application: `npm start`.
+            1. The server can be accessed at http://localhost:3000.
+        - To deploy to IBM Cloud:
+            1. Log in to your IBM Cloud account using the IBM Cloud CLI: `ibmcloud login`.
+            1. Target a Cloud Foundry org and space: `ibmcloud target --cf`.
+            1. Push the app to IBM Cloud: `ibmcloud app push`.
+            1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  https://my-app-name.bluemix.net).
+
+### 4. Run the mobile application
+
+To run the mobile application (using the Xcode iOS Simulator):
+
+1. Go to the `starter-kit/mobile-app` directory of the cloned repo.
+1. Copy the `.env.example` file in the `starter-kit/mobile-app` directory, and create a file named `.env`.
+1. Edit the newly created `.env` file.
+    - Update the `STARTER_KIT_SERVER_URL` with the URL to the server app launched in the previous step.
+    - Update the `HERE_APIKEY` with the API Key generated in the HERE Developer Portal.
+1. From a terminal:
+    1. Go to the `starter-kit/mobile-app` directory.
+    1. Install the dependencies: `npm install`.
+    1. Go to the `ios` directory: `cd ios`.
+    1. Install pod dependencies: `pod install`.
+    1. Return to the `mobile-app` directory: `cd ../`.
+    1. Launch the app in the simulator: `npm run ios`.
+
 ## Resources
 
 - [IBM Cloud](https://www.ibm.com/cloud)
 - [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
-
-## Resources
-
+- [HERE Location Services](https://developer.here.com/documentation)
+- [React Native](https://reactnative.dev/)
 
 ## License
 
