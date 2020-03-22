@@ -1,0 +1,415 @@
+let map = null;
+let platform = null;
+let ui = null;
+let currentMarker = null;
+let places = null;
+let searchGroup = null;
+let router = null;
+let routeLineGroup = null;
+let selectedRoute = null;
+let currentInfoBubble = null;
+let geocoder = null;
+
+const markerRed = `
+<svg width="22px" height="31px" viewBox="0 0 22 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M11,1 C5.00584111,0.922155833 0.0822937842,5.71590055 0,11.71 C0.0025279372,14.0375734 0.776170498,16.2987196 2.2,18.14 L11,31 L19.8,18.14 C21.2238295,16.2987196 21.9974721,14.0375734 22,11.71 C21.9177062,5.71590055 16.9941589,0.922155833 11,1 Z" id="outerPath" fill="#DA1E28"></path>
+  <path d="M11,7 C8.23857625,7 6,9.23857625 6,12 C6,14.7614237 8.23857625,17 11,17 C13.7614237,17 16,14.7614237 16,12 C16,10.6739176 15.4732158,9.40214799 14.5355339,8.46446609 C13.597852,7.5267842 12.3260824,7 11,7 Z" id="innerPath" fill="#FFFFFF"></path>
+</svg>
+`.trim();
+
+const markerBlue = `
+<svg width="22px" height="31px" viewBox="0 0 22 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M11,1 C5.00584111,0.922155833 0.0822937842,5.71590055 0,11.71 C0.0025279372,14.0375734 0.776170498,16.2987196 2.2,18.14 L11,31 L19.8,18.14 C21.2238295,16.2987196 21.9974721,14.0375734 22,11.71 C21.9177062,5.71590055 16.9941589,0.922155833 11,1 Z" id="outerPath" fill="#1062FE"></path>
+  <path d="M11,7 C8.23857625,7 6,9.23857625 6,12 C6,14.7614237 8.23857625,17 11,17 C13.7614237,17 16,14.7614237 16,12 C16,10.6739176 15.4732158,9.40214799 14.5355339,8.46446609 C13.597852,7.5267842 12.3260824,7 11,7 Z" id="innerPath" fill="#FFFFFF"></path>
+</svg>
+`.trim();
+
+const searchRadius = 20000; // in meters
+const currentCoordinates = {
+  lat: 35.7846633,
+  lng: -78.6820946
+};
+
+const formatDistance = (d) => (d < 1000) ? `${d}m` : `${(d / 1000).toFixed(1)}km`;
+const formatDuration = (d) => {
+  const h = Math.floor(d / 3600);
+  const m = Math.floor(d % 3600 / 60);
+  return (h > 0) ? `${h}h ${m}min` : `${m}min`;
+};
+
+const routeLineStyles = {
+  normal: { strokeColor: 'rgba(0, 128, 255, 0.5)', lineWidth: 3 },
+  selected: { strokeColor: 'rgba(255, 0, 0, 0.7)', lineWidth: 7 }
+};
+
+const getQueryObject = () => {
+  return (window.location.search.match(/([^=?&]+=[^&]+)/g)||[])
+    .reduce((a,b) => {
+      a[b.split('=')[0]] = b.split('=')[1];
+      return a;
+    }, {});
+};
+
+const routeOptions = (from, to) => {
+  return {
+    mode: 'fastest;car',
+    representation: 'display',
+    alternatives: 2,
+    waypoint0: `geo!${from.lat},${from.lng}`,
+    waypoint1: `geo!${to.lat},${to.lng}`,
+    routeattributes: 'waypoints,summary,shape,legs',
+    maneuverattributes: 'direction,action'
+  };
+};
+
+const zoomAndCenterAround = function (group) {
+  if (group.getChildCount()) {
+    map.getViewModel().setLookAtData({
+      bounds: group.getBoundingBox()
+    });
+  }
+};
+
+const addInfoBubble = (position, opts) => {
+  const options = opts || {};
+  if (currentInfoBubble) {
+    ui.removeBubble(currentInfoBubble);
+    currentInfoBubble.dispose();
+    currentInfoBubble = null;
+  }
+  currentInfoBubble = new H.ui.InfoBubble(position, options);
+
+  ui.addBubble(currentInfoBubble);
+  return currentInfoBubble;
+};
+
+const addMarker = (position, opts) => {
+  const options = opts || {};
+  let markerOptions = null;
+
+  if (options.icon) {
+    markerOptions = {
+      icon: options.icon
+    };
+  } 
+
+  const marker = new H.map.Marker(position, markerOptions);
+
+  if (options.data) {
+    marker.setData(options.data);
+
+    marker.addEventListener('tap', (evt) => {
+      const position = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
+
+      addInfoBubble(evt.target.getGeometry(), {
+        content: evt.target.getData()
+      });
+
+      if (typeof options.clickListener === 'function') {
+        options.clickListener(evt, position);
+      }
+    })
+  } else if (typeof options.clickListener === 'function') {
+    marker.addEventListener('tap', () => {
+      options.clickListener(evt, position);
+    });
+  }
+
+  if (!options.skip) {
+    map.addObject(marker);
+  }
+
+  if (options.recenter) {
+    map.getViewModel().setLookAtData({
+      position: position,
+      zoom: 14
+    });
+  }
+
+  return marker;
+};
+
+const onRouteSelection = (route) => {
+  if (selectedRoute) {
+    selectedRoute.routeLine.setStyle(routeLineStyles.normal).setZIndex(1);
+  }
+
+  route.routeLine.setStyle(routeLineStyles.selected).setZIndex(10);
+  selectedRoute = route;
+};
+
+const routePanel = function (routes, onRouteSelected) {
+  let selectedRoute = null;
+  let selectedRouteElement = null;
+
+  const routeList = document.querySelector('#routePanel ul');
+  routeList.innerHTML = '';
+
+  const renderRouteTitle = (routeSummary, i) => `<span>Route ${i + 1}</span> (${formatDistance(routeSummary.distance)} in ${formatDuration(routeSummary.travelTime)})`;
+
+  const renderManeuvers = (maneuvers) => {
+    const mLi = maneuvers.map(m => `<li>${m.instruction}</li>`).join('');
+    return `<ol class="directions">${mLi}</ol>`;
+  };
+
+  const renderRouteElement = (route, i) => {
+    const element = document.createElement('li');
+
+    element.innerHTML = renderRouteTitle(route.route.summary, i);
+    element.innerHTML += renderManeuvers(route.route.leg[0].maneuver);
+
+    element.addEventListener('click', () => {
+      if (element.classList.contains('selected')) {
+        element.classList.remove('selected');
+      } else {
+        if (selectedRoute) {
+          selectedRouteElement.classList.remove('selected');
+        }
+        element.classList.add('selected');
+        selectedRoute = route;
+        selectedRouteElement = element;
+
+        if (typeof onRouteSelected === 'function') {
+          onRouteSelected(selectedRoute);
+        }
+      }
+    }, false);
+
+    return element;
+  };
+
+  routes.forEach((route, i) => {
+    routeList.appendChild(renderRouteElement(route, i));
+  });
+};
+
+const drawRoute = (route) => {
+  const routeShape = route.shape;
+  const lineString = new H.geo.LineString();
+
+  routeShape.forEach(function(point) {
+    const parts = point.split(',');
+    lineString.pushLatLngAlt(parts[0], parts[1]);
+  });
+
+  const polyline = new H.map.Polyline(lineString, {
+    style: {
+      lineWidth: 4,
+      strokeColor: 'rgba(0, 128, 255, 0.5)'
+    }
+  });
+  
+  map.addObject(polyline);
+  return polyline;
+};
+
+const calculateRoute = (from, to) => {
+  if (routeLineGroup) {
+    routeLineGroup.removeAll();
+    routeLineGroup = null;
+  }
+  return getRoute(from, to)
+    .then((results) => {
+      routeLineGroup = new H.map.Group();
+
+      const routes = results.map((route) => {
+        const routeLine = drawRoute(route);
+        routeLineGroup.addObject(routeLine);
+  
+        return {
+          route: route,
+          routeLine: routeLine
+        };
+      });
+  
+      map.addObject(routeLineGroup);
+      // zoomAndCenterAround(routeLineGroup);
+      return routes;
+    }).then((routes) => {
+      routePanel(routes, onRouteSelection);
+    })
+};
+
+const getRoute = function (from, to) {
+  if (!router) {
+    router = platform.getRoutingService();
+  }
+
+  return new Promise((resolve, reject) => {
+    router.calculateRoute(
+      routeOptions(from, to),
+      (result) => {
+        resolve(result.response.route);
+      }, (error) => {
+        reject(error);
+      });
+  });
+};
+
+const searchPlaces = (query) => {
+  if (!places) {
+    places = platform.getPlacesService();
+  }
+
+  return new Promise((resolve, reject) => {
+    places.search({
+      'q': query,
+      'in': `${currentCoordinates.lat},${currentCoordinates.lng};r=${searchRadius}`,
+      'Accept-Language': 'en'
+    }, (response) => {
+      const searchResults = response.results.items.map((place) => {
+        place.coordinates = { lat: place.position[0], lng: place.position[1] };
+        return place;
+      });
+
+      resolve(searchResults);
+    }, (error) => {
+      reject(error);
+    });
+  });
+};
+
+const searchFor = (query, reset, cb) => {
+  if (currentInfoBubble) {
+    ui.removeBubble(currentInfoBubble);
+    currentInfoBubble.dispose();
+    currentInfoBubble = null;
+  }
+  if (routeLineGroup) {
+    routeLineGroup.removeAll();
+    routeLineGroup = null;
+  }
+  if (searchGroup) {
+    searchGroup.removeAll();
+    searchGroup = null;
+  }
+  if (reset) {
+    document.getElementById('searchInput').value = '';
+  }
+
+  const eventListener = (evt, coordinates) => {
+    calculateRoute(currentCoordinates, coordinates);
+  };
+
+  return searchPlaces(query)
+    .then((results) => {
+      searchGroup = new H.map.Group();
+
+      results.map((place) => {
+        const opts = {
+          skip: true,
+          data: `<p><strong>${place.title}</strong><br>${place.vicinity}</p>`,
+          clickListener: eventListener,
+          icon: new H.map.Icon(markerRed, {
+            anchor: new H.math.Point(11, 31),
+            size: new H.math.Size(22, 31)
+          })
+        };
+
+        searchGroup.addObject(addMarker(
+          { lat: place.position[0], lng: place.position[1] },
+          opts
+        ));
+      });
+
+      if (cb) {
+        cb();
+      }
+
+      map.addObject(searchGroup);
+      zoomAndCenterAround(searchGroup);
+    }).catch((err) => {
+      console.error(err);
+    });
+};
+
+const updatePosition = (position) => {
+  currentCoordinates.lat = position.latitude || position.lat;
+  currentCoordinates.lng = position.longitude || position.lng;
+
+  if (currentMarker) {
+    map.removeObject(currentMarker);
+    currentMarker = null;
+  }
+
+  currentMarker = addMarker(currentCoordinates, {
+    data: `<p>Location: ${currentCoordinates.lat},${currentCoordinates.lng}</p>`,
+    recenter: true,
+    icon: new H.map.Icon(markerBlue, {
+      anchor: new H.math.Point(11, 31),
+      size: new H.math.Size(22, 31)
+    })
+  });
+};
+
+const onPostMessage = (data) => {
+  if (data.coords) {
+    updatePosition(data.coords);
+  } else {
+    if (!geocoder) {
+      geocoder = platform.getGeocodingService();
+    }
+
+    geocoder.geocode({
+      searchText: data
+    },
+    (result) => {
+      togglePanel();
+
+      const locations = result.Response.View[0].Result;
+      if (locations.length) {
+        updatePosition({
+          lat: locations[0].Location.DisplayPosition.Latitude,
+          lng: locations[0].Location.DisplayPosition.Longitude
+        });
+      }
+    }, 
+    (e) => {
+      alert(e);
+    })
+  }
+};
+
+const initMap = () => {
+  const mapContainer = document.getElementById('mapContainer');
+  const qs = getQueryObject();
+
+  platform = new H.service.Platform({
+    apikey: qs.apikey
+  });
+
+  const options = {
+    zoom: 8,
+    center: currentCoordinates,
+    pixelRatio: window.devicePixelRatio || 1
+  };
+
+  const defaultLayers = platform.createDefaultLayers();
+
+  map = new H.Map(
+    mapContainer,
+    defaultLayers.vector.normal.map,
+    options
+  );
+
+  const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+  ui = H.ui.UI.createDefault(map, defaultLayers);
+
+  document.addEventListener('message', (message) => {
+    if (message.data) {
+      onPostMessage(message.data);
+    }
+  });
+
+  try {
+    window.ReactNativeWebView.postMessage(JSON.stringify({ status: 'initialized' }));
+  } catch(err) {
+    onPostMessage({ coords: currentCoordinates })
+  }
+};
+
+if (document.readyState !== 'complete') {
+  window.addEventListener('load', initMap);
+} else {
+  initMap();
+}

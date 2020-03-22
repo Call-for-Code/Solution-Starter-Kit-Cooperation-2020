@@ -1,0 +1,24 @@
+{
+  "name": "solution-starter-kit-disasters-2020-server",
+  "version": "0.0.1",
+  "description": "Call for Code 2020 solution starter kit for natural disaster resiliency",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "ibm-watson": "^5.4.0"
+  },
+  "homepage": "https://github.com/Call-for-Code/Solution-Starter-Kit-Disasters-2020#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Call-for-Code/Solution-Starter-Kit-Disasters-2020.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Call-for-Code/Solution-Starter-Kit-Disasters-2020/issues"
+  },
+  "license": "Apache-2.0"
+}
