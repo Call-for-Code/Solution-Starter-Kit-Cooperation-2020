@@ -1,0 +1,738 @@
+{
+  "intents": [
+    {
+      "intent": "Flood_Danger",
+      "examples": [
+        {
+          "text": "Why do we have flood warnings?"
+        },
+        {
+          "text": "Should I be careful around floods?"
+        },
+        {
+          "text": "Are floods dangerous?"
+        },
+        {
+          "text": "Am I safe around floods?"
+        },
+        {
+          "text": "How much damage can flooding cause?"
+        },
+        {
+          "text": "What can floods do?"
+        },
+        {
+          "text": "What are floods capable of?"
+        }
+      ],
+      "description": "Dangers of floods"
+    },
+    {
+      "intent": "Flood_After",
+      "examples": [
+        {
+          "text": "the flood is gone"
+        },
+        {
+          "text": "Flood clean up"
+        },
+        {
+          "text": "Flood aftermath"
+        },
+        {
+          "text": "When can I go home?"
+        },
+        {
+          "text": "Is it ok to return home?"
+        },
+        {
+          "text": "Flooding has stopped, am I safe?"
+        },
+        {
+          "text": "What should I do when the flooding goes away?"
+        },
+        {
+          "text": "How do I recover from a flood?"
+        },
+        {
+          "text": "What do I need to do after a flood?"
+        },
+        {
+          "text": "When do I return to my house after a flood?"
+        },
+        {
+          "text": "what happens after a flood"
+        },
+        {
+          "text": "i am ready to head back to the apartment"
+        }
+      ],
+      "description": "Recovering from a flood"
+    },
+    {
+      "intent": "Flood_During",
+      "examples": [
+        {
+          "text": "What actions do I need to take while in a flood area?"
+        },
+        {
+          "text": "I just received a flood warning"
+        },
+        {
+          "text": "what happens during a flood"
+        },
+        {
+          "text": "my neighborhood is flooding"
+        },
+        {
+          "text": "the flood is here"
+        },
+        {
+          "text": "i am stuck in a flood"
+        },
+        {
+          "text": "What do I do when a flood is happening?"
+        },
+        {
+          "text": "Where should I go during a flood?"
+        },
+        {
+          "text": "Where is the safest place?"
+        },
+        {
+          "text": "Do I need to evacuate?"
+        },
+        {
+          "text": "How can I survive a flood?"
+        },
+        {
+          "text": "What do I do during a flood?"
+        }
+      ],
+      "description": "Surviving during a flood"
+    },
+    {
+      "intent": "Flood_Before",
+      "examples": [
+        {
+          "text": "Do I need a plan?"
+        },
+        {
+          "text": "What safety precautions do I need to take?"
+        },
+        {
+          "text": "Can I plan ahead?"
+        },
+        {
+          "text": "How can I reduce the impact?"
+        },
+        {
+          "text": "How do I prepare?"
+        },
+        {
+          "text": "What do I need to do before a flood?"
+        },
+        {
+          "text": "what happens before a flood"
+        },
+        {
+          "text": "What do you recommend I do to be ready?"
+        },
+        {
+          "text": "Tell me what I need before a flood warning"
+        },
+        {
+          "text": "Any guidance on how to prepare?"
+        },
+        {
+          "text": "How do I know I am ready for a flood?"
+        }
+      ],
+      "description": "Preparing for a flood"
+    },
+    {
+      "intent": "Flood_Travel",
+      "examples": [
+        {
+          "text": "Should I walk through flood waters"
+        },
+        {
+          "text": "Should I travel across a flood zone?"
+        },
+        {
+          "text": "Should I pass through a flooded roadway?"
+        },
+        {
+          "text": "Is it safe to swim in flood waters?"
+        },
+        {
+          "text": "How do I cross a flooded area?"
+        },
+        {
+          "text": "Can i bike through the flood?"
+        },
+        {
+          "text": "Can I drive though a flooded area?"
+        }
+      ],
+      "description": "Passing through a flood zone"
+    },
+    {
+      "intent": "General_Ending",
+      "examples": [
+        {
+          "text": "Have a nice day?"
+        },
+        {
+          "text": "Bye bye"
+        },
+        {
+          "text": "Bye now"
+        },
+        {
+          "text": "Catch you later"
+        },
+        {
+          "text": "Cya later"
+        },
+        {
+          "text": "End trial"
+        },
+        {
+          "text": "Ending this session"
+        },
+        {
+          "text": "Finished now, good bye"
+        },
+        {
+          "text": "Get lost"
+        },
+        {
+          "text": "Go away"
+        },
+        {
+          "text": "Go off"
+        },
+        {
+          "text": "Going now"
+        },
+        {
+          "text": "Good. bye."
+        },
+        {
+          "text": "Goodbye"
+        },
+        {
+          "text": "Hey bot go away"
+        },
+        {
+          "text": "I am leaving"
+        },
+        {
+          "text": "I am out of here"
+        },
+        {
+          "text": "I d like to stop doing this"
+        },
+        {
+          "text": "I have got to go"
+        },
+        {
+          "text": "I want to quit"
+        },
+        {
+          "text": "I'm done"
+        },
+        {
+          "text": "Im done"
+        },
+        {
+          "text": "Im good thank you"
+        },
+        {
+          "text": "I'm leaving now"
+        },
+        {
+          "text": "It was nice chatting with you"
+        },
+        {
+          "text": "Ok goodbye"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "See you"
+        },
+        {
+          "text": "Shut up"
+        },
+        {
+          "text": "Stop doing this"
+        },
+        {
+          "text": "Stop talking to me"
+        },
+        {
+          "text": "Thank you for your time"
+        },
+        {
+          "text": "Thanks, bye!"
+        },
+        {
+          "text": "Thanks very much, bye!"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "That's everything"
+        },
+        {
+          "text": "Time to go"
+        }
+      ],
+      "description": "End the conversation."
+    },
+    {
+      "intent": "Flood_About",
+      "examples": [
+        {
+          "text": "Do you know about floods?"
+        },
+        {
+          "text": "What can you say about floods?"
+        },
+        {
+          "text": "flood"
+        },
+        {
+          "text": "What is a flood?"
+        },
+        {
+          "text": "Describe floods"
+        },
+        {
+          "text": "How does flooding happen?"
+        },
+        {
+          "text": "What causes floods?"
+        },
+        {
+          "text": "Tell me about floods"
+        },
+        {
+          "text": "I want to know more about floods"
+        },
+        {
+          "text": "What do I need to know about floods?"
+        },
+        {
+          "text": "Why does flooding occur?"
+        }
+      ],
+      "description": "General flood information"
+    },
+    {
+      "intent": "General_About_You",
+      "examples": [
+        {
+          "text": "Why are you here?"
+        },
+        {
+          "text": "How old are you?"
+        },
+        {
+          "text": "How do you function?"
+        },
+        {
+          "text": "How can I configure you?"
+        },
+        {
+          "text": "Do you know who you are?"
+        },
+        {
+          "text": "Do you have a name?"
+        },
+        {
+          "text": "Describe your self"
+        },
+        {
+          "text": "Can I use another language?"
+        },
+        {
+          "text": "About you"
+        },
+        {
+          "text": "What's your name?"
+        },
+        {
+          "text": "Introduce your self"
+        },
+        {
+          "text": "Let us talk about you"
+        },
+        {
+          "text": "Tell me about your life"
+        },
+        {
+          "text": "Tell me something about yourself"
+        },
+        {
+          "text": "What languages do you speak?"
+        },
+        {
+          "text": "What should I know about you?"
+        },
+        {
+          "text": "I want to set up the chat bot for my shop"
+        },
+        {
+          "text": "Where are you from?"
+        },
+        {
+          "text": "Where were you born?"
+        },
+        {
+          "text": "Who are you?"
+        }
+      ],
+      "description": "Request generic personal attributes."
+    },
+    {
+      "intent": "General_Greetings",
+      "examples": [
+        {
+          "text": "You there"
+        },
+        {
+          "text": "Who is this?"
+        },
+        {
+          "text": "What's up?"
+        },
+        {
+          "text": "What's new?"
+        },
+        {
+          "text": "Ok take me back"
+        },
+        {
+          "text": "Looking good eve"
+        },
+        {
+          "text": "How r u?"
+        },
+        {
+          "text": "How is it going?"
+        },
+        {
+          "text": "How have you been?"
+        },
+        {
+          "text": "How are you today?"
+        },
+        {
+          "text": "How are things going?"
+        },
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "Hi advisor"
+        },
+        {
+          "text": "Hey you"
+        },
+        {
+          "text": "Hey twin"
+        },
+        {
+          "text": "Hey there"
+        },
+        {
+          "text": "Hey there all"
+        },
+        {
+          "text": "Hey how are you doing"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hello I am looking for some help here"
+        },
+        {
+          "text": "Hello Agent"
+        },
+        {
+          "text": "Have you been well?"
+        },
+        {
+          "text": "Greetings"
+        },
+        {
+          "text": "Good to see you"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Good evening"
+        },
+        {
+          "text": "Good day"
+        }
+      ],
+      "description": "Greet the bot."
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do not walk, swim, or drive through flood waters. Never cross any barriers that are put in place by emergency officials. You likely will not know the depth of the water or the condition of the ground. Road beds may be washed out under flood waters."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Flood_Travel",
+      "dialog_node": "node_7_1584394345975",
+      "previous_sibling": "node_2_1584231537199"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "OK. See you later."
+              },
+              {
+                "text": "Take care"
+              },
+              {
+                "text": "Bye"
+              },
+              {
+                "text": "Stay safe"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#General_Ending",
+      "dialog_node": "node_4_1584218971201",
+      "previous_sibling": "node_8_1584231697399"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Floods can cause outages, disrupt transportation, damage buildings, and create landslides."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Flood_Danger",
+      "dialog_node": "node_9_1584393013683",
+      "previous_sibling": "node_5_1584231112927"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Flooding is a temporary overflow of water onto land that is normally dry. It results from rain, snow, coastal storms, storm surges, and overflows of dams and other water systems. Floods can cause outages, disrupt transportation, damage buildings, and create landslides."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Flood_About",
+      "dialog_node": "node_5_1584231112927",
+      "previous_sibling": "node_4_1584218872946"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "- Know the flood risk in your area\n- Sign up for your community’s warning system and be ready to follow all emergency alerts\n- Learn and practice evacuation routes, shelter plans, and flash flood response\n- Gather supplies (e.g., medication, batteries, etc.) in case you have to leave immediately or lose services\n- Store valuables and important documents in a safe, dry place\n- Make plans on what to do with your animals and pets if you are required to evacuate"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Flood_Before",
+      "dialog_node": "node_10_1584231342659",
+      "previous_sibling": "node_9_1584393013683"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello"
+              },
+              {
+                "text": "Hi"
+              },
+              {
+                "text": "Hey"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#General_Greetings",
+      "dialog_node": "node_4_1584218872946",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Even though a flood warning may have been cancelled continue to stay informed and follow the directions of emergency officials. During clean up from a flood wear heavy gloves, boots, and other protective gear and be aware snakes and other animals that may be in your home. Also, do not touch electrical equipment if it is wet or if you are standing in water. And return home only when local authorities say it is safe."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Flood_After",
+      "dialog_node": "node_8_1584231697399",
+      "previous_sibling": "node_7_1584394345975"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1584218971201",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "It is important to stay informed with what is happening and to follow instructions given by emergency officials. If there is a flood warning, find safe shelter right away! Go to a safe location you previously identified. If told to evacuate, do so immediately. Do not walk, swim, or drive through flood waters. Failing to evacuate flooded areas or entering flood waters can result in injury or death. If trapped in a building, get to the highest level. Do not climb into a closed attic and go on the roof only if necessary."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Flood_During",
+      "dialog_node": "node_2_1584231537199",
+      "previous_sibling": "node_10_1584231342659"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. I am a disaster resiliency virtual agent. I can help answer your questions about flood preparedness, survival, and recovery. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "starter-kit-flood-dialog-skill",
+  "language": "en",
+  "description": ""
+}
