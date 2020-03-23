@@ -47,7 +47,7 @@ Mobile, Web and Cloud services enable rapid deployment of applications that can 
 
 ## The idea
 
-The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation applicaiton that could address the local needs in aspects of food, equipment and resources scarcity. It would allow both suppliers (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers to locate where these supplies are, and, if reauired, to be guided to where they are.
+The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation applicaiton that could address the local needs in aspects of food, equipment and resources scarcity. It would allow both suppliers (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers to locate where these supplies are, and, if required, to be guided to where they are.
 
 ## How it works
 
