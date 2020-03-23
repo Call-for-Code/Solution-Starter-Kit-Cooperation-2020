@@ -33,11 +33,11 @@ This solution starter was created by technologists from IBM.
 
 ### What's the problem?
 
-In times of crisis, such as COVID-19, while federal and local government may be rolling out broad programs, cooperation at the local level is usually the most effectibe way of getting help to where it is most needed. While traditional social media is one way of communicating within a community, this is (by its very design) not locally focused, and often not sufficently structured to enable rapid discover of help needed. In the COVID-19 crisis we have already seen problems with the local supply of food, equipment and other supplies. In addition, due to self-isolation and social distancing, the inablity of people to easily get to where the best stock of supplies may be held compounds the problem. This is a growing interest in communities' cooperating amoung themsleves to solve these problems, whether it be to advertise where stock is held, offer assitance for collections or other local services. What is needed is the something to empower communities to easily to provide this to each other.
+In times of crisis, such as COVID-19, while federal and local government may be rolling out broad programs, cooperation at the local level is usually the most effective way of getting help to where it is most needed. While traditional social media is one way of communicating within a community, this is (by its very design) not locally focused, and often not sufficiently structured to enable rapid discover of help needed. In the COVID-19 crisis we have already seen problems with the local supply of food, equipment and other supplies. In addition, due to self-isolation and social distancing, the inability of people to easily get to where the best stock of supplies may be held compounds the problem. This is a growing interest in communities' cooperating among themselves to solve these problems, whether it be to advertise where stock is held, offer assistance for collections or other local services. What is needed is the something to empower communities to easily to provide this to each other.
 
 ### How can technology help?
 
-Mobile, Web and Cloud services enable rapid deployment of applications that can empower cooperation in the community. Watson Assistant is a service on IBM Cloud that allows us to build, train, and deploy conversational interactions into any application, device, or channel. Creating a chatbot using Watson Assistant can help address the issues that our users can face while trying to gather the right information. Embedding loaction/routing services (like [HERE](https://developer.here.com/products/routing)) can enhance such applications, giving optimum guidance so that they are outside of their isolation location for the minimum amount of time.
+Mobile, Web and Cloud services enable rapid deployment of applications that can empower cooperation in the community. Watson Assistant is a service on IBM Cloud that allows us to build, train, and deploy conversational interactions into any application, device, or channel. Creating a chatbot using Watson Assistant can help address the issues that our users can face while trying to gather the right information. Embedding location/routing services (like [HERE](https://developer.here.com/products/routing)) can enhance such applications, giving optimum guidance so that they are outside of their isolation location for the minimum amount of time.
 
 ## Video
 
@@ -47,7 +47,7 @@ Mobile, Web and Cloud services enable rapid deployment of applications that can 
 
 ## The idea
 
-The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation applicaiton that could address the local needs in aspects of food, equipment and resources scarcity. It would allow both suppliers (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers to locate where these supplies are, and, if required, to be guided to where they are.
+The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation application that could address the local needs in aspects of food, equipment and resources scarcity. It would allow both suppliers (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers to locate where these supplies are, and, if required, to be guided to where they are.
 
 ## How it works
 
@@ -64,8 +64,8 @@ This solution starter idea combines machine learning and location services with 
 [WIP - needs refining]
 
 1. The user launches the mobile app and can access information across multiple services.
-1. The user can ask questions to Watson Assistant and get answers on food/service availabilty questions.
-1. The user can post availability of stcok or services they can provide.
+1. The user can ask questions to Watson Assistant and get answers on food/service availability questions.
+1. The user can post availability of stock or services they can provide.
 1. The user can obtain geolocation data to plot routes to collect (or drop off) supplies using HERE Location Services.
 
 
@@ -129,7 +129,7 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 1. Provision an instance of **Watson Assistant** from the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant).
 1. Launch the Watson Assistant service.
 1. [Create an **Assistant**](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add).
-1. [Add a dialog skill](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) to the **Assistant** by importing the [`starter-kit-flood-dialog-skill.json`](./starter-kit/assistant/starter-kit-flood-dialog-skill.json) file.
+1. [Add a dialog skill](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) to the **Assistant** by importing the [`starter-kit-cooperation-dialog-skill.json`](./starter-kit/assistant/starter-kit-cooperation-dialog-skill.json) file.
 1. Go back to All Assistants page, open **Settings** from the action menu ( **`⋮`** ) and click on **API Details**.
 1. Note the **Assistant ID** and **API Key**.
 1. Go to **Preview Link** to get a link to test and verify the dialog skill.

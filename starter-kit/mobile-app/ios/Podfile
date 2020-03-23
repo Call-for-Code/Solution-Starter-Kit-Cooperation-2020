@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'SolutionStarterKitDisasters2020App' do
-  # Pods for SolutionStarterKitDisasters2020App
+target 'SolutionStarterKitCooperation2020App' do
+  # Pods for SolutionStarterKitCooperation2020App
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -38,7 +38,7 @@ target 'SolutionStarterKitDisasters2020App' do
 
   pod 'react-native-geolocation', :path => '../node_modules/@react-native-community/geolocation'
 
-  target 'SolutionStarterKitDisasters2020AppTests' do
+  target 'SolutionStarterKitCooperation2020AppTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -46,10 +46,10 @@ target 'SolutionStarterKitDisasters2020App' do
   use_native_modules!
 end
 
-target 'SolutionStarterKitDisasters2020App-tvOS' do
-  # Pods for SolutionStarterKitDisasters2020App-tvOS
+target 'SolutionStarterKitCooperation2020App-tvOS' do
+  # Pods for SolutionStarterKitCooperation2020App-tvOS
 
-  target 'SolutionStarterKitDisasters2020App-tvOSTests' do
+  target 'SolutionStarterKitCooperation2020App-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

@@ -1,4 +1,4 @@
-package com.solutionstarterkitdisasters2020app;
+package com.solutionstarterkitcooperation2020app;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "SolutionStarterKitDisasters2020App";
+    return "SolutionStarterKitCooperation2020App";
   }
 }

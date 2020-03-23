@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.m */; };
+		00E356F31AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		152DD0D4241F0CD20039AF48 /* Web.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 152DD0D3241F0CD20039AF48 /* Web.bundle */; };
-		174838CF928D2185BD7F739F /* libPods-SolutionStarterKitDisasters2020App-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F506371DE24ABB36F059BE /* libPods-SolutionStarterKitDisasters2020App-tvOSTests.a */; };
+		174838CF928D2185BD7F739F /* libPods-SolutionStarterKitCooperation2020App-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F506371DE24ABB36F059BE /* libPods-SolutionStarterKitCooperation2020App-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* SolutionStarterKitDisasters2020AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* SolutionStarterKitCooperation2020AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.m */; };
 		3E58C862A227432692D9AAC8 /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62563C8814DD4A9DBC844369 /* IBMPlexSans-Bold.ttf */; };
-		6E8CC6D6C7804333DFE8BDDF /* libPods-SolutionStarterKitDisasters2020AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0EACA7FCEC26D3912818C6 /* libPods-SolutionStarterKitDisasters2020AppTests.a */; };
+		6E8CC6D6C7804333DFE8BDDF /* libPods-SolutionStarterKitCooperation2020AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0EACA7FCEC26D3912818C6 /* libPods-SolutionStarterKitCooperation2020AppTests.a */; };
 		76A45FB26EB14F76A9C87B67 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35180C132AEA4BB482084281 /* IBMPlexSans-Medium.ttf */; };
-		914382AC963EC72D8FB01339 /* libPods-SolutionStarterKitDisasters2020App-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BE188D872B2C503E529135 /* libPods-SolutionStarterKitDisasters2020App-tvOS.a */; };
+		914382AC963EC72D8FB01339 /* libPods-SolutionStarterKitCooperation2020App-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BE188D872B2C503E529135 /* libPods-SolutionStarterKitCooperation2020App-tvOS.a */; };
 		A46B9372CD954CBA9A5B05BC /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57DBEBC691D4F76BC65C6C6 /* IBMPlexMono-Medium.ttf */; };
 		D458BDFC86324769BD0887B8 /* IBMPlexMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90D76D9FEA424F6CB85A492F /* IBMPlexMono-Bold.ttf */; };
-		FE2ED2F5239F7550D8F1AF02 /* libPods-SolutionStarterKitDisasters2020App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DDE067226BFFA99A2E6768 /* libPods-SolutionStarterKitDisasters2020App.a */; };
+		FE2ED2F5239F7550D8F1AF02 /* libPods-SolutionStarterKitCooperation2020App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DDE067226BFFA99A2E6768 /* libPods-SolutionStarterKitCooperation2020App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,48 +33,48 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = SolutionStarterKitDisasters2020App;
+			remoteInfo = SolutionStarterKitCooperation2020App;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "SolutionStarterKitDisasters2020App-tvOS";
+			remoteInfo = "SolutionStarterKitCooperation2020App-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolutionStarterKitDisasters2020AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolutionStarterKitCooperation2020AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolutionStarterKitDisasters2020AppTests.m; sourceTree = "<group>"; };
-		09847059F31878E310FC6BC9 /* Pods-SolutionStarterKitDisasters2020AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitDisasters2020AppTests.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitDisasters2020AppTests/Pods-SolutionStarterKitDisasters2020AppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* SolutionStarterKitDisasters2020App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolutionStarterKitDisasters2020App.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SolutionStarterKitDisasters2020App/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SolutionStarterKitDisasters2020App/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolutionStarterKitCooperation2020AppTests.m; sourceTree = "<group>"; };
+		09847059F31878E310FC6BC9 /* Pods-SolutionStarterKitCooperation2020AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020AppTests.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020AppTests/Pods-SolutionStarterKitCooperation2020AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* SolutionStarterKitCooperation2020App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolutionStarterKitCooperation2020App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SolutionStarterKitCooperation2020App/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SolutionStarterKitCooperation2020App/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SolutionStarterKitDisasters2020App/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SolutionStarterKitDisasters2020App/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SolutionStarterKitDisasters2020App/main.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SolutionStarterKitCooperation2020App/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SolutionStarterKitCooperation2020App/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SolutionStarterKitCooperation2020App/main.m; sourceTree = "<group>"; };
 		152DD0D3241F0CD20039AF48 /* Web.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Web.bundle; path = ../src/www/Web.bundle; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SolutionStarterKitDisasters2020App-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SolutionStarterKitDisasters2020App-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SolutionStarterKitCooperation2020App-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SolutionStarterKitCooperation2020App-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35180C132AEA4BB482084281 /* IBMPlexSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Medium.ttf"; path = "../src/fonts/IBMPlex/IBMPlexSans-Medium.ttf"; sourceTree = "<group>"; };
-		48F506371DE24ABB36F059BE /* libPods-SolutionStarterKitDisasters2020App-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitDisasters2020App-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BADEF2F618EA47691595283 /* Pods-SolutionStarterKitDisasters2020App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitDisasters2020App.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitDisasters2020App/Pods-SolutionStarterKitDisasters2020App.debug.xcconfig"; sourceTree = "<group>"; };
-		58DDE067226BFFA99A2E6768 /* libPods-SolutionStarterKitDisasters2020App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitDisasters2020App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F506371DE24ABB36F059BE /* libPods-SolutionStarterKitCooperation2020App-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitCooperation2020App-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BADEF2F618EA47691595283 /* Pods-SolutionStarterKitCooperation2020App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App/Pods-SolutionStarterKitCooperation2020App.debug.xcconfig"; sourceTree = "<group>"; };
+		58DDE067226BFFA99A2E6768 /* libPods-SolutionStarterKitCooperation2020App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitCooperation2020App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62563C8814DD4A9DBC844369 /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Bold.ttf"; path = "../src/fonts/IBMPlex/IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
-		6616DE190E0A6368E53C1D2C /* Pods-SolutionStarterKitDisasters2020App-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitDisasters2020App-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitDisasters2020App-tvOSTests/Pods-SolutionStarterKitDisasters2020App-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		70F4F4F88629B2CDA08BD45F /* Pods-SolutionStarterKitDisasters2020App-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitDisasters2020App-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitDisasters2020App-tvOSTests/Pods-SolutionStarterKitDisasters2020App-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		7CA756A30F2D95EFAD4CA087 /* Pods-SolutionStarterKitDisasters2020AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitDisasters2020AppTests.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitDisasters2020AppTests/Pods-SolutionStarterKitDisasters2020AppTests.release.xcconfig"; sourceTree = "<group>"; };
-		82BE188D872B2C503E529135 /* libPods-SolutionStarterKitDisasters2020App-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitDisasters2020App-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6616DE190E0A6368E53C1D2C /* Pods-SolutionStarterKitCooperation2020App-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App-tvOSTests/Pods-SolutionStarterKitCooperation2020App-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		70F4F4F88629B2CDA08BD45F /* Pods-SolutionStarterKitCooperation2020App-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App-tvOSTests/Pods-SolutionStarterKitCooperation2020App-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7CA756A30F2D95EFAD4CA087 /* Pods-SolutionStarterKitCooperation2020AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020AppTests.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020AppTests/Pods-SolutionStarterKitCooperation2020AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		82BE188D872B2C503E529135 /* libPods-SolutionStarterKitCooperation2020App-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitCooperation2020App-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D76D9FEA424F6CB85A492F /* IBMPlexMono-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexMono-Bold.ttf"; path = "../src/fonts/IBMPlex/IBMPlexMono-Bold.ttf"; sourceTree = "<group>"; };
 		B57DBEBC691D4F76BC65C6C6 /* IBMPlexMono-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexMono-Medium.ttf"; path = "../src/fonts/IBMPlex/IBMPlexMono-Medium.ttf"; sourceTree = "<group>"; };
-		BA9D31708EEBE5ABA7A50732 /* Pods-SolutionStarterKitDisasters2020App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitDisasters2020App.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitDisasters2020App/Pods-SolutionStarterKitDisasters2020App.release.xcconfig"; sourceTree = "<group>"; };
-		C62E4843910E5DB3E758A37E /* Pods-SolutionStarterKitDisasters2020App-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitDisasters2020App-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitDisasters2020App-tvOS/Pods-SolutionStarterKitDisasters2020App-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		C833CFE227BF6177EFCF21CB /* Pods-SolutionStarterKitDisasters2020App-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitDisasters2020App-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitDisasters2020App-tvOS/Pods-SolutionStarterKitDisasters2020App-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		DC0EACA7FCEC26D3912818C6 /* libPods-SolutionStarterKitDisasters2020AppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitDisasters2020AppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA9D31708EEBE5ABA7A50732 /* Pods-SolutionStarterKitCooperation2020App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App/Pods-SolutionStarterKitCooperation2020App.release.xcconfig"; sourceTree = "<group>"; };
+		C62E4843910E5DB3E758A37E /* Pods-SolutionStarterKitCooperation2020App-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App-tvOS/Pods-SolutionStarterKitCooperation2020App-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		C833CFE227BF6177EFCF21CB /* Pods-SolutionStarterKitCooperation2020App-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App-tvOS/Pods-SolutionStarterKitCooperation2020App-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DC0EACA7FCEC26D3912818C6 /* libPods-SolutionStarterKitCooperation2020AppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitCooperation2020AppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E8CC6D6C7804333DFE8BDDF /* libPods-SolutionStarterKitDisasters2020AppTests.a in Frameworks */,
+				6E8CC6D6C7804333DFE8BDDF /* libPods-SolutionStarterKitCooperation2020AppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE2ED2F5239F7550D8F1AF02 /* libPods-SolutionStarterKitDisasters2020App.a in Frameworks */,
+				FE2ED2F5239F7550D8F1AF02 /* libPods-SolutionStarterKitCooperation2020App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				914382AC963EC72D8FB01339 /* libPods-SolutionStarterKitDisasters2020App-tvOS.a in Frameworks */,
+				914382AC963EC72D8FB01339 /* libPods-SolutionStarterKitCooperation2020App-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,20 +108,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				174838CF928D2185BD7F739F /* libPods-SolutionStarterKitDisasters2020App-tvOSTests.a in Frameworks */,
+				174838CF928D2185BD7F739F /* libPods-SolutionStarterKitCooperation2020App-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests */ = {
+		00E356EF1AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.m */,
+				00E356F21AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = SolutionStarterKitDisasters2020AppTests;
+			path = SolutionStarterKitCooperation2020AppTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -132,7 +132,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* SolutionStarterKitDisasters2020App */ = {
+		13B07FAE1A68108700A75B9A /* SolutionStarterKitCooperation2020App */ = {
 			isa = PBXGroup;
 			children = (
 				152DD0D3241F0CD20039AF48 /* Web.bundle */,
@@ -144,7 +144,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = SolutionStarterKitDisasters2020App;
+			name = SolutionStarterKitCooperation2020App;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -152,10 +152,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				58DDE067226BFFA99A2E6768 /* libPods-SolutionStarterKitDisasters2020App.a */,
-				82BE188D872B2C503E529135 /* libPods-SolutionStarterKitDisasters2020App-tvOS.a */,
-				48F506371DE24ABB36F059BE /* libPods-SolutionStarterKitDisasters2020App-tvOSTests.a */,
-				DC0EACA7FCEC26D3912818C6 /* libPods-SolutionStarterKitDisasters2020AppTests.a */,
+				58DDE067226BFFA99A2E6768 /* libPods-SolutionStarterKitCooperation2020App.a */,
+				82BE188D872B2C503E529135 /* libPods-SolutionStarterKitCooperation2020App-tvOS.a */,
+				48F506371DE24ABB36F059BE /* libPods-SolutionStarterKitCooperation2020App-tvOSTests.a */,
+				DC0EACA7FCEC26D3912818C6 /* libPods-SolutionStarterKitCooperation2020AppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,14 +163,14 @@
 		4DBE8F8CCADEE7F4C1A41551 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4BADEF2F618EA47691595283 /* Pods-SolutionStarterKitDisasters2020App.debug.xcconfig */,
-				BA9D31708EEBE5ABA7A50732 /* Pods-SolutionStarterKitDisasters2020App.release.xcconfig */,
-				C833CFE227BF6177EFCF21CB /* Pods-SolutionStarterKitDisasters2020App-tvOS.debug.xcconfig */,
-				C62E4843910E5DB3E758A37E /* Pods-SolutionStarterKitDisasters2020App-tvOS.release.xcconfig */,
-				6616DE190E0A6368E53C1D2C /* Pods-SolutionStarterKitDisasters2020App-tvOSTests.debug.xcconfig */,
-				70F4F4F88629B2CDA08BD45F /* Pods-SolutionStarterKitDisasters2020App-tvOSTests.release.xcconfig */,
-				09847059F31878E310FC6BC9 /* Pods-SolutionStarterKitDisasters2020AppTests.debug.xcconfig */,
-				7CA756A30F2D95EFAD4CA087 /* Pods-SolutionStarterKitDisasters2020AppTests.release.xcconfig */,
+				4BADEF2F618EA47691595283 /* Pods-SolutionStarterKitCooperation2020App.debug.xcconfig */,
+				BA9D31708EEBE5ABA7A50732 /* Pods-SolutionStarterKitCooperation2020App.release.xcconfig */,
+				C833CFE227BF6177EFCF21CB /* Pods-SolutionStarterKitCooperation2020App-tvOS.debug.xcconfig */,
+				C62E4843910E5DB3E758A37E /* Pods-SolutionStarterKitCooperation2020App-tvOS.release.xcconfig */,
+				6616DE190E0A6368E53C1D2C /* Pods-SolutionStarterKitCooperation2020App-tvOSTests.debug.xcconfig */,
+				70F4F4F88629B2CDA08BD45F /* Pods-SolutionStarterKitCooperation2020App-tvOSTests.release.xcconfig */,
+				09847059F31878E310FC6BC9 /* Pods-SolutionStarterKitCooperation2020AppTests.debug.xcconfig */,
+				7CA756A30F2D95EFAD4CA087 /* Pods-SolutionStarterKitCooperation2020AppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -196,9 +196,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* SolutionStarterKitDisasters2020App */,
+				13B07FAE1A68108700A75B9A /* SolutionStarterKitCooperation2020App */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests */,
+				00E356EF1AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				4DBE8F8CCADEE7F4C1A41551 /* Pods */,
@@ -212,10 +212,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* SolutionStarterKitDisasters2020App.app */,
-				00E356EE1AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* SolutionStarterKitCooperation2020App.app */,
+				00E356EE1AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests */ = {
+		00E356ED1AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SolutionStarterKitDisasters2020AppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SolutionStarterKitCooperation2020AppTests" */;
 			buildPhases = (
 				51225F315429B551C0D093C6 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -237,14 +237,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = SolutionStarterKitDisasters2020AppTests;
-			productName = SolutionStarterKitDisasters2020AppTests;
-			productReference = 00E356EE1AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.xctest */;
+			name = SolutionStarterKitCooperation2020AppTests;
+			productName = SolutionStarterKitCooperation2020AppTests;
+			productReference = 00E356EE1AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* SolutionStarterKitDisasters2020App */ = {
+		13B07F861A680F5B00A75B9A /* SolutionStarterKitCooperation2020App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SolutionStarterKitDisasters2020App" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SolutionStarterKitCooperation2020App" */;
 			buildPhases = (
 				65523A9482C4775E1EB9FF32 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -257,14 +257,14 @@
 			);
 			dependencies = (
 			);
-			name = SolutionStarterKitDisasters2020App;
-			productName = SolutionStarterKitDisasters2020App;
-			productReference = 13B07F961A680F5B00A75B9A /* SolutionStarterKitDisasters2020App.app */;
+			name = SolutionStarterKitCooperation2020App;
+			productName = SolutionStarterKitCooperation2020App;
+			productReference = 13B07F961A680F5B00A75B9A /* SolutionStarterKitCooperation2020App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SolutionStarterKitDisasters2020App-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SolutionStarterKitCooperation2020App-tvOS" */;
 			buildPhases = (
 				69196A1B19390FC7BA533E33 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -277,14 +277,14 @@
 			);
 			dependencies = (
 			);
-			name = "SolutionStarterKitDisasters2020App-tvOS";
-			productName = "SolutionStarterKitDisasters2020App-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOS.app */;
+			name = "SolutionStarterKitCooperation2020App-tvOS";
+			productName = "SolutionStarterKitCooperation2020App-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SolutionStarterKitDisasters2020App-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SolutionStarterKitCooperation2020App-tvOSTests" */;
 			buildPhases = (
 				49A7FD87D437B092788DEC83 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -296,9 +296,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "SolutionStarterKitDisasters2020App-tvOSTests";
-			productName = "SolutionStarterKitDisasters2020App-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOSTests.xctest */;
+			name = "SolutionStarterKitCooperation2020App-tvOSTests";
+			productName = "SolutionStarterKitCooperation2020App-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -325,7 +325,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SolutionStarterKitDisasters2020App" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SolutionStarterKitCooperation2020App" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -339,10 +339,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* SolutionStarterKitDisasters2020App */,
-				00E356ED1AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests */,
-				2D02E47A1E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* SolutionStarterKitCooperation2020App */,
+				00E356ED1AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests */,
+				2D02E47A1E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -430,7 +430,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SolutionStarterKitDisasters2020App-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SolutionStarterKitCooperation2020App-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -452,7 +452,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SolutionStarterKitDisasters2020AppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SolutionStarterKitCooperation2020AppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -474,7 +474,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SolutionStarterKitDisasters2020App-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SolutionStarterKitCooperation2020App-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -496,7 +496,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SolutionStarterKitDisasters2020App-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SolutionStarterKitCooperation2020App-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -548,7 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* SolutionStarterKitDisasters2020AppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* SolutionStarterKitCooperation2020AppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,7 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* SolutionStarterKitDisasters2020AppTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* SolutionStarterKitCooperation2020AppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,12 +583,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* SolutionStarterKitDisasters2020App */;
+			target = 13B07F861A680F5B00A75B9A /* SolutionStarterKitCooperation2020App */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* SolutionStarterKitDisasters2020App-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* SolutionStarterKitCooperation2020App-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -600,7 +600,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = SolutionStarterKitDisasters2020App;
+			path = SolutionStarterKitCooperation2020App;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -608,14 +608,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09847059F31878E310FC6BC9 /* Pods-SolutionStarterKitDisasters2020AppTests.debug.xcconfig */;
+			baseConfigurationReference = 09847059F31878E310FC6BC9 /* Pods-SolutionStarterKitCooperation2020AppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SolutionStarterKitDisasters2020AppTests/Info.plist;
+				INFOPLIST_FILE = SolutionStarterKitCooperation2020AppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -625,17 +625,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolutionStarterKitDisasters2020App.app/SolutionStarterKitDisasters2020App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolutionStarterKitCooperation2020App.app/SolutionStarterKitCooperation2020App";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CA756A30F2D95EFAD4CA087 /* Pods-SolutionStarterKitDisasters2020AppTests.release.xcconfig */;
+			baseConfigurationReference = 7CA756A30F2D95EFAD4CA087 /* Pods-SolutionStarterKitCooperation2020AppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = SolutionStarterKitDisasters2020AppTests/Info.plist;
+				INFOPLIST_FILE = SolutionStarterKitCooperation2020AppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -645,18 +645,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolutionStarterKitDisasters2020App.app/SolutionStarterKitDisasters2020App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolutionStarterKitCooperation2020App.app/SolutionStarterKitCooperation2020App";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BADEF2F618EA47691595283 /* Pods-SolutionStarterKitDisasters2020App.debug.xcconfig */;
+			baseConfigurationReference = 4BADEF2F618EA47691595283 /* Pods-SolutionStarterKitCooperation2020App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				INFOPLIST_FILE = SolutionStarterKitDisasters2020App/Info.plist;
+				INFOPLIST_FILE = SolutionStarterKitCooperation2020App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -664,18 +664,18 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = SolutionStarterKitDisasters2020App;
+				PRODUCT_NAME = SolutionStarterKitCooperation2020App;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA9D31708EEBE5ABA7A50732 /* Pods-SolutionStarterKitDisasters2020App.release.xcconfig */;
+			baseConfigurationReference = BA9D31708EEBE5ABA7A50732 /* Pods-SolutionStarterKitCooperation2020App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = SolutionStarterKitDisasters2020App/Info.plist;
+				INFOPLIST_FILE = SolutionStarterKitCooperation2020App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -683,14 +683,14 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = SolutionStarterKitDisasters2020App;
+				PRODUCT_NAME = SolutionStarterKitCooperation2020App;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C833CFE227BF6177EFCF21CB /* Pods-SolutionStarterKitDisasters2020App-tvOS.debug.xcconfig */;
+			baseConfigurationReference = C833CFE227BF6177EFCF21CB /* Pods-SolutionStarterKitCooperation2020App-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -701,14 +701,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "SolutionStarterKitDisasters2020App-tvOS/Info.plist";
+				INFOPLIST_FILE = "SolutionStarterKitCooperation2020App-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SolutionStarterKitDisasters2020App-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SolutionStarterKitCooperation2020App-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -718,7 +718,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C62E4843910E5DB3E758A37E /* Pods-SolutionStarterKitDisasters2020App-tvOS.release.xcconfig */;
+			baseConfigurationReference = C62E4843910E5DB3E758A37E /* Pods-SolutionStarterKitCooperation2020App-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -729,14 +729,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "SolutionStarterKitDisasters2020App-tvOS/Info.plist";
+				INFOPLIST_FILE = "SolutionStarterKitCooperation2020App-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SolutionStarterKitDisasters2020App-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SolutionStarterKitCooperation2020App-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -746,7 +746,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6616DE190E0A6368E53C1D2C /* Pods-SolutionStarterKitDisasters2020App-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 6616DE190E0A6368E53C1D2C /* Pods-SolutionStarterKitCooperation2020App-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -756,24 +756,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "SolutionStarterKitDisasters2020App-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "SolutionStarterKitCooperation2020App-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SolutionStarterKitDisasters2020App-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SolutionStarterKitCooperation2020App-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolutionStarterKitDisasters2020App-tvOS.app/SolutionStarterKitDisasters2020App-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolutionStarterKitCooperation2020App-tvOS.app/SolutionStarterKitCooperation2020App-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70F4F4F88629B2CDA08BD45F /* Pods-SolutionStarterKitDisasters2020App-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 70F4F4F88629B2CDA08BD45F /* Pods-SolutionStarterKitCooperation2020App-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -783,17 +783,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "SolutionStarterKitDisasters2020App-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "SolutionStarterKitCooperation2020App-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SolutionStarterKitDisasters2020App-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SolutionStarterKitCooperation2020App-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolutionStarterKitDisasters2020App-tvOS.app/SolutionStarterKitDisasters2020App-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolutionStarterKitCooperation2020App-tvOS.app/SolutionStarterKitCooperation2020App-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -900,7 +900,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SolutionStarterKitDisasters2020AppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SolutionStarterKitCooperation2020AppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -909,7 +909,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SolutionStarterKitDisasters2020App" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SolutionStarterKitCooperation2020App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -918,7 +918,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SolutionStarterKitDisasters2020App-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SolutionStarterKitCooperation2020App-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -927,7 +927,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SolutionStarterKitDisasters2020App-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SolutionStarterKitCooperation2020App-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -936,7 +936,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SolutionStarterKitDisasters2020App" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SolutionStarterKitCooperation2020App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

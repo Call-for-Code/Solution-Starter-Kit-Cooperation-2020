@@ -40,5 +40,5 @@ app.post('/api/message', (req, res) => {
 const server = app.listen(port, () => {
    const host = server.address().address;
    const port = server.address().port;
-   console.log(`SolutionStarterKitDisastersServer listening at http://${host}:${port}`);
+   console.log(`SolutionStarterKitCooperationServer listening at http://${host}:${port}`);
 });
