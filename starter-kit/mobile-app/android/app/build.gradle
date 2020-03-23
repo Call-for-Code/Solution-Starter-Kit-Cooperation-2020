@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.solutionstarterkitdisasters2020app"
+        applicationId "com.solutionstarterkitcooperation2020app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

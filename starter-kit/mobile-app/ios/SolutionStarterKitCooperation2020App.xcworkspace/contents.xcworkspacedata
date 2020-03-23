@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SolutionStarterKitDisasters2020App.xcodeproj">
+      location = "group:SolutionStarterKitCooperation2020App.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -1,4 +1,4 @@
-package com.solutionstarterkitdisasters2020app;
+package com.solutionstarterkitcooperation2020app;
 
 import android.app.Application;
 import android.content.Context;

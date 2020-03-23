@@ -1,5 +1,5 @@
 applications:
-- name: solution-starter-kit-disasters-2020-server
+- name: solution-starter-kit-cooperation-2020-server
   command: npm start
   path: .
   memory: 256M
