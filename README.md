@@ -5,7 +5,7 @@ This solution starter was created by technologists from IBM.
 ## Authors
 
 - Omer Arad
-- JJ Asgar
+- JJ Asghar
 - Jody Burks
 - Margriet Groenendijk
 - Niklas Heidloff
