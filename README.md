@@ -51,23 +51,20 @@ The idea is to provide a mobile application, along with server side components, 
 
 ## How it works
 
-[WIP - I'm working on this (HN)]
+A supplier (who could just be a regular resident, or a small business, voluntary organization etc.) who has food, supplies, resources or other essentails they can provide opens the mobile application and fills out a brief form that indiacets what is they have. This will be stored in a database in the IBM Cloud.
+
+A user who is in need of food, supplies, resources or other essentails opens the mobile application and can use the chat interface to locate the supplies near them. For instance, they might type "Where can I find bread", or " Can someone collect my shopping for me". The mobile applciation will access database (after first understanding teh quetsion via Watson Assistant), and then display a map showing where locally they can find what they are looking for.
 
 ## Diagrams
 
-[WIP - needs refining]
-
 ![Cooperation architecture diagram](/images/architecture-diagram.png)
 
-This solution starter idea combines machine learning and location services with real-time information to get users the information they need.
-
-[WIP - needs refining]
+This solution starter idea combines a chat interface (Watsone Assistant), data storage to hold status of supplies available and location services with real-time information to get users the information they need.
 
 1. The user launches the mobile app and can access information across multiple services.
 1. The user can ask questions to Watson Assistant and get answers on food/service availability questions.
-1. The user can post availability of stock or services they can provide.
+1. The user can post availability of stock or services they can provide, as well locate items they are in need of
 1. The user can obtain geolocation data to plot routes to collect (or drop off) supplies using HERE Location Services.
-
 
 ## Documents
 
@@ -118,9 +115,10 @@ This solution starter idea combines machine learning and location services with 
 ### Steps
 
 1. [Set up an instance of Watson Assistant](#1-set-up-an-instance-of-watson-assistant).
-1. [Generate an API Key from the HERE Developer Portal](#2-generate-an-api-key-from-the-here-developer-portal).
-1. [Run the server](#3-run-the-server).
-1. [Run the mobile application](#4-run-the-mobile-application).
+1. [Provision a CouchDB instance using Cloudant](#2-Provision-a-CouchDB-instance-using-Cloudant).
+1. [Generate an API Key from the HERE Developer Portal](#3-generate-an-api-key-from-the-here-developer-portal).
+1. [Run the server](#4-run-the-server).
+1. [Run the mobile application](#5-run-the-mobile-application).
 
 ### 1. Set up an instance of Watson Assistant
 
@@ -134,19 +132,29 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 1. Note the **Assistant ID** and **API Key**.
 1. Go to **Preview Link** to get a link to test and verify the dialog skill.
 
-### 2. Generate an API Key from the HERE Developer Portal
+### 2: Provision a CouchDB instance using Cloudant
+
+Log into the IBM Cloud and provision a [CouchDB instance using Cloudant](https://www.ibm.com/cloud/cloudant).
+
+1. From the catalog, select Databases and then the Cloudant panel.
+1. Once selected, you can choose your Cloudant plan - there is a free tier for simple testing that is sufficient to run this CIR example. You should choose an appropriate region, give the service a name, and it is recommended you choose **Use only IAM** under **Available authentication methods**. You can leave the other settings with their defaults. Click the blue `Create` button when ready.
+1. Once your Cloudant instance has been created, you need to create a service credential that the CIR API Server can use to communicate with it. By selecting your running Cloudant instance, you can choose **Service credentials** from the left hand menu. Create a new service credential. giving it a name (it doesn't matter what you call it).
+1. Once created, you can display the credentials by selecting `view service credentials`, and then copy the credential, so you are ready to paste it into the code of the API Server in step 4.
+
+
+### 3. Generate an API Key from the HERE Developer Portal
 
 The application uses HERE Location Services for maps, searching, and routing.
 
 To access these services, an API Key is required. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate a JavaScript API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
-### 3. Run the server
+### 4. Run the server
 
 To set up and launch the server application:
 
 1. Go to the `starter-kit/server-app` directory of the cloned repo.
 1. Copy the `.env.example` file in the `starter-kit/server-app` directory, and create a new file named `.env`.
-1. Edit the newly created `.env` file and update the `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant.
+1. Edit the newly created `.env` file and update the `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant. Also update the  `CLOUDANT_ID` and `CLOUDANT_IAM_APIKEY` with the values from the service credential you created in step 2. (Note that the `username` from the crediential is what should be used for the `CLOUDANT_ID`).
 1. Edit the **name** value in the `manifest.yml` file to your application name (for example, _my-app-name_).
 1. From a terminal:
     1. Go to the `starter-kit/server-app` directory of the cloned repo.
@@ -161,7 +169,7 @@ To set up and launch the server application:
             1. Push the app to IBM Cloud: `ibmcloud app push`.
             1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  https://my-app-name.bluemix.net).
 
-### 4. Run the mobile application
+### 5. Run the mobile application
 
 To run the mobile application (using the Xcode iOS Simulator):
 
