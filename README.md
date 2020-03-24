@@ -129,7 +129,8 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 1. [Create an **Assistant**](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add).
 1. [Add a dialog skill](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) to the **Assistant** by importing the [`starter-kit-cooperation-dialog-skill.json`](./starter-kit/assistant/starter-kit-cooperation-dialog-skill.json) file.
 1. Go back to All Assistants page, open **Settings** from the action menu ( **`⋮`** ) and click on **API Details**.
-1. Note the **Assistant ID** and **API Key**.
+1. Note the **Assistant ID**, **API Key** and **Assistant URL**. For **Assistant URL**, make note of the base URL/domain (e.g., `https://api.us-south.assistant.watson.cloud.ibm.com` or `https://api.eu-gb.assistant.watson.cloud.ibm.com`) and not the full directory/path. You will need all 3 of these values in Step 4, below.
+
 1. Go to **Preview Link** to get a link to test and verify the dialog skill.
 
 ### 2: Provision a CouchDB instance using Cloudant
@@ -139,7 +140,7 @@ Log into the IBM Cloud and provision a [CouchDB instance using Cloudant](https:/
 1. From the catalog, select Databases and then the Cloudant panel.
 1. Once selected, you can choose your Cloudant plan - there is a free tier for simple testing that is sufficient to run this CIR example. You should choose an appropriate region, give the service a name, and it is recommended you choose **Use only IAM** under **Available authentication methods**. You can leave the other settings with their defaults. Click the blue `Create` button when ready.
 1. Once your Cloudant instance has been created, you need to create a service credential that the CIR API Server can use to communicate with it. By selecting your running Cloudant instance, you can choose **Service credentials** from the left hand menu. Create a new service credential. giving it a name (it doesn't matter what you call it).
-1. Once created, you can display the credentials by selecting `view service credentials`, and then copy the credential, so you are ready to paste it into the code of the API Server in step 4.
+1. Once created, you can display the credentials by selecting `view service credentials`, and then copy the credential, so you are ready to paste it into the code of the API Server in Step 4.
 
 
 ### 3. Generate an API Key from the HERE Developer Portal
@@ -154,7 +155,7 @@ To set up and launch the server application:
 
 1. Go to the `starter-kit/server-app` directory of the cloned repo.
 1. Copy the `.env.example` file in the `starter-kit/server-app` directory, and create a new file named `.env`.
-1. Edit the newly created `.env` file and update the `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant. Also update the  `CLOUDANT_ID` and `CLOUDANT_IAM_APIKEY` with the values from the service credential you created in step 2. (Note that the `username` from the crediential is what should be used for the `CLOUDANT_ID`).
+1. Edit the newly created `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant, from Step 1. Also update the  `CLOUDANT_ID` and `CLOUDANT_IAM_APIKEY` with the values from the service credential you created in Step 2. (Note that the `username` from the crediential is what should be used for the `CLOUDANT_ID`).
 1. Edit the **name** value in the `manifest.yml` file to your application name (for example, _my-app-name_).
 1. From a terminal:
     1. Go to the `starter-kit/server-app` directory of the cloned repo.
