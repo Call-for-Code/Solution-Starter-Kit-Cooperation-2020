@@ -4,13 +4,14 @@ This solution starter was created by technologists from IBM.
 
 ## Authors
 
+- Va Barbosa
+- Henry Nash
+- Robert Loredo
+- John Swanson
+- Jody Burks
 - Omer Arad
 - JJ Asgar
-- Jody Burks
-- Margriet Groenendijk
 - Niklas Heidloff
-- Robert Loredo
-- Henry Nash
 - Debbie Kestin Schildkraut
 - Porter Stowell
 - Bruce Weed
@@ -33,7 +34,7 @@ This solution starter was created by technologists from IBM.
 
 ### What's the problem?
 
-In times of crisis, such as COVID-19, while federal and local government may be rolling out broad programs, cooperation at the local level is usually the most effective way of getting help to where it is most needed. While traditional social media is one way of communicating within a community, this is (by its very design) not locally focused, and often not sufficiently structured to enable rapid discover of help needed. In the COVID-19 crisis we have already seen problems with the local supply of food, equipment and other supplies. In addition, due to self-isolation and social distancing, the inability of people to easily get to where the best stock of supplies may be held compounds the problem. This is a growing interest in communities' cooperating among themselves to solve these problems, whether it be to advertise where stock is held, offer assistance for collections or other local services. What is needed is the something to empower communities to easily to provide this to each other.
+In times of crisis, such as the 2020 SARS-COV-2 (COVID-19 or "novel Coronavirus") crisis, while federal and local government may be rolling out broad programs, cooperation at the local level is usually the most effective way of getting help to where it is most needed as soon as possible. While traditional social media is one way of communicating within a community, this is (by its very design) not locally focused, and often not sufficiently structured to enable rapid discover of help needed. In the COVID-19 crisis we have already seen shortages of local food, equipment and other supplies. In addition, the requested (or required) self-isolation and social distancing compounds the problem by preventing  people to easily get to locations with the best stocks of supplies. There is a growing interest in communities' cooperating among themselves to solve these problems, whether it be to advertise where supplies are held, offer assistance for collections or other local services like volunteer deliveries. What is needed is a solution to empower communities to easily connect and provide this information to each other.
 
 ### How can technology help?
 
@@ -47,24 +48,24 @@ Mobile, Web and Cloud services enable rapid deployment of applications that can 
 
 ## The idea
 
-The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation application that could address the local needs in aspects of food, equipment and resources scarcity. It would allow both suppliers (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers to locate where these supplies are, and, if required, to be guided to where they are.
+The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation application that could address local needs in aspects of food, equipment and resources scarcity. It would allow both "Suppliers" (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers ("Recipients") to locate where these supplies are, and, if required, to be guided to where they are.
 
 ## How it works
 
-A supplier (who could just be a regular resident, or a small business, voluntary organization etc.) who has food, supplies, resources or other essentails they can provide opens the mobile application and fills out a brief form that indiacets what is they have. This will be stored in a database in the IBM Cloud.
+A Supplier (who could just be a regular resident, or a small business, voluntary organization, etc.) who has food, supplies, resources or other essentials they can provide opens the mobile application and fills out a brief form that indicates what they have. This information will be stored in a database in the IBM Cloud.
 
-A user who is in need of food, supplies, resources or other essentails opens the mobile application and can use the chat interface to locate the supplies near them. For instance, they might type "Where can I find bread", or " Can someone collect my shopping for me". The mobile applciation will access database (after first understanding teh quetsion via Watson Assistant), and then display a map showing where locally they can find what they are looking for.
+A Recipient, who is in need of food, supplies, resources or other essentials, opens the mobile application and can use the chat interface to locate the supplies near them. For instance, they might type "Where can I find bread?", or " Can someone collect my shopping for me?". The mobile application will access the database (after first understanding the question via Watson Assistant), and then display a map showing locally where they can find what they are looking for.
 
 ## Diagrams
 
 ![Cooperation architecture diagram](/images/architecture-diagram.png)
 
-This solution starter idea combines a chat interface (Watsone Assistant), data storage to hold status of supplies available and location services with real-time information to get users the information they need.
+This solution starter idea combines a chat interface (Watson Assistant), data storage to hold status of supplies available from Suppliers and location services with real-time information to get Recipients the information they need.
 
-1. The user launches the mobile app and can access information across multiple services.
-1. The user can ask questions to Watson Assistant and get answers on food/service availability questions.
-1. The user can post availability of stock or services they can provide, as well locate items they are in need of
-1. The user can obtain geolocation data to plot routes to collect (or drop off) supplies using HERE Location Services.
+1. The Recipient launches the mobile app and can access information across multiple services.
+2. The Recipient can ask questions to Watson Assistant and get answers on food/service availability questions.
+3. The Recipient can post availability of stock or services they can provide, as well locate items they are in need of
+4. The Recipient can obtain geolocation data to plot routes to collect (or drop off) supplies using HERE Location Services.
 
 ## Documents
 
