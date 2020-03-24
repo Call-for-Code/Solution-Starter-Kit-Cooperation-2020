@@ -102,7 +102,7 @@ This solution starter idea combines a chat interface (Watsone Assistant), data s
 
 ### Prerequisite
 
-- Register for an [IBM Cloud](cloud.ibm.com/registration/) account.
+- Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 - Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) account.
 - Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) (for iOS).
