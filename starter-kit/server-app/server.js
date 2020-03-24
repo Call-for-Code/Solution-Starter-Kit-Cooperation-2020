@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const assistant = require('./lib/assistant.js');
 const port = process.env.PORT || 3000
 
+const cloudant = require('./lib/cloudant.js');
+
 const app = express();
 app.use(bodyParser.json());
 
@@ -34,6 +36,22 @@ app.post('/api/message', (req, res) => {
   assistant
     .message(text, sessionid)
     .then(result => res.json(result))
+    .catch(err => handleError(res, err));
+});
+
+// GET should support a query string of ?description="tomatoes"
+app.get('/api/supplies', (req, res) => {
+  cloudant
+    .findByDescription("tomatoes")
+    .then(data => res.send(data))
+    .catch(err => handleError(res, err));
+});
+
+// POST should pass in the 4 items below in the body
+app.post('/api/supplies', (req, res) => {
+  cloudant
+    .create("tomatoes", "100 cans", "GPScoords", "henry.nash@uk.ibm.com")
+    .then(data => res.send(data))
     .catch(err => handleError(res, err));
 });
 
