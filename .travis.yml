@@ -1,0 +1,8 @@
+sudo: 'required'
+
+before_install:
+  - npm install yaspeller markdownlist-cli -g
+
+script:
+  - 'markdownlint --config .markdownlint.json README.md'
+  - 'yaspeller -l en -c .yaspeller.json README.md'
