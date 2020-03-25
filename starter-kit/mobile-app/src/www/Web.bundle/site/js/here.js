@@ -55,6 +55,15 @@ const formatItemInfo = (item) => {
 <p><strong>Description</strong>:<br> ${item.description}</p>
 <p><strong>Contact</strong>:<br> ${item.contact}</p>
 `.trim();
+};
+const getCoordinates = (location) => {
+  const coords = (typeof location === 'string') ?location.split(',') : location;
+
+  if (coords.length !== 2 || isNaN(coords[0]) || isNaN(coords[1])) {
+    return geocodeSearch(location);
+  } else {
+    return Promise.resolve({ lat: coords[0], lng: coords[1] });
+  }
 }
 
 const routeLineStyles = {
@@ -142,7 +151,7 @@ const addMarker = (position, opts) => {
   if (options.recenter) {
     map.getViewModel().setLookAtData({
       position: position,
-      zoom: 14
+      zoom: 10
     });
   }
 
@@ -296,32 +305,35 @@ const handleSearchResponse = (results) => {
 
   searchGroup = new H.map.Group();
 
-  results.map((item) => {
-    const coords = item.location.split(',');
-
-    const opts = {
-      skip: true,
-      data: formatItemInfo(item),
-      clickListener: eventListener,
-      icon: new H.map.Icon(circleRed, {
-        anchor: new H.math.Point(0, 31),
-        size: new H.math.Size(28, 28)
-      })
-    };
-
-    searchGroup.addObject(addMarker(
-      { lat: coords[0], lng: coords[1] },
-      opts
-    ));
+  const r = results.map((item) => {
+    return getCoordinates(item.location)
+      .then(coords => {
+        const opts = {
+          skip: true,
+          data: formatItemInfo(item),
+          clickListener: eventListener,
+          icon: new H.map.Icon(circleRed, {
+            anchor: new H.math.Point(0, 31),
+            size: new H.math.Size(28, 28)
+          })
+        };
+    
+        searchGroup.addObject(addMarker(
+          coords,
+          opts
+        ));
+      });
   });
 
-  if (typeof searchCallback === 'function') {
-    searchCallback();
-    searchCallback = null;
-  }
-
-  map.addObject(searchGroup);
-  zoomAndCenterAround(searchGroup);
+  Promise.all(r).then(() => {
+    if (typeof searchCallback === 'function') {
+      searchCallback();
+      searchCallback = null;
+    }
+  
+    map.addObject(searchGroup);
+    zoomAndCenterAround(searchGroup);
+  })
 };
 
 const updatePosition = (position) => {
@@ -353,16 +365,18 @@ const updateItemPosition = (item) => {
     calculateRoute(currentCoordinates, coordinates);
   };
   
-  const coords = item.location.split(',')
-  currentItemMarker = addMarker({ lat: coords[0], lng: coords[1] }, {
-    data: formatItemInfo(item),
-    clickListener: eventListener,
-    recenter: true,
-    icon: new H.map.Icon(markerRed, {
-      anchor: new H.math.Point(11, 31),
-      size: new H.math.Size(22, 31)
-    })
-  });
+  getCoordinates(item.location)
+    .then(coords => {
+      currentItemMarker = addMarker(coords, {
+        data: formatItemInfo(item),
+        clickListener: eventListener,
+        recenter: true,
+        icon: new H.map.Icon(markerRed, {
+          anchor: new H.math.Point(11, 31),
+          size: new H.math.Size(22, 31)
+        })
+      });
+    });
 };
 
 const onMessageReceived = (data) => {
@@ -372,29 +386,33 @@ const onMessageReceived = (data) => {
     handleSearchResponse(data.search);
   } else if (data.coords) {
     updatePosition(data.coords);
-  } else {
-    if (!geocoder) {
-      geocoder = platform.getGeocodingService();
-    }
-
-    geocoder.geocode({
-      searchText: data
-    },
-    (result) => {
-      togglePanel();
-
-      const locations = result.Response.View[0].Result;
-      if (locations.length) {
-        updatePosition({
-          lat: locations[0].Location.DisplayPosition.Latitude,
-          lng: locations[0].Location.DisplayPosition.Longitude
-        });
-      }
-    }, 
-    (e) => {
-      alert(e);
-    })
   }
+};
+
+const geocodeSearch = (query) => {
+  if (!geocoder) {
+    geocoder = platform.getGeocodingService();
+  }
+
+  return new Promise((resolve, reject) => {
+    geocoder.geocode(
+      { searchText: query },
+      (results) => {
+        const locations = results.Response.View[0].Result;
+        if (locations.length) {
+          resolve({
+            lat: locations[0].Location.DisplayPosition.Latitude,
+            lng: locations[0].Location.DisplayPosition.Longitude
+          });
+        } else {
+          resolve(locations)
+        }
+      },
+      (err) => {
+        reject(e);
+      }
+    )
+  });
 };
 
 const sendMessage = (data) => {

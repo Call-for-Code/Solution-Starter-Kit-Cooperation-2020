@@ -142,7 +142,7 @@ const SearchSupplies = function ({ route, navigation }) {
           blurOnSubmit={false}
         />
         {
-          query.type !== '' && query.name.trim() !== '' &&
+          query.type !== '' &&
           <TouchableOpacity onPress={searchItem}>
             <Text style={styles.button}>Search</Text>
           </TouchableOpacity>
