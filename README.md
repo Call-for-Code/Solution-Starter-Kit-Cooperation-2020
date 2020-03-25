@@ -4,6 +4,8 @@ This solution starter was created by technologists from IBM.
 
 ## Authors
 
+- Henry Nash
+- Va Barbosa
 - Omer Arad
 - JJ Asghar
 - Va Barbosa
@@ -11,9 +13,7 @@ This solution starter was created by technologists from IBM.
 - Margriet Groenendijk
 - Niklas Heidloff
 - Robert Loredo
-- Henry Nash
 - Debbie Kestin Schildkraut
-- Porter Stowell
 - Bruce Weed
 
 ## Contents
