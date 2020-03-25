@@ -10,7 +10,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoadingScreen from './src/screens/loading';
 import Home from './src/screens/home';
 import Chat from './src/screens/chat';
-import FindSupplies from './src/screens/supplies-find';
+import SearchSupplies from './src/screens/supplies-search';
 import DonateSupplies from './src/screens/supplies-donate';
 import Map from './src/screens/map';
 
@@ -60,8 +60,8 @@ const TabLayout = () => (
       }}
     />
     <Tab.Screen
-      name='Find'
-      component={FindStackLayout}
+      name='Search'
+      component={SearchStackLayout}
       options={{
         tabBarIcon: ({color}) => (<SearchIcon fill={color} />)
       }}
@@ -75,10 +75,11 @@ const DonateStackLayout = () => (
   </Stack.Navigator>
 );
 
-const FindStackLayout = () => (
+const SearchStackLayout = () => (
   <Stack.Navigator>
-    <Stack.Screen name='Find Supplies' component={FindSupplies} options={ItemsStackOptions} />
+    <Stack.Screen name='Search Supplies' component={SearchSupplies} options={ItemsStackOptions} />
     <Stack.Screen name='Chat' component={Chat} />
+    <Stack.Screen name='Map' component={Map} />
   </Stack.Navigator>
 );
 

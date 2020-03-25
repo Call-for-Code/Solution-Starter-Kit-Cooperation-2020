@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
-import Config from 'react-native-config';
 import { ScrollView } from 'react-native-gesture-handler';
 import PickerSelect from 'react-native-picker-select';
+import { CheckedIcon, UncheckedIcon } from '../images/svg-icons';
+import Geolocation from '@react-native-community/geolocation';
+
+import { add } from '../lib/utils'
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +16,15 @@ const styles = StyleSheet.create({
     fontFamily: 'IBMPlexSans-Medium',
     flex: 1,
     backgroundColor: '#fff',
+    padding: 16,
+    elevation: 2,
+    marginBottom: 25
+  },
+  textInputDisabled: {
+    fontFamily: 'IBMPlexSans-Medium',
+    backgroundColor: '#eee',
+    color: '#999',
+    flex: 1,
     padding: 16,
     elevation: 2,
     marginBottom: 25
@@ -32,47 +44,60 @@ const styles = StyleSheet.create({
     padding: 12,
     textAlign:'center',
     marginTop: 15
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom: 10
+  },
+  typeArea: {
+    width: '40%'
+  },
+  quantityArea: {
+    width: '40%'
   }
 });
 
-const serverUrl = Config.STARTER_KIT_SERVER_URL;
-// const serverUrl = 'http://localhost:3000';
-
 const DonateSupplies = function ({ navigation }) {
-  const [item, setItem] = React.useState({ type: 'Food', name: '', description: '', location: '', contact: ''});
+  const clearItem = { type: 'Food', name: '', description: '', location: '', contact: '', quantity: '1' }
+  const [item, setItem] = React.useState(clearItem);
+  const [useLocation, setUseLocation] = React.useState(true);
+  const [position, setPosition] = React.useState({})
 
+  React.useEffect(() => {
+    navigation.addListener('focus', () => {
+      Geolocation.getCurrentPosition((pos) => {
+        setPosition(pos)
+        if (useLocation) {
+          setItem({
+            ...item,
+            location: `${pos.coords.latitude},${pos.coords.longitude}`
+          })
+        }
+      });
+    })
+  }, []);
 
-  const handleResponse = (response) => {
-    if (!response.ok) {
-      throw new Error(response.statusText || response.message || response.status);
-    } else {
-      return response.json().then(response => {
-        alert('Thank you! You item has been uploaded.')
+  const toggleUseLocation = () => {
+    if (!useLocation && position) {
+      setItem({
+        ...item,
+        location: `${position.coords.latitude},${position.coords.longitude}`
       })
     }
-  }
-
-  const postItem = (payload) => {
-    return fetch(`${serverUrl}/api/supplies`, {
-      method: 'POST',
-      mode: 'no-cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-  }
+    setUseLocation(!useLocation);
+  };
 
   const sendItem = () => {
     const payload = {
-      ...item
+      ...item,
+      quantity: isNaN(item.quantity) ? 1 : parseInt(item.quantity)
     };
 
-    postItem(payload)
-      .then(handleResponse)
+    add(payload)
       .then(() => {
-        setItem({ type: 'Food', name: '', description: '', location: '', contact: ''});
+        alert('Thank you! You item has been uploaded.');
+        setItem(clearItem);
       })
       .catch(err => {
         console.log(err)
@@ -82,22 +107,39 @@ const DonateSupplies = function ({ navigation }) {
   
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.label}>Type</Text>
-      <PickerSelect
-        style={{ inputIOS: {
-          fontFamily: 'IBMPlexSans-Medium',
-          backgroundColor: '#fff',
-          padding: 16,
-          marginBottom: 25
-        } }}
-        value='Food'
-        onValueChange={(t) => setItem({ ...item, type: t })}
-        items={[
-            { label: 'Food', value: 'Food' },
-            { label: 'Help', value: 'Help' },
-            { label: 'Other', value: 'Other' }
-        ]}
-      />
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={styles.typeArea}>
+          <Text style={styles.label}>Type</Text>
+          <PickerSelect
+            style={{ inputIOS: {
+              fontFamily: 'IBMPlexSans-Medium',
+              backgroundColor: '#fff',
+              padding: 16,
+              marginBottom: 25
+            } }}
+            value='Food'
+            onValueChange={(t) => setItem({ ...item, type: t })}
+            items={[
+                { label: 'Food', value: 'Food' },
+                { label: 'Help', value: 'Help' },
+                { label: 'Other', value: 'Other' }
+            ]}
+          />
+        </View>
+        <View style={styles.quantityArea}>
+          <Text style={styles.label}>Quantity</Text>
+          <TextInput
+            style={styles.textInput}
+            value={item.quantity}
+            onChangeText={(t) => setItem({ ...item, quantity: t})}
+            onSubmitEditing={sendItem}
+            returnKeyType='send'
+            enablesReturnKeyAutomatically={true}
+            placeholder='e.g., 10'
+            keyboardType='numeric'
+          />
+        </View>
+      </View>
       <Text style={styles.label}>Name</Text>
       <TextInput
         style={styles.textInput}
@@ -109,28 +151,6 @@ const DonateSupplies = function ({ navigation }) {
         placeholder='e.g., Tomotatoes'
         blurOnSubmit={false}
       />
-      <Text style={styles.label}>Description</Text>
-      <TextInput
-        style={styles.textInput}
-        value={item.description}
-        onChangeText={(t) => setItem({ ...item, description: t})}
-        onSubmitEditing={sendItem}
-        returnKeyType='send'
-        enablesReturnKeyAutomatically={true}
-        placeholder='e.g., 100 cans of tomatoes'
-        blurOnSubmit={false}
-      />
-      <Text style={styles.label}>Location</Text>
-      <TextInput
-        style={styles.textInput}
-        value={item.location}
-        onChangeText={(t) => setItem({ ...item, location: t})}
-        onSubmitEditing={sendItem}
-        returnKeyType='send'
-        enablesReturnKeyAutomatically={true}
-        placeholder='street address, city, state'
-        blurOnSubmit={false}
-      />
       <Text style={styles.label}>Contact</Text>
       <TextInput
         style={styles.textInput}
@@ -140,7 +160,39 @@ const DonateSupplies = function ({ navigation }) {
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='user@domain.com'
-        blurOnSubmit={false}
+      />
+      <Text style={styles.label}>Description</Text>
+      <TextInput
+        style={styles.textInput}
+        value={item.description}
+        onChangeText={(t) => setItem({ ...item, description: t})}
+        onSubmitEditing={sendItem}
+        returnKeyType='send'
+        enablesReturnKeyAutomatically={true}
+        placeholder='e.g., 100 cans of tomatoes'
+      />
+      <Text style={styles.label}>Location</Text>
+      <View style={styles.checkboxContainer}>
+        <TouchableOpacity onPress={toggleUseLocation}>
+          {
+            (useLocation)
+              ?
+              <CheckedIcon height='18' width='18'/>
+              :
+              <UncheckedIcon height='18' width='18'/>
+          }
+        </TouchableOpacity>
+        <Text> Use my current location </Text>
+      </View>
+      <TextInput
+        style={useLocation ? styles.textInputDisabled : styles.textInput}
+        value={item.location}
+        onChangeText={(t) => setItem({ ...item, location: t})}
+        onSubmitEditing={sendItem}
+        returnKeyType='send'
+        enablesReturnKeyAutomatically={true}
+        placeholder='street address, city, state'
+        editable={!useLocation}
       />
       {
         item.type !== '' && item.name.trim() !== '' && item.contact.trim() !== '' &&
