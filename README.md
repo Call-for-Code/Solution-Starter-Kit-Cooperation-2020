@@ -6,6 +6,7 @@ This solution starter was created by technologists from IBM.
 
 - Omer Arad
 - JJ Asghar
+- Va Barbosa
 - Jody Burks
 - Margriet Groenendijk
 - Niklas Heidloff
@@ -31,15 +32,19 @@ This solution starter was created by technologists from IBM.
 
 ### What's the problem?
 
-In times of crisis, such as the 2020 SARS-COV-2 (COVID-19 or "novel Coronavirus") crisis, while federal and local governments may be rolling out broad programs, cooperation at the local level is usually the most effective way of getting help to where it is most needed as soon as possible. Traditional social media is one way of communicating within a community, but this is (by its very design) not locally focused, and often not sufficiently structured to enable rapid discover of help needed. In the COVID-19 crisis we have already seen shortages of local food, medical equipment and other supplies. In addition, the requested (or required) self-isolation and social distancing compounds the problem by preventing  people to easily get to locations with the best stocks of supplies. There is a growing interest in communities' cooperating among themselves to solve these problems, whether it be to advertise where supplies are held, offer assistance for collections or other local services like volunteer deliveries. What is needed is a solution to empower communities to easily connect and provide this information to each other.
+In times of crisis, such as the 2020 SARS-COV-2 (COVID-19 or "novel Coronavirus") crisis, while federal and local governments may be rolling out broad programs, cooperation at the local level is usually the most effective way of getting help to where it is most needed as soon as possible. Traditional social media is one way of communicating within a community, but this is (by its very design) not locally focused, and often not sufficiently structured to enable rapid discovery of help needed.
+In the COVID-19 crisis, we have already seen shortages of local food, medical equipment, and other supplies. In addition, the requested (or required) self-isolation and social distancing compound the problem by preventing people to easily get to locations with the best stocks of supplies.
+There is a growing interest in communities' cooperating among themselves to solve these problems, whether it be to advertise where supplies are held, offer assistance for collections or other local services like volunteer deliveries. What is needed is a solution to empower communities to easily connect and provide this information to each other.
 
 ### How can technology help?
 
-Mobile, Web and Cloud services enable rapid deployment of applications that can empower cooperation in the community. [Watson Assistant](https://www.ibm.com/cloud/watson-assistant/) is a service on [IBM Cloud](https://cloud.ibm.com) that allows us to build, train, and deploy conversational interactions into any application, device, or channel. Creating a chatbot using Watson Assistant can help address the issues that our users can face while trying to gather the right information. Embedding location/routing services (like [HERE](https://developer.here.com/products/routing)) can enhance such applications, giving optimum guidance so that they are outside of their isolation location for the minimum amount of time.
+Mobile, Web and Cloud services enable rapid deployment of applications that can empower cooperation in the community. [Watson Assistant](https://www.ibm.com/cloud/watson-assistant/) is a service on [IBM Cloud](https://cloud.ibm.com) that allows us to build, train, and deploy conversational interactions into any application, device, or channel.
+Creating a chatbot using Watson Assistant can help address the issues that our users can face while trying to gather the right information. Embedding location/routing services (like [HERE](https://developer.here.com/products/routing)) can enhance such applications, giving optimum guidance so that they are outside of their isolation location for the minimum amount of time.
 
 ## The idea
 
-The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation application that could address local needs in aspects of food, equipment and resources scarcity. It would allow both "Suppliers" (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers ("Recipients") to locate where these supplies are, and, if required, to be guided to where they are.
+The idea is to provide a mobile application, along with server-side components, that would be the basis for developers to build out a community cooperation application that could address local needs in aspects of food, equipment, and resource scarcity.
+It would allow both "Suppliers" (who may be a store or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers ("Recipients") to locate where these supplies are, and, if required, to be guided to where they are.
 
 ## How it works
 
@@ -51,11 +56,11 @@ A Recipient, who is in need of food, supplies, resources or other essentials, op
 
 ![Cooperation architecture diagram](/images/architecture-diagram.png)
 
-This solution starter idea combines a chat interface (Watson Assistant), data storage to hold status of supplies available and location services with real-time information to get users the information they need.
+This solution starter idea combines a chat interface (Watson Assistant), data storage to hold the status of supplies available and location services with real-time information to get users the information they need.
 
 1. The Recipient launches the mobile app and can access information across multiple services.
 1. The Recipient can ask questions to Watson Assistant and get answers on food/service availability questions.
-1. The Supplier can post availability of stock or services they can provide, as well locate items they are in need of
+1. The Supplier can post the availability of stock or services they can provide, as well as locate items they are in need of
 1. The Recipient can obtain geolocation data to plot routes to collect (or drop off) supplies using HERE Location Services.
 
 ## Documents
@@ -68,7 +73,8 @@ Trusted sources for COVID-19 Information
 
 ## Technology
 
-**IBM Cloud Services**
+### IBM Cloud Services
+
 - [Bot Asset Exchange](https://developer.ibm.com/code/exchanges/bots/)
 - [IBM Watson Assistant](https://www.ibm.com/cloud/watson-assistant/)
 - [How-to guides for chatbots](https://www.ibm.com/watson/how-to-build-a-chatbot)
@@ -87,7 +93,8 @@ Trusted sources for COVID-19 Information
 - [Chat Bot Slack Deployment](https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-slack)
 - [Node-RED Slack Integration](https://www.ibm.com/cloud/blog/create-a-chatbot-on-ibm-cloud-and-integrate-with-slack-part-1)
 
-**HERE Location Services**
+### HERE Location Services
+
 - [HERE Maps](https://developer.here.com/products/maps)
 - [HERE Routing](https://developer.here.com/products/routing)
 - [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
@@ -133,9 +140,8 @@ Log into the IBM Cloud and provision a [CouchDB instance using Cloudant](https:/
 
 1. From the catalog, select Databases and then the Cloudant panel.
 1. Once selected, you can choose your Cloudant plan - there is a free tier for simple testing that is sufficient to run this CIR example. You should choose an appropriate region, give the service a name, and it is recommended you choose **Use only IAM** under **Available authentication methods**. You can leave the other settings with their defaults. Click the blue `Create` button when ready.
-1. Once your Cloudant instance has been created, you need to create a service credential that the CIR API Server can use to communicate with it. By selecting your running Cloudant instance, you can choose **Service credentials** from the left hand menu. Create a new service credential. giving it a name (it doesn't matter what you call it).
+1. Once your Cloudant instance has been created, you need to create a service credential that the CIR API Server can use to communicate with it. By selecting your running Cloudant instance, you can choose **Service credentials** from the left-hand menu. Create a new service credential. giving it a name (it doesn't matter what you call it).
 1. Once created, you can display the credentials by selecting `view service credentials`, and then copy the credential, so you are ready to paste it into the code of the API Server in Step 4.
-
 
 ### 3. Generate an API Key from the HERE Developer Portal
 
@@ -149,7 +155,7 @@ To set up and launch the server application:
 
 1. Go to the `starter-kit/server-app` directory of the cloned repo.
 1. Copy the `.env.example` file in the `starter-kit/server-app` directory, and create a new file named `.env`.
-1. Edit the newly created `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant, from Step 1. Also update the  `CLOUDANT_ID` and `CLOUDANT_IAM_APIKEY` with the values from the service credential you created in Step 2. (Note that the `username` from the credential is what should be used for the `CLOUDANT_ID`).
+1. Edit the newly created `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant, from Step 1. Also, update the  `CLOUDANT_ID` and `CLOUDANT_IAM_APIKEY` with the values from the service credential you created in Step 2. (Note that the `username` from the credential is what should be used for the `CLOUDANT_ID`).
 1. Edit the **name** value in the `manifest.yml` file to your application name (for example, _my-app-name_).
 1. From a terminal:
     1. Go to the `starter-kit/server-app` directory of the cloned repo.
@@ -157,12 +163,12 @@ To set up and launch the server application:
     1. Launch the server application locally or deploy to IBM Cloud:
         - To run locally:
             1. Start the application: `npm start`.
-            1. The server can be accessed at http://localhost:3000.
+            1. The server can be accessed at <http://localhost:3000>.
         - To deploy to IBM Cloud:
             1. Log in to your IBM Cloud account using the IBM Cloud CLI: `ibmcloud login`.
             1. Target a Cloud Foundry org and space: `ibmcloud target --cf`.
             1. Push the app to IBM Cloud: `ibmcloud app push`.
-            1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  https://my-app-name.bluemix.net).
+            1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  <https://my-app-name.bluemix.net>).
 
 ### 5. Run the mobile application
 
