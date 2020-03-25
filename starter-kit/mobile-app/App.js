@@ -10,58 +10,74 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoadingScreen from './src/screens/loading';
 import Home from './src/screens/home';
 import Chat from './src/screens/chat';
+import FindSupplies from './src/screens/supplies-find';
+import DonateSupplies from './src/screens/supplies-donate';
 import Map from './src/screens/map';
 
-import { HomeIcon, MapIcon } from './src/images/svg-icons';
+import { HomeIcon, DonateIcon, ChatIcon, SearchIcon } from './src/images/svg-icons';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const MainStackOptions = ({ navigation }) => {
+const ItemsStackOptions = ({ navigation }) => {
   return ({
     headerRight: () => (
       <Button
         onPress={() => navigation.navigate('Chat')}
-        title='Chat'
+        title='Chat '
       />
     )
   });
 };
 
 const tabBarOptions = {
-  showLabel: false,
+  // showLabel: false,
   activeTintColor: '#1062FE',
   inactiveTintColor: '#000',
   style: {
     backgroundColor: '#F1F0EE',
-    paddingTop: 10
+    paddingTop: 5
   }
 };
 
 const TabLayout = () => (
   <Tab.Navigator
+    style={{paddingTop: 50}}
     initialRouteName='Home'
     tabBarOptions={tabBarOptions} >
     <Tab.Screen
       name='Home'
       component={Home}
       options={{
-        tabBarIcon: ({color}) => (<HomeIcon stroke={color}/>)
+        tabBarIcon: ({color}) => (<HomeIcon fill={color}/>)
       }}
     />
     <Tab.Screen
-      name='Map'
-      component={Map}
+      name='Donate'
+      component={DonateStackLayout}
       options={{
-        tabBarIcon: ({color}) => (<MapIcon stroke={color} />)
+        tabBarIcon: ({color}) => (<DonateIcon fill={color} />)
+      }}
+    />
+    <Tab.Screen
+      name='Find'
+      component={FindStackLayout}
+      options={{
+        tabBarIcon: ({color}) => (<SearchIcon fill={color} />)
       }}
     />
   </Tab.Navigator>
 );
 
-const StackLayout = () => (
+const DonateStackLayout = () => (
   <Stack.Navigator>
-    <Stack.Screen name='Starter Kit' component={TabLayout} options={MainStackOptions} />
+    <Stack.Screen name='Donate Supplies' component={DonateSupplies} />
+  </Stack.Navigator>
+);
+
+const FindStackLayout = () => (
+  <Stack.Navigator>
+    <Stack.Screen name='Find Supplies' component={FindSupplies} options={ItemsStackOptions} />
     <Stack.Screen name='Chat' component={Chat} />
   </Stack.Navigator>
 );
@@ -81,7 +97,7 @@ const App = () => {
   } else {
     return (
       <NavigationContainer>
-        <StackLayout/>
+        <TabLayout/>
       </NavigationContainer>
     );
   }
