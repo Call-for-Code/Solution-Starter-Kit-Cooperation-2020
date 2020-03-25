@@ -51,15 +51,15 @@ The idea is to provide a mobile application, along with server side components, 
 
 ## How it works
 
-A supplier (who could just be a regular resident, or a small business, voluntary organization etc.) who has food, supplies, resources or other essentails they can provide opens the mobile application and fills out a brief form that indiacets what is they have. This will be stored in a database in the IBM Cloud.
+A supplier (who could just be a regular resident, or a small business, voluntary organization etc.) who has food, supplies, resources or other essentials they can provide opens the mobile application and fills out a brief form that indicates what is they have. This will be stored in a database in the IBM Cloud.
 
-A user who is in need of food, supplies, resources or other essentails opens the mobile application and can use the chat interface to locate the supplies near them. For instance, they might type "Where can I find bread", or " Can someone collect my shopping for me". The mobile applciation will access database (after first understanding teh quetsion via Watson Assistant), and then display a map showing where locally they can find what they are looking for.
+A user who is in need of food, supplies, resources or other essentials opens the mobile application and can use the chat interface to locate the supplies near them. For instance, they might type "Where can I find bread", or " Can someone collect my shopping for me". The mobile application will access database (after first understanding the question via Watson Assistant), and then display a map showing where locally they can find what they are looking for.
 
 ## Diagrams
 
 ![Cooperation architecture diagram](/images/architecture-diagram.png)
 
-This solution starter idea combines a chat interface (Watsone Assistant), data storage to hold status of supplies available and location services with real-time information to get users the information they need.
+This solution starter idea combines a chat interface (Watson Assistant), data storage to hold status of supplies available and location services with real-time information to get users the information they need.
 
 1. The user launches the mobile app and can access information across multiple services.
 1. The user can ask questions to Watson Assistant and get answers on food/service availability questions.
@@ -87,7 +87,7 @@ This solution starter idea combines a chat interface (Watsone Assistant), data s
 - [Chat Bot Slack Integration](https://developer.ibm.com/technologies/artificial-intelligence/videos/integrating-watson-assistant-with-slack-using-built-in-integrations/#)
 - [Chat Bot Slack Deployment](https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-slack)
 - [Node-RED Slack Integration](https://www.ibm.com/cloud/blog/create-a-chatbot-on-ibm-cloud-and-integrate-with-slack-part-1)
-- [Enhance customer helpdesks with Smart Document Understanding using webhooks in Watson Assistant](https://developer.ibm.com/patterns/enhance-customer-help-desk-with-smart-document-understanding/)
+- [Enhance customer help desks with Smart Document Understanding using webhooks in Watson Assistant](https://developer.ibm.com/patterns/enhance-customer-help-desk-with-smart-document-understanding/)
 - [Watson Voice Agent](https://cloud.ibm.com/catalog/services/voice-agent-with-watson)
 - [Getting Started with Watson Voice Agent](https://cloud.ibm.com/docs/services/voice-agent?topic=voice-agent-getting-started)
 - [Making Programmatic Calls from Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-webhooks)
@@ -155,7 +155,7 @@ To set up and launch the server application:
 
 1. Go to the `starter-kit/server-app` directory of the cloned repo.
 1. Copy the `.env.example` file in the `starter-kit/server-app` directory, and create a new file named `.env`.
-1. Edit the newly created `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant, from Step 1. Also update the  `CLOUDANT_ID` and `CLOUDANT_IAM_APIKEY` with the values from the service credential you created in Step 2. (Note that the `username` from the crediential is what should be used for the `CLOUDANT_ID`).
+1. Edit the newly created `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant, from Step 1. Also update the  `CLOUDANT_ID` and `CLOUDANT_IAM_APIKEY` with the values from the service credential you created in Step 2. (Note that the `username` from the credential is what should be used for the `CLOUDANT_ID`).
 1. Edit the **name** value in the `manifest.yml` file to your application name (for example, _my-app-name_).
 1. From a terminal:
     1. Go to the `starter-kit/server-app` directory of the cloned repo.
