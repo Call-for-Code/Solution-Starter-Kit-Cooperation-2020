@@ -18,42 +18,34 @@ This solution starter was created by technologists from IBM.
 ## Contents
 
 1. [Overview](#overview)
-2. [Video](#video)
-3. [The idea](#the-idea)
-4. [How it works](#how-it-works)
-5. [Diagrams](#diagrams)
-6. [Documents](#documents)
-7. [Datasets](#datasets)
-8. [Technology](#technology)
-9. [Getting started](#getting-started)
-9. [Resources](#resources)
-10. [License](#license)
+2. [The idea](#the-idea)
+3. [How it works](#how-it-works)
+4. [Diagrams](#diagrams)
+5. [Documents](#documents)
+6. [Technology](#technology)
+7. [Getting started](#getting-started)
+8. [Resources](#resources)
+9. [License](#license)
 
 ## Overview
 
 ### What's the problem?
 
-There is a growing interest in communities' cooperating among themselves to solve these problems, whether it be to advertise where stock is held, offer assistance for collections or other local services. In times of crisis, such as COVID-19, while federal and local government may be rolling out broad programs, cooperation at the local level is usually the most effective way of getting help to where it is most needed. While traditional social media is one way of communicating within a community, this is (by its very design) not locally focused, and often not sufficiently structured to enable rapid discover of help needed. In the COVID-19 crisis we have already seen problems with the local supply of food, equipment and other supplies. In addition, due to self-isolation and social distancing, the inability of people to easily get to where the best stock of supplies may be held compounds the problem. What is needed is the something to empower communities to easily to provide this to each other.
+In times of crisis, such as the 2020 SARS-COV-2 (COVID-19 or "novel Coronavirus") crisis, while federal and local governments may be rolling out broad programs, cooperation at the local level is usually the most effective way of getting help to where it is most needed as soon as possible. Traditional social media is one way of communicating within a community, but this is (by its very design) not locally focused, and often not sufficiently structured to enable rapid discover of help needed. In the COVID-19 crisis we have already seen shortages of local food, medical equipment and other supplies. In addition, the requested (or required) self-isolation and social distancing compounds the problem by preventing  people to easily get to locations with the best stocks of supplies. There is a growing interest in communities' cooperating among themselves to solve these problems, whether it be to advertise where supplies are held, offer assistance for collections or other local services like volunteer deliveries. What is needed is a solution to empower communities to easily connect and provide this information to each other.
 
 ### How can technology help?
 
-Mobile, Web and Cloud services enable rapid deployment of applications that can empower cooperation in the community. Watson Assistant is a service on IBM Cloud that allows us to build, train, and deploy conversational interactions into any application, device, or channel. Creating a chatbot using Watson Assistant can help address the issues that our users can face while trying to gather the right information. Embedding location/routing services (like [HERE](https://developer.here.com/products/routing)) can enhance such applications, giving optimum guidance so that they are outside of their isolation location for the minimum amount of time.
-
-## Video
-
-[WIP - need something specific for us]
-
-[![Call for Code Solution Starter: Water sustainability in the context of climate change ](https://img.youtube.com/vi/VnKmEgUnn34/0.jpg)](https://www.youtube.com/watch?v=VnKmEgUnn34)
+Mobile, Web and Cloud services enable rapid deployment of applications that can empower cooperation in the community. [Watson Assistant](https://www.ibm.com/cloud/watson-assistant/) is a service on [IBM Cloud](https://cloud.ibm.com) that allows us to build, train, and deploy conversational interactions into any application, device, or channel. Creating a chatbot using Watson Assistant can help address the issues that our users can face while trying to gather the right information. Embedding location/routing services (like [HERE](https://developer.here.com/products/routing)) can enhance such applications, giving optimum guidance so that they are outside of their isolation location for the minimum amount of time.
 
 ## The idea
 
-The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation application that could address the local needs in aspects of food, equipment and resources scarcity. It would allow both suppliers (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers to locate where these supplies are, and, if required, to be guided to where they are.
+The idea is to provide a mobile application, along with server side components, that would be the basis for developers to build out a community cooperation application that could address local needs in aspects of food, equipment and resources scarcity. It would allow both "Suppliers" (who may be a store, or just a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers ("Recipients") to locate where these supplies are, and, if required, to be guided to where they are.
 
 ## How it works
 
-A supplier (who could just be a regular resident, or a small business, voluntary organization etc.) who has food, supplies, resources or other essentials they can provide opens the mobile application and fills out a brief form that indicates what is they have. This will be stored in a database in the IBM Cloud.
+A Supplier (who could just be a regular resident, or a small business, voluntary organization, etc.) who has food, supplies, resources or other essentials they can provide opens the mobile application and fills out a brief form that indicates what they have. This information will be stored in a database in the IBM Cloud.
 
-A user who is in need of food, supplies, resources or other essentials opens the mobile application and can use the chat interface to locate the supplies near them. For instance, they might type "Where can I find bread", or " Can someone collect my shopping for me". The mobile application will access database (after first understanding the question via Watson Assistant), and then display a map showing where locally they can find what they are looking for.
+A Recipient, who is in need of food, supplies, resources or other essentials, opens the mobile application and can use the chat interface to locate the supplies near them. For instance, they might type "Where can I find bread?", or " Can someone collect my shopping for me?". The mobile application will access the database (after first understanding the question via Watson Assistant), and then display a map showing locally where they can find what they are looking for.
 
 ## Diagrams
 
@@ -61,19 +53,18 @@ A user who is in need of food, supplies, resources or other essentials opens the
 
 This solution starter idea combines a chat interface (Watson Assistant), data storage to hold status of supplies available and location services with real-time information to get users the information they need.
 
-1. The user launches the mobile app and can access information across multiple services.
-1. The user can ask questions to Watson Assistant and get answers on food/service availability questions.
-1. The user can post availability of stock or services they can provide, as well locate items they are in need of
-1. The user can obtain geolocation data to plot routes to collect (or drop off) supplies using HERE Location Services.
+1. The Recipient launches the mobile app and can access information across multiple services.
+1. The Recipient can ask questions to Watson Assistant and get answers on food/service availability questions.
+1. The Supplier can post availability of stock or services they can provide, as well locate items they are in need of
+1. The Recipient can obtain geolocation data to plot routes to collect (or drop off) supplies using HERE Location Services.
 
 ## Documents
 
-- Trusted sources for COVID-19
+Trusted sources for COVID-19 Information
 - [CDC COVID-19 FAQ](https://www.cdc.gov/coronavirus/2019-ncov/faq.html)
-
-## Datasets
-
-- [CDC COVID-19 FAQ](https://www.cdc.gov/coronavirus/2019-ncov/faq.html)
+- [WHO COVID-19 page](https://www.who.int/health-topics/coronavirus)
+- [Johns Hopkins University Coronavirus (includes tracking map)](https://coronavirus.jhu.edu)
+[National Foundation for Infectious Diseases](https://www.nfid.org/infectious-diseases/frequently-asked-questions-about-novel-coronavirus-2019-ncov/)
 
 ## Technology
 
@@ -84,14 +75,17 @@ This solution starter idea combines a chat interface (Watson Assistant), data st
 - [Create a machine learning powered web app to answer questions](https://developer.ibm.com/patterns/create-a-machine-learning-powered-web-app-to-answer-questions-from-a-book/)
 - [Learning path: Getting started with Watson Assistant](https://developer.ibm.com/series/learning-path-watson-assistant/)
 - [Train a speech-to-text model](https://developer.ibm.com/patterns/customize-and-continuously-train-your-own-watson-speech-service/)
-- [Chat Bot Slack Integration](https://developer.ibm.com/technologies/artificial-intelligence/videos/integrating-watson-assistant-with-slack-using-built-in-integrations/#)
-- [Chat Bot Slack Deployment](https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-slack)
-- [Node-RED Slack Integration](https://www.ibm.com/cloud/blog/create-a-chatbot-on-ibm-cloud-and-integrate-with-slack-part-1)
-- [Enhance customer help desks with Smart Document Understanding using webhooks in Watson Assistant](https://developer.ibm.com/patterns/enhance-customer-help-desk-with-smart-document-understanding/)
+- [Enhance customer helpdesks with Smart Document Understanding using webhooks in Watson Assistant](https://developer.ibm.com/patterns/enhance-customer-help-desk-with-smart-document-understanding/)
 - [Watson Voice Agent](https://cloud.ibm.com/catalog/services/voice-agent-with-watson)
 - [Getting Started with Watson Voice Agent](https://cloud.ibm.com/docs/services/voice-agent?topic=voice-agent-getting-started)
 - [Making Programmatic Calls from Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-webhooks)
 - [IBM Cloud Voice Agent with Twilio](https://developer.ibm.com/recipes/tutorials/ibms-voice-agent-with-watson-and-twilio/)
+- [Build a Chatbot For Your Mobile App](https://developer.ibm.com/technologies/mobile/patterns/building-a-chatbot-with-kubernetes-watson-assistant-and-elastic-search)
+- [Build a Cross-Platform Mobile App Using React Native](https://developer.ibm.com/technologies/mobile/patterns/build-a-cross-platform-mobile-app-to-search-company-news-and-gain-insights)
+- [Building Successful Mobile Apps Article Series](https://developer.ibm.com/series/building-successful-mobile-apps/)
+- [Chat Bot Slack Integration](https://developer.ibm.com/technologies/artificial-intelligence/videos/integrating-watson-assistant-with-slack-using-built-in-integrations/#)
+- [Chat Bot Slack Deployment](https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-slack)
+- [Node-RED Slack Integration](https://www.ibm.com/cloud/blog/create-a-chatbot-on-ibm-cloud-and-integrate-with-slack-part-1)
 
 **HERE Location Services**
 - [HERE Maps](https://developer.here.com/products/maps)
@@ -100,7 +94,7 @@ This solution starter idea combines a chat interface (Watson Assistant), data st
 
 ## Getting started
 
-### Prerequisite
+### Prerequisites
 
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
