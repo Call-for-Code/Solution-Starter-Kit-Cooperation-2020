@@ -4,15 +4,15 @@ This solution starter was created by technologists from IBM.
 
 ## Authors
 
+- Henry Nash
+- Va Barbosa
 - Omer Arad
 - JJ Asghar
 - Jody Burks
 - Margriet Groenendijk
 - Niklas Heidloff
 - Robert Loredo
-- Henry Nash
 - Debbie Kestin Schildkraut
-- Porter Stowell
 - Bruce Weed
 
 ## Contents
