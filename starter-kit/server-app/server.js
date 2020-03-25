@@ -65,9 +65,9 @@ app.post('/api/supplies', (req, res) => {
   }
   const type = req.body.type;
   const name = req.body.name;
-  const description = req.body.name || '';
-  const quantity = req.body.name || 1;
-  const location = req.body.name || '';
+  const description = req.body.description || '';
+  const quantity = req.body.quantity || 1;
+  const location = req.body.location || '';
   const contact = req.body.contact;
 
   cloudant
