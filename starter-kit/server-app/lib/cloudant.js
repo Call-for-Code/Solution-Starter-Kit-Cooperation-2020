@@ -114,7 +114,7 @@ function findByName(partialName) {
  */
 function find(type, partialName) {
     return new Promise((resolve, reject) => {
-        let selector = {'selector': {}}
+        let selector = {}
         if (type) {
             selector['type'] = type;
         }
@@ -123,7 +123,7 @@ function find(type, partialName) {
             selector['name'] = {'$regex': search};
 
         }
-
+        console.log(selector)
         db.find({ 
             'selector': selector
         }, (err, documents) => {
@@ -178,11 +178,11 @@ function findByType(type) {
  */
 function create(type, name, description, quantity, location, contact) {
     return new Promise((resolve, reject) => {
-        let listId = uuidv4();
+        let itemId = uuidv4();
         let whenCreated = Date.now();
-        let list = {
-            _id: listId,
-            id: listId,
+        let item = {
+            _id: itemId,
+            id: itemId,
             type: type,
             name: name,
             description: description,
@@ -191,7 +191,7 @@ function create(type, name, description, quantity, location, contact) {
             contact: contact,
             whenCreated: whenCreated
         };
-        db.insert(list, (err, result) => {
+        db.insert(item, (err, result) => {
             if (err) {
                 logger.error('Error occurred: ' + err.message, 'create()');
                 reject(err);
