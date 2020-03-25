@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
-import Config from 'react-native-config';
 import { ScrollView } from 'react-native-gesture-handler';
 import PickerSelect from 'react-native-picker-select';
+
+import { search } from '../lib/utils';
 
 const styles = StyleSheet.create({
   outerContainer: {
@@ -52,11 +53,16 @@ const styles = StyleSheet.create({
     borderBottomColor: '#dddddd',
     borderBottomWidth: 0.25
   },
-  itemDescription: {
+  itemName: {
     fontSize: 24,
     fontFamily: 'IBMPlexSans-Medium',
   },
-  itemContact: {
+  itemDescription: {
+    fontSize: 14,
+    fontFamily: 'IBMPlexSans-Medium',
+    color: 'gray'
+  },
+  itemQuantity: {
     fontSize: 14,
     fontFamily: 'IBMPlexSans-Medium',
     color: 'gray'
@@ -68,10 +74,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const serverUrl = Config.STARTER_KIT_SERVER_URL;
-// const serverUrl = 'http://localhost:3000';
-
-const FindSupplies = function ({ route, navigation }) {
+const SearchSupplies = function ({ route, navigation }) {
   const [query, setQuery] = React.useState({ type: 'Food', name: '' });
   const [items, setItems] = React.useState([]);
 
@@ -80,44 +83,28 @@ const FindSupplies = function ({ route, navigation }) {
       <View>
         <TouchableOpacity style={styles.itemContainer}
           onPress={() => {
-            navigation.navigate('Map');
+            navigation.navigate('Map', {
+              item: props
+            });
           }}
         >
-          <Text style={styles.itemDescription}>{props.name}</Text>
-          <Text style={styles.itemContact}>{props.description}</Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Text style={styles.itemName}>{props.name}</Text>
+            <Text style={styles.itemQuantity}> ( {props.quantity} ) </Text>
+          </View>
+          <Text style={styles.itemDescription}>{props.description}</Text>
         </TouchableOpacity>
       </View>
     );
   };
-  
-  const handleResponse = (response) => {
-    if (!response.ok) {
-      throw new Error(response.statusText || response.message || response.status);
-    } else {
-      return response.json().then(res => {
-        setItems(res)
-      })
-    }
-  }
-
-  const findItem = (payload) => {
-    return fetch(`${serverUrl}/api/supplies?type=${payload.type}&name=${payload.name}`, {
-      method: 'GET',
-      mode: 'no-cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  }
 
   const searchItem = () => {
     const payload = {
       ...query
     };
 
-    findItem(payload)
-      .then(handleResponse)
+    search(payload)
+      .then(setItems)
       .catch(err => {
         console.log(err)
         alert('ERROR: Please try again. If the poblem persists contact an administrator.');
@@ -172,4 +159,4 @@ const FindSupplies = function ({ route, navigation }) {
   );
 };
 
-export default FindSupplies;
+export default SearchSupplies;

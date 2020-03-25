@@ -2,6 +2,7 @@ let map = null;
 let platform = null;
 let ui = null;
 let currentMarker = null;
+let currentItemMarker = null;
 let places = null;
 let searchGroup = null;
 let router = null;
@@ -9,6 +10,7 @@ let routeLineGroup = null;
 let selectedRoute = null;
 let currentInfoBubble = null;
 let geocoder = null;
+let searchCallback = false;
 
 const markerRed = `
 <svg width="22px" height="31px" viewBox="0 0 22 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -24,6 +26,17 @@ const markerBlue = `
 </svg>
 `.trim();
 
+const circleRed = `
+<svg width="32" height="32" viewBox="0 0 32 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group" transform="translate(13.000000, 27.500000) rotate(20.000000) translate(-13.000000, -27.500000) translate(-3.000000, 0.000000)">
+        <circle id="Oval" fill="#DA1E28" cx="16" cy="16" r="16"></circle>
+        <path d="M16,32 L16,55" id="Line" stroke="#DA1E28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+  </g>
+</svg>
+`.trim()
+
 const searchRadius = 20000; // in meters
 const currentCoordinates = {
   lat: 35.7846633,
@@ -36,6 +49,13 @@ const formatDuration = (d) => {
   const m = Math.floor(d % 3600 / 60);
   return (h > 0) ? `${h}h ${m}min` : `${m}min`;
 };
+const formatItemInfo = (item) => {
+  return `
+<p><strong>Name</strong>:<br> ${item.name}</p>
+<p><strong>Description</strong>:<br> ${item.description}</p>
+<p><strong>Contact</strong>:<br> ${item.contact}</p>
+`.trim();
+}
 
 const routeLineStyles = {
   normal: { strokeColor: 'rgba(0, 128, 255, 0.5)', lineWidth: 3 },
@@ -246,30 +266,12 @@ const getRoute = function (from, to) {
   });
 };
 
-const searchPlaces = (query) => {
-  if (!places) {
-    places = platform.getPlacesService();
-  }
+const searchFor = (query, cb) => {
+  searchCallback = cb;
+  sendMessage({ search: query });
+}
 
-  return new Promise((resolve, reject) => {
-    places.search({
-      'q': query,
-      'in': `${currentCoordinates.lat},${currentCoordinates.lng};r=${searchRadius}`,
-      'Accept-Language': 'en'
-    }, (response) => {
-      const searchResults = response.results.items.map((place) => {
-        place.coordinates = { lat: place.position[0], lng: place.position[1] };
-        return place;
-      });
-
-      resolve(searchResults);
-    }, (error) => {
-      reject(error);
-    });
-  });
-};
-
-const searchFor = (query, reset, cb) => {
+const handleSearchResponse = (results) => {
   if (currentInfoBubble) {
     ui.removeBubble(currentInfoBubble);
     currentInfoBubble.dispose();
@@ -283,44 +285,43 @@ const searchFor = (query, reset, cb) => {
     searchGroup.removeAll();
     searchGroup = null;
   }
-  if (reset) {
-    document.getElementById('searchInput').value = '';
+  if (currentItemMarker) {
+    map.removeObject(currentItemMarker);
+    currentItemMarker = null;
   }
 
   const eventListener = (evt, coordinates) => {
     calculateRoute(currentCoordinates, coordinates);
   };
 
-  return searchPlaces(query)
-    .then((results) => {
-      searchGroup = new H.map.Group();
+  searchGroup = new H.map.Group();
 
-      results.map((place) => {
-        const opts = {
-          skip: true,
-          data: `<p><strong>${place.title}</strong><br>${place.vicinity}</p>`,
-          clickListener: eventListener,
-          icon: new H.map.Icon(markerRed, {
-            anchor: new H.math.Point(11, 31),
-            size: new H.math.Size(22, 31)
-          })
-        };
+  results.map((item) => {
+    const coords = item.location.split(',');
 
-        searchGroup.addObject(addMarker(
-          { lat: place.position[0], lng: place.position[1] },
-          opts
-        ));
-      });
+    const opts = {
+      skip: true,
+      data: formatItemInfo(item),
+      clickListener: eventListener,
+      icon: new H.map.Icon(circleRed, {
+        anchor: new H.math.Point(0, 31),
+        size: new H.math.Size(28, 28)
+      })
+    };
 
-      if (cb) {
-        cb();
-      }
+    searchGroup.addObject(addMarker(
+      { lat: coords[0], lng: coords[1] },
+      opts
+    ));
+  });
 
-      map.addObject(searchGroup);
-      zoomAndCenterAround(searchGroup);
-    }).catch((err) => {
-      console.error(err);
-    });
+  if (typeof searchCallback === 'function') {
+    searchCallback();
+    searchCallback = null;
+  }
+
+  map.addObject(searchGroup);
+  zoomAndCenterAround(searchGroup);
 };
 
 const updatePosition = (position) => {
@@ -342,8 +343,34 @@ const updatePosition = (position) => {
   });
 };
 
-const onPostMessage = (data) => {
-  if (data.coords) {
+const updateItemPosition = (item) => {
+  if (currentItemMarker) {
+    map.removeObject(currentItemMarker);
+    currentItemMarker = null;
+  }
+
+  const eventListener = (evt, coordinates) => {
+    calculateRoute(currentCoordinates, coordinates);
+  };
+  
+  const coords = item.location.split(',')
+  currentItemMarker = addMarker({ lat: coords[0], lng: coords[1] }, {
+    data: formatItemInfo(item),
+    clickListener: eventListener,
+    recenter: true,
+    icon: new H.map.Icon(markerRed, {
+      anchor: new H.math.Point(11, 31),
+      size: new H.math.Size(22, 31)
+    })
+  });
+};
+
+const onMessageReceived = (data) => {
+  if (data.item && data.item.location) {
+    updateItemPosition(data.item);
+  } else if (data.search) {
+    handleSearchResponse(data.search);
+  } else if (data.coords) {
     updatePosition(data.coords);
   } else {
     if (!geocoder) {
@@ -368,6 +395,10 @@ const onPostMessage = (data) => {
       alert(e);
     })
   }
+};
+
+const sendMessage = (data) => {
+  window.ReactNativeWebView.postMessage(JSON.stringify(data));
 };
 
 const initMap = () => {
@@ -397,14 +428,14 @@ const initMap = () => {
 
   document.addEventListener('message', (message) => {
     if (message.data) {
-      onPostMessage(message.data);
+      onMessageReceived(message.data);
     }
   });
 
   try {
-    window.ReactNativeWebView.postMessage(JSON.stringify({ status: 'initialized' }));
+    sendMessage({ status: 'initialized' });
   } catch(err) {
-    onPostMessage({ coords: currentCoordinates })
+    onMessageReceived({ coords: currentCoordinates })
   }
 };
 

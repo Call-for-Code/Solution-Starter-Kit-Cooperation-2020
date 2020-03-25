@@ -18,13 +18,6 @@
   </head>
   <body>
     <div id="mapContainer"></div>
-    <div id="searchContainer">
-      <input id="searchInput" placeholder="Search"><button id="searchButton">
-        <svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
-          <path d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z" fill="#6f737A"></path>
-        </svg>
-      </button>
-    </div>
     <button id="sidebarButton" onclick="togglePanel();">
       <svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
         <path d="M4 24H28V26H4zM4 12H28V14H4zM4 18H28V20H4zM4 6H28V8H4z" fill="#6f737A"></path>
@@ -37,9 +30,18 @@
         </svg>
       </button>
       <div id="buttonsWrapper">
-        <svg onclick="onPostMessage(prompt('Enter your location'));"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 48 48" aria-hidden="true" style="will-change: transform;"><path fill="none" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" d="M35,20c0,8-11,19-11,19S13,29,13,20c0-6,4.925-11,11-11S35,14,35,20z M24,16c-2.209,0-4,1.791-4,4s1.791,4,4,4s4-1.791,4-4 S26.209,16,24,16z"></path></svg>
-        <svg onclick="searchFor('hospital', true, togglePanel);" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 48 48" aria-hidden="true" style="will-change: transform;"><path fill="none" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" d="M24,31v8 M24,12.999v13.002 M25.617,20.001c0.937-0.658,1.478-1.446,1.478-2.637c0-1.035-0.617-1.993-1.478-2.361 M22.382,29.827 c-0.937,0.658-1.478,1.446-1.478,2.637c0,1.035,0.617,1.993,1.478,2.361 M25.617,27.485c0.976-0.74,1.478-1.33,1.478-2.622 c0-3.246-6.179-4.1-6.179-7.618c0-0.999,0.608-1.865,1.442-2.242 M25.617,34.825c0.976-0.74,1.478-1.33,1.478-2.622 c0-3.246-6.179-4.1-6.179-7.618c0-0.999,0.608-1.865,1.442-2.242 M36,17h-6.848 M33.979,19.001h-5.164 M38,15h-6.286 c-1.241,0-2.619,0.453-2.619,2.576c0,1.275-0.855,2.84-2.095,3.424 M12,17h6.869 M14,19.001h5.187 M21,21 c-1.239-0.584-2.093-2.149-2.093-3.424c0-2.123-1.378-2.576-2.619-2.576H10 M24,9c-1.105,0-2,0.895-2,2s0.895,2,2,2s2-0.895,2-2 S25.105,9,24,9z"></path></svg>
-        <svg onclick="searchFor('police', true, togglePanel);" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 48 48" aria-hidden="true" style="will-change: transform;"><path fill="none" stroke="#FFF" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" d="M24,14 c-0.741-0.212-1.25-0.964-1.25-1.643c0-0.548,0-0.981,0-0.981c0.64,0,0.914-0.098,1.25-0.376c0.336,0.278,0.61,0.376,1.25,0.376 c0,0,0,0.433,0,0.981C25.25,13.036,24.741,13.788,24,14z M30,10.71c-3.07,0-4.38-0.44-6-1.71c-1.62,1.27-2.93,1.71-6,1.71 c-1.15,2.09-4,2.61-4,2.61l1.23,1.62l1.37,1.81l0.18,0.23L16.79,17c1.64-0.88,3.83-1.63,7.23-1.63s5.33,0.75,7.22,1.62l0.17-0.22 l1.37-1.83L34,13.32C34,13.32,31.15,12.8,30,10.71z M31.225,18.99c-1.89-0.87-3.82-1.62-7.22-1.62s-5.59,0.75-7.23,1.63 M16.403,19 c1.757,0.959,3.934,2.4,7.567,2.4s5.869-1.442,7.626-2.4 M32,35.714c0-1.096,0-1.963,0-1.963c-1.28,0-1.827-0.196-2.5-0.752 c-0.673,0.556-1.22,0.752-2.5,0.752c0,0,0,0.866,0,1.963c0,1.358,1.018,2.861,2.5,3.286C30.982,38.575,32,37.072,32,35.714z M32,35.714c0-1.096,0-1.963,0-1.963c-1.28,0-1.827-0.196-2.5-0.752c-0.673,0.556-1.22,0.752-2.5,0.752c0,0,0,0.866,0,1.963 c0,1.358,1.018,2.861,2.5,3.286C30.982,38.575,32,37.072,32,35.714z M31.24,16.99c0.18,0.47,0.31,0.97,0.4,1.48 c0.06,0.41,0.1,0.83,0.1,1.26c0,3.16-1.89,5.86-4.6,7.07C33.12,28.22,38,33.59,38,40 M10,40c0-6.41,4.88-11.78,10.86-13.2 c-2.7-1.21-4.59-3.91-4.59-7.07c0-0.43,0.04-0.86,0.11-1.27c0.08-0.51,0.21-1.01,0.4-1.48 M16,36h5"></path></svg>
+        <svg onclick="searchFor('Food', togglePanel);" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 48 48" aria-hidden="true" style="will-change: transform;">
+          <path fill="none" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"
+                d="M32.014,21.016c0,0,2.214,0.926,1,8 M32.283,32.298l0.37-1.282 M22.016,18.016c-1.596-0.152-3.35-1-5.002-1c-4.641,0-6,4.056-6,8 c0,8.646,4.001,14,7.989,14c1.674,0,3.561-1,5.013-1h-0.004c1.454,0,3.336,1,5.012,1c3.991-0.001,7.99-5.393,7.99-14 c0-3.926-1.355-8-6-8c-2.26,0-4.473,0.97-6.745,0.999l-0.255,0.001v-2.745c0,0,6.73,0.468,8-5c0,0-5.21-1.555-8.003,3 M20.513,10.516c-1.656-1.656-4.497-1.499-4.497-1.499s-0.157,2.842,1.499,4.497s4.497,1.499,4.497,1.499 S22.169,12.172,20.513,10.516z"></path>
+        </svg>
+        <svg onclick="searchFor('Help', togglePanel);" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 48 48" aria-hidden="true" style="will-change: transform;">
+          <path fill="none" stroke="#FFF" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"
+                d="M9.5,34v-8.619c0-2.836,1.968-5.21,4.612-5.837c-1.197-0.533-2.032-1.73-2.032-3.124c0-1.889,1.531-3.42,3.42-3.42 s3.42,1.531,3.42,3.42c0,1.394-0.836,2.592-2.032,3.124c3.701-1.268,4.944-2.725,6.206-4.061c1.262-1.336,2.008-0.849,2.405-0.483 c0.442,0.406,1,1.263-0.313,2.625c-1.312,1.362-4.687,4.784-4.687,4.784V34 M28.5,34V22.409c0,0-2.39-2.423-3.93-4.003 M39.5,34 v-8.619c0-2.836-1.968-5.21-4.612-5.837c1.197-0.533,2.032-1.73,2.032-3.124c0-1.889-1.531-3.42-3.42-3.42 c-1.889,0-3.42,1.531-3.42,3.42c0,1.394,0.836,2.592,2.032,3.124c-3.701-1.268-5.119-2.956-6.381-4.291"></path>
+        </svg>
+        <svg onclick="searchFor('Other', togglePanel);" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 48 48" aria-hidden="true" style="will-change: transform;">
+          <path fill="none" stroke="#FFF" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"
+                d="M12,33h-1c-1.105,0-2-0.895-2-2v-7h12 M37,15H23 M37,18H25 M37,21H27 M37,24h-8 M37,33h2V12H21v21h10 M18,17v7 M15,30 c-1.657,0-3,1.343-3,3c0,1.657,1.343,3,3,3s3-1.343,3-3C18,31.343,16.657,30,15,30z M34,30c-1.657,0-3,1.343-3,3 c0,1.657,1.343,3,3,3s3-1.343,3-3C37,31.343,35.657,30,34,30z M9,24l4.041-7H21v16h-3 M17,26h2"></path>
+        </svg>
       </div>
       <div id="routePanel">
         <ul></ul>

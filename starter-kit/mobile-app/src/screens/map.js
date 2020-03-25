@@ -4,6 +4,8 @@ import { WebView } from 'react-native-webview';
 import Config from 'react-native-config';
 import Geolocation from '@react-native-community/geolocation';
 
+import { search } from '../lib/utils'
+
 const styles = StyleSheet.create({
   mapContainer: {
     flex: 1
@@ -12,7 +14,7 @@ const styles = StyleSheet.create({
 
 const hereApikey = Config.HERE_APIKEY;
 
-const Map = () => {
+const Map = (props) => {
   const webView = useRef(null);
 
   const onMessage = (event) => {
@@ -22,6 +24,19 @@ const Map = () => {
       Geolocation.getCurrentPosition((position) => {
         sendMessage(position);
       });
+
+      if (props.route.params && props.route.params.item) {
+        sendMessage({ item: props.route.params.item });
+      }
+    } else if (message.search) {
+      search(message.search)
+        .then((response) => {
+          sendMessage({ search: response });
+        })
+        .catch(err => {
+          console.log(err)
+          alert('ERROR: Please try again. If the poblem persists contact an administrator.');
+        });
     }
   };
 
