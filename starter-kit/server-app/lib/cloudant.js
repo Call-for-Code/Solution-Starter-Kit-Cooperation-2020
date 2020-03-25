@@ -17,49 +17,14 @@ var cloudant = new Cloudant({
 
 // Cloudant DB reference
 let db;
-let db_name = "test1";
+let db_name = "community_db";
 
 /**
- * Connects to the Cloudant DB
+ * Connects to the Cloudant DB, creating it if does not already exist
  * @return {Promise} - when resolved, contains the db, ready to go
  */
 const dbCloudantConnect = () => {
     return new Promise((resolve, reject) => {
-        Cloudant({  // eslint-disable-line
-            account: cloudant_id,
-                plugins: {
-                    iamauth: {
-                        iamApiKey: cloudant_apikey
-                    }
-                }
-        }, ((err, cloudant) => {
-            if (err) {
-                console.log('Connect failure: ' + err.message + ' for Cloudant DB: ' +
-                    cloudant_id);
-                reject(err);
-            } else {
-                let db = cloudant.use(db_name);
-                console.log('Connect success! Connected to DB: ' + db_name);
-                resolve(db);
-            }
-        }));
-    });
-}
-
-// Initialize the DB when this module is loaded
-(function getDbConnection() {
-    console.log('Initializing Cloudant connection...', 'items-dao-cloudant.getDbConnection()');
-    dbCloudantConnect().then((database) => {
-        console.log('Cloudant connection initialized.', 'items-dao-cloudant.getDbConnection()');
-        db = database;
-    }).catch((err) => {
-        console.log('Error while initializing DB: ' + err.message, 'items-dao-cloudant.getDbConnection()');
-        throw err;
-    });
-})();
-
-const dbCloudantConnect2 = () => {
-    return new Promise((list, reject) => {
         Cloudant({  // eslint-disable-line
             account: cloudant_id,
                 plugins: {
@@ -74,34 +39,54 @@ const dbCloudantConnect2 = () => {
                 reject(err);
             } else {
                 cloudant.db.list().then((body) => {
-                    list(body)
-                    body.forEach((db) => {
-                      console.log(db);
-                    });
+                    if (!body.includes(db_name)) {
+                        console.log('DB Does not exist..creating: ' + db_name);
+                        cloudant.db.create(db_name).then(() => {
+                            if (err) {
+                                console.log('DB Create failure: ' + err.message + ' for Cloudant ID: ' +
+                                cloudant_id);
+                                reject(err);
+                            }
+                        })
+                    }
+                    let db = cloudant.use(db_name);
+                    console.log('Connect success! Connected to DB: ' + db_name);
+                    resolve(db);
                 }).catch((err) => { console.log(err); reject(err); });
             }
         }));
     });
 }
 
+// Initialize the DB when this module is loaded
+(function getDbConnection() {
+    console.log('Initializing Cloudant connection...', 'getDbConnection()');
+    dbCloudantConnect().then((database) => {
+        console.log('Cloudant connection initialized.', 'getDbConnection()');
+        db = database;
+    }).catch((err) => {
+        console.log('Error while initializing DB: ' + err.message, 'getDbConnection()');
+        throw err;
+    });
+})();
+
 /**
- * Find all Items objects that match the specified
- * partial description.
+ * Find all objects that match the specified partial name.
  * 
- * @param {String} partialDescription
+ * @param {String} partialName
  * 
  * @return {Promise} Promise - 
  *  resolve(): all Item objects that contain the partial
- *          description provided or an empty array if nothing
- *          could not be located for that partialDescription 
+ *          name provided or an empty array if nothing
+ *          could be located for that partialName 
  *  reject(): the err object from the underlying data store
  */
-function findByDescription(partialDescription) {
+function findByName(partialName) {
     return new Promise((resolve, reject) => {
-        let search = `.*${partialDescription}.*`;
+        let search = `.*${partialName}.*`;
         db.find({ 
             'selector': { 
-                'description': {
+                'name': {
                     '$regex': search 
                 }
             } 
@@ -116,9 +101,74 @@ function findByDescription(partialDescription) {
 }
 
 /**
+ * Find all objects that match the specified partial name.
+ * 
+ * @param {String} type
+ * @param {String} partialName
+ * 
+ * @return {Promise} Promise - 
+ *  resolve(): all Item objects that contain the partial
+ *          name provided or an empty array if nothing
+ *          could be located for that partialName 
+ *  reject(): the err object from the underlying data store
+ */
+function find(type, partialName) {
+    return new Promise((resolve, reject) => {
+        let selector = {'selector': {}}
+        if (type) {
+            selector['type'] = type;
+        }
+        if (partialName) {
+            let search = `.*${partialName}.*`;
+            selector['name'] = {'$regex': search};
+
+        }
+
+        db.find({ 
+            'selector': selector
+        }, (err, documents) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve({ data: JSON.stringify(documents.docs), statusCode: (documents.docs.length > 0) ? 200 : 404 });
+            }
+        });
+    });
+}
+
+/**
+ * Find all objects that match a type.
+ * 
+ * @param {String} type
+ * 
+ * @return {Promise} Promise - 
+ *  resolve(): all Item objects that contain the type
+ *          provided or an empty array if nothing
+ *          could be located for that type 
+ *  reject(): the err object from the underlying data store
+ */
+function findByType(type) {
+    return new Promise((resolve, reject) => {
+        db.find({ 
+            'selector': { 
+                'type': type
+            } 
+        }, (err, documents) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve({ data: JSON.stringify(documents.docs), statusCode: (documents.docs.length > 0) ? 200 : 404 });
+            }
+        });
+    });
+}
+
+/**
  * Create an entry with the specified description
  * 
- * @param {String} description - the description to use
+ * @param {String} type - the type of the item
+ * @param {String} name - the name of the item
+ * @param {String} description - the description of the item
  * @param {String} quantity - the quantity available 
  * @param {String} location - the GPS location of the item
  * @param {String} contact - the contact info 
@@ -126,14 +176,15 @@ function findByDescription(partialDescription) {
  * @return {Promise} - promise that will be resolved (or rejected)
  * when the call to the DB completes
  */
-function create(description, location) {
+function create(type, name, description, quantity, location, contact) {
     return new Promise((resolve, reject) => {
         let listId = uuidv4();
         let whenCreated = Date.now();
         let list = {
             _id: listId,
             id: listId,
-            type: 'Supplies',
+            type: type,
+            name: name,
             description: description,
             quantity: quantity,
             location: location,
@@ -160,6 +211,7 @@ const test = () => {
 }
 
 module.exports = {
-    findByDescription: findByDescription,
-    create: create
+    findByName: findByName,
+    create: create,
+    find: find
   };

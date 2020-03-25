@@ -39,18 +39,39 @@ app.post('/api/message', (req, res) => {
     .catch(err => handleError(res, err));
 });
 
-// GET should support a query string of ?description="tomatoes"
+// GET should support a query string of ?name="tomatoes"
 app.get('/api/supplies', (req, res) => {
+  const type = req.query.type;
+  const name = req.query.name;
   cloudant
-    .findByDescription("tomatoes")
+    .find(type, name)
     .then(data => res.send(data))
     .catch(err => handleError(res, err));
 });
 
-// POST should pass in the 4 items below in the body
+let types = ["Food", "Other", "Help"]
 app.post('/api/supplies', (req, res) => {
+  if (!req.body.type) {
+    return res.status(422).json({ errors: "Type of item must be provided"});
+  }
+  if (!types.includes(req.body.type)) {
+    return res.status(422).json({ errors: "Type of item must be one of " + types.toString()});
+  }
+  if (!req.body.name) {
+    return res.status(422).json({ errors: "Name of item must be provided"});
+  }
+  if (!req.body.contact) {
+    return res.status(422).json({ errors: "A method of conact must be provided"});
+  }
+  const type = req.body.type;
+  const name = req.body.name;
+  const description = req.body.name || '';
+  const quantity = req.body.name || 1;
+  const location = req.body.name || '';
+  const contact = req.body.contact;
+
   cloudant
-    .create("tomatoes", "100 cans", "GPScoords", "henry.nash@uk.ibm.com")
+    .create(type, name, description, quantity, location, contact)
     .then(data => res.send(data))
     .catch(err => handleError(res, err));
 });
