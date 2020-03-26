@@ -81,7 +81,7 @@ const Chat = function ({ navigation }) {
   const [session, setSession] = React.useState('');
   const [messages, setMessages] = React.useState([]);
 
-  const Supply = (props) => {
+  const Resource = (props) => {
     return (
       <TouchableOpacity onPress={() => { navigation.navigate('Map', { item: props }); }}>
         <Text> - <Text style={styles.anchorLink}>{props.name}</Text> ({props.quantity})</Text>
@@ -96,10 +96,10 @@ const Chat = function ({ navigation }) {
       <View style={styles.messageContainer}>
         <View style={style}>
           <Text style={styles.chatText}>{props.text}</Text>
-            { props.supplies.map((supply, i) => {
-              supply.key = `sup-${(new Date()).getTime()}-${i}`;
-              return <Supply {...supply} />
-            })}
+          { props.resources.map((resource, i) => {
+            resource.key = `sup-${(new Date()).getTime()}-${i}`;
+            return <Resource {...resource} />
+          })}
         </View>
       </View>
     );
@@ -137,7 +137,7 @@ const Chat = function ({ navigation }) {
       throw new Error(response.statusText || response.message || response.status);
     } else {
       return response.json().then(response => {
-        addMessages(response.generic, false, response.supplies);
+        addMessages(response.generic, false, response.resources);
       })
     }
   }
@@ -172,13 +172,13 @@ const Chat = function ({ navigation }) {
       });
   };
 
-  const addMessages = (msgs, fromInput, supplies) => {
+  const addMessages = (msgs, fromInput, resources) => {
     const date = (new Date()).getTime();
     const result = msgs.map((r, i) => {
       return {
         text: r.text,
         fromInput: fromInput,
-        supplies: supplies || []
+        resources: resources || []
       };
     });
 
