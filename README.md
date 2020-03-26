@@ -199,6 +199,8 @@ You should be able to navigate to the screens to donate and find resources:
 
 - [IBM Cloud](https://www.ibm.com/cloud)
 - [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
+- [IBM Cloudant](https://cloud.ibm.com/docs/Cloudant?topic=cloudant-overview)
+- [Node.js](https://nodejs.org)
 - [HERE Location Services](https://developer.here.com/documentation)
 - [React Native](https://reactnative.dev/)
 
