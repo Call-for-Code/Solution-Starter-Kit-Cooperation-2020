@@ -189,11 +189,11 @@ To run the mobile application (using the Xcode iOS Simulator):
 
 You should be able to navigate to the screens to donate and find resources:
 
-![Donate](/images/0-screen-home.png)
+![Home](/images/0-screen-home.png)
 ![Donate](/images/1-screen-donate.png)
-![Donate](/images/4-screen-search.png)
-![Donate](/images/2-screen-map.png)
-![Donate](/images/3-screen-map.png)
+![Search](/images/2-screen-search.png)
+![Map](/images/3-screen-map.png)
+![Route](/images/4-screen-map.png)
 
 ## Resources
 
