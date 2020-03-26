@@ -10,7 +10,6 @@ This solution starter was created by technologists from IBM.
 - Omer Arad
 - JJ Asghar
 - Jody Burks
-- Niklas Heidloff
 - Robert Loredo
 - Debbie Kestin Schildkraut
 - Bruce Weed
@@ -191,7 +190,7 @@ To run the mobile application (using the Xcode iOS Simulator):
     1. Return to the `mobile-app` directory: `cd ../`.
     1. Launch the app in the simulator: `npm run ios`.
 
-With the application running in the simualtor, you should be able to navigate through the various screens:
+With the application running in the simulator, you should be able to navigate through the various screens:
 
 ![Intro Screen](/images/0-screen-home.png)
 ![Donate Screen](/images/1-screen-donate.png)
