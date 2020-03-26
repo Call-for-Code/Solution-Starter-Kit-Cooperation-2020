@@ -203,7 +203,7 @@ You should be able to navigate to the screens to donate and find resources:
 - [Node.js](https://nodejs.org)
 - [HERE Location Services](https://developer.here.com/documentation)
 - [React Native](https://reactnative.dev/)
-- IBM Blockchain for Developers: https://developer.ibm.com/technologies/blockchain/
+- [IBM Blockchain for Developers](https://developer.ibm.com/technologies/blockchain/)
 
 ## License
 
