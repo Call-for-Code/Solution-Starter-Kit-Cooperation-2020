@@ -46,7 +46,8 @@ Creating a chatbot using Watson Assistant can help you address the issues that y
 
 ## The idea
 
-The goal is to provide a mobile application, along with server-side components, that serves as the basis for developers to build out a community cooperation application that addresses local needs for food, equipment, and resources. It would allow both "Suppliers" (such as a store or a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers ("Recipients") to locate where these supplies are, and, if necessary, guide them to the appropriate locations to pick them up.
+The goal is to provide a mobile application, along with server-side components, that serves as the basis for developers to build out a community cooperation application that addresses local needs for food, equipment, and resources.
+It would allow both "Suppliers" (such as a store or a community member who has produce they can sell or distribute) to make people aware of what the have; and consumers ("Recipients") to locate where these supplies are, and, if necessary, guide them to the appropriate locations to pick them up.
 
 ## How it works
 
