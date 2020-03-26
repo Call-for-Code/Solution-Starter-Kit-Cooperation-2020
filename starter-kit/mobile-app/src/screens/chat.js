@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, KeyboardAvoidingView, ScrollView, View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, ScrollView, View, Text, TextInput, Button, TouchableOpacity, Linking } from 'react-native';
 import Config from 'react-native-config';
 
 const styles = StyleSheet.create({
@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
   anchorLink: {
     fontFamily: 'IBMPlexSans-Medium',
     color: '#1062FE',
-    textDecorationLine: 'underline',
     padding: 2.5
   },
   chatText: {
@@ -81,12 +80,28 @@ const Chat = function ({ navigation }) {
   const [session, setSession] = React.useState('');
   const [messages, setMessages] = React.useState([]);
 
-  const Resource = (props) => {
+  const MapLink = (props) => {
     return (
       <TouchableOpacity onPress={() => { navigation.navigate('Map', { item: props }); }}>
-        <Text> - <Text style={styles.anchorLink}>{props.name}</Text> ({props.quantity})</Text>
+        <Text style={styles.chatText}>  {props.quantity} from <Text style={styles.anchorLink}>{props.location}</Text> </Text>
       </TouchableOpacity>
     )
+  };
+
+  const MailLink = (props) => {
+    return (
+      <TouchableOpacity onPress={() => { Linking.openURL(`mailto:${props.contact}?subject=${props.name}`) }}>
+        <Text style={styles.chatText}>  {props.quantity} at <Text style={styles.anchorLink}>{props.contact}</Text> </Text>
+      </TouchableOpacity>
+    )
+  };
+
+  const Resource = (props) => {
+    if (props.location) {
+      return <MapLink {...props} />
+    } else {
+      return <MailLink {...props} />
+    }
   };
   
   const Message = (props) => {
