@@ -6,12 +6,10 @@ This solution starter was created by technologists from IBM.
 
 - Henry Nash
 - Va Barbosa
+- Javier Torres
 - Omer Arad
 - JJ Asghar
-- Va Barbosa
 - Jody Burks
-- Margriet Groenendijk
-- Niklas Heidloff
 - Robert Loredo
 - Debbie Kestin Schildkraut
 - Bruce Weed
@@ -32,11 +30,13 @@ This solution starter was created by technologists from IBM.
 
 ### What's the problem?
 
+There is a growing interest in enabling communities to cooperate among themselves to solve these problems, whether it be to advertise where supplies are held, offer assistance for collections, or other local services like volunteer deliveries.
+
 In times of crisis, such as the 2020 SARS-COV-2 (COVID-19 or "Novel Coronavirus") crisis, while federal and local governments may be rolling out broad programs, cooperation at the local level is usually the most effective way of getting help to where it is most needed as quickly as possible. Traditional social media is one way of communicating within a community, but this is (by its very design) not locally focused, and often not sufficiently structured to enable rapid discovery of help needed.
 
 In the COVID-19 crisis, we have already seen shortages of local food, medical equipment, and other supplies. In addition, the recommended (or required) self-isolation and social distancing measures can compound the problem by preventing people from easily getting to locations with the best stocks of supplies.
 
-There is a growing interest in enabling communities to cooperate among themselves to solve these problems, whether it be to advertise where supplies are held, offer assistance for collections, or other local services like volunteer deliveries. What is needed is a solution that empowers communities to easily connect and provide this information to each other.
+What is needed is a solution that empowers communities to easily connect and provide this information to each other.
 
 ### How can technology help?
 
@@ -189,6 +189,14 @@ To run the mobile application (using the Xcode iOS Simulator):
     1. Install pod dependencies: `pod install`.
     1. Return to the `mobile-app` directory: `cd ../`.
     1. Launch the app in the simulator: `npm run ios`.
+
+With the application running in the simulator, you should be able to navigate through the various screens:
+
+![Intro Screen](/images/0-screen-home.png)
+![Donate Screen](/images/1-screen-donate.png)
+![Search Screen](/images/2-screen-search.png)
+![Map1 Screen](/images/3-screen-map.png)
+![Map2 Screen](/images/4-screen-map.png)
 
 ## Resources
 
