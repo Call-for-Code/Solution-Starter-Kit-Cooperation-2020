@@ -83,7 +83,7 @@ const Chat = function ({ navigation }) {
   const MapLink = (props) => {
     return (
       <TouchableOpacity onPress={() => { navigation.navigate('Map', { item: props }); }}>
-        <Text style={styles.chatText}>  {props.quantity} from <Text style={styles.anchorLink}>{props.location}</Text> </Text>
+        <Text style={styles.chatText}>  {props.quantity} at <Text style={styles.anchorLink}>{props.location}</Text> </Text>
       </TouchableOpacity>
     )
   };
@@ -91,7 +91,7 @@ const Chat = function ({ navigation }) {
   const MailLink = (props) => {
     return (
       <TouchableOpacity onPress={() => { Linking.openURL(`mailto:${props.contact}?subject=${props.name}`) }}>
-        <Text style={styles.chatText}>  {props.quantity} at <Text style={styles.anchorLink}>{props.contact}</Text> </Text>
+        <Text style={styles.chatText}>  {props.quantity} from <Text style={styles.anchorLink}>{props.contact}</Text> </Text>
       </TouchableOpacity>
     )
   };
