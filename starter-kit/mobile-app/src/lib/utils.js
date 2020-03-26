@@ -49,3 +49,21 @@ export const add = (item) => {
     }
   });
 };
+
+export const update = (item) => {
+  return fetch(`${serverUrl}/api/supplies`, {
+    method: 'PUT',
+    mode: 'no-cors',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(item)
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error(response.statusText || response.message || response.status);
+    } else {
+      return response.json();
+    }
+  });
+}
