@@ -77,8 +77,9 @@ app.post('/api/message', (req, res) => {
 app.get('/api/supplies', (req, res) => {
   const type = req.query.type;
   const name = req.query.name;
+  const userID = req.query.userID;
   cloudant
-    .find(type, name)
+    .find(type, name, userID)
     .then(data => {
       if (data.statusCode != 200) {
         res.sendStatus(data.statusCode)
@@ -106,12 +107,13 @@ app.post('/api/supplies', (req, res) => {
   const type = req.body.type;
   const name = req.body.name;
   const description = req.body.description || '';
+  const userID = req.body.userID || '';
   const quantity = req.body.quantity || 1;
   const location = req.body.location || '';
   const contact = req.body.contact;
 
   cloudant
-    .create(type, name, description, quantity, location, contact)
+    .create(type, name, description, quantity, location, contact, userID)
     .then(data => {
       if (data.statusCode != 201) {
         res.sendStatus(data.statusCode)

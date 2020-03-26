@@ -105,6 +105,7 @@ function findByName(partialName) {
  * 
  * @param {String} type
  * @param {String} partialName
+ * @param {String} userID
  * 
  * @return {Promise} Promise - 
  *  resolve(): all Item objects that contain the partial
@@ -112,7 +113,7 @@ function findByName(partialName) {
  *          could be located for that partialName 
  *  reject(): the err object from the underlying data store
  */
-function find(type, partialName) {
+function find(type, partialName, userID) {
     return new Promise((resolve, reject) => {
         let selector = {}
         if (type) {
@@ -122,6 +123,9 @@ function find(type, partialName) {
             let search = `(?i).*${partialName}.*`;
             selector['name'] = {'$regex': search};
 
+        }
+        if (userID) {
+            selector['userID'] = userID;
         }
         console.log(selector)
         db.find({ 
@@ -172,11 +176,12 @@ function findByType(type) {
  * @param {String} quantity - the quantity available 
  * @param {String} location - the GPS location of the item
  * @param {String} contact - the contact info 
+ * @param {String} userID - the ID of the user 
  * 
  * @return {Promise} - promise that will be resolved (or rejected)
  * when the call to the DB completes
  */
-function create(type, name, description, quantity, location, contact) {
+function create(type, name, description, quantity, location, contact, userID) {
     return new Promise((resolve, reject) => {
         let itemId = uuidv4();
         let whenCreated = Date.now();
@@ -189,6 +194,7 @@ function create(type, name, description, quantity, location, contact) {
             quantity: quantity,
             location: location,
             contact: contact,
+            userID: userID,
             whenCreated: whenCreated
         };
         db.insert(item, (err, result) => {
