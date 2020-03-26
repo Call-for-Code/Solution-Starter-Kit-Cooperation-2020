@@ -188,7 +188,8 @@ To run the mobile application (using the Xcode iOS Simulator):
     1. Go to the `ios` directory: `cd ios`.
     1. Install pod dependencies: `pod install`.
     1. Return to the `mobile-app` directory: `cd ../`.
-    1. Launch the app in the simulator: `npm run ios`.
+    1. Launch the app in the simulator: `npm run ios`. You should be running at least iOS 13.0.
+    1. The first time you launch the simulator, you should ensure that you set a Location in the Features menu.
 
 With the application running in the simulator, you should be able to navigate through the various screens:
 
