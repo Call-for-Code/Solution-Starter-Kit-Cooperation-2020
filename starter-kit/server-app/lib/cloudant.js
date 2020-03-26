@@ -119,7 +119,7 @@ function find(type, partialName) {
             selector['type'] = type;
         }
         if (partialName) {
-            let search = `.*${partialName}.*`;
+            let search = `(?i).*${partialName}.*`;
             selector['name'] = {'$regex': search};
 
         }
