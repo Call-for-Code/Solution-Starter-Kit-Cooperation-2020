@@ -1,229 +1,292 @@
 {
   "intents": [
     {
-      "intent": "Flood_Danger",
+      "intent": "Covid_Cleaning_Disinfecting",
       "examples": [
         {
-          "text": "Why do we have flood warnings?"
+          "text": "What cleaning methods kill the coronavirus?"
         },
         {
-          "text": "Should I be careful around floods?"
+          "text": "Should I spray myself or my kids with disinfectant?"
         },
         {
-          "text": "Are floods dangerous?"
+          "text": "How often do I need to clean my home to prevent the spread of coronavirus?"
         },
         {
-          "text": "Am I safe around floods?"
+          "text": "All the stores are out of disinfecting wipes, what do I do?"
         },
         {
-          "text": "How much damage can flooding cause?"
+          "text": "Are there disinfectants available that can inactivate (kill) COVID-19?"
         },
         {
-          "text": "What can floods do?"
+          "text": "Do I have to use bleach to kill coronavirus?"
         },
         {
-          "text": "What are floods capable of?"
+          "text": "Do I need lysol wipes?"
+        },
+        {
+          "text": "Does alcohol kill the coronavirus?"
+        },
+        {
+          "text": "How do I clean my home properly?"
+        },
+        {
+          "text": "how do i get rid of germs at my home"
+        },
+        {
+          "text": "Whats the difference between cleaning and disinfecting?"
         }
       ],
-      "description": "Dangers of floods"
+      "description": "How to clean and disinfect."
     },
     {
-      "intent": "Flood_After",
+      "intent": "Covid_Description",
       "examples": [
         {
-          "text": "the flood is gone"
+          "text": "How dangerous is this?"
         },
         {
-          "text": "Flood clean up"
+          "text": "Where did the coronavirus come from?"
         },
         {
-          "text": "Flood aftermath"
+          "text": "what is the coronavirus?"
         },
         {
-          "text": "When can I go home?"
+          "text": "what is novel coronavirus?"
         },
         {
-          "text": "Is it ok to return home?"
+          "text": "What is COVID-19?"
         },
         {
-          "text": "Flooding has stopped, am I safe?"
+          "text": "Is the coronavirus the same as SARS?"
         },
         {
-          "text": "What should I do when the flooding goes away?"
+          "text": "Is the coronavirus the same as MERS?"
         },
         {
-          "text": "How do I recover from a flood?"
+          "text": "Is the coronavirus the same as a cold?"
         },
         {
-          "text": "What do I need to do after a flood?"
+          "text": "How is COVID-19 spread?"
         },
         {
-          "text": "When do I return to my house after a flood?"
-        },
-        {
-          "text": "what happens after a flood"
-        },
-        {
-          "text": "i am ready to head back to the apartment"
+          "text": "Has the cause of COVID-19 been identified?"
         }
       ],
-      "description": "Recovering from a flood"
+      "description": "Overview of Covid 19."
     },
     {
-      "intent": "Flood_During",
+      "intent": "General_Greetings",
       "examples": [
         {
-          "text": "What actions do I need to take while in a flood area?"
+          "text": "How are things going?"
         },
         {
-          "text": "I just received a flood warning"
+          "text": "Good day"
         },
         {
-          "text": "what happens during a flood"
+          "text": "Good evening"
         },
         {
-          "text": "my neighborhood is flooding"
+          "text": "Good morning"
         },
         {
-          "text": "the flood is here"
+          "text": "Good to see you"
         },
         {
-          "text": "i am stuck in a flood"
+          "text": "Greetings"
         },
         {
-          "text": "What do I do when a flood is happening?"
+          "text": "Have you been well?"
         },
         {
-          "text": "Where should I go during a flood?"
+          "text": "Hello Agent"
         },
         {
-          "text": "Where is the safest place?"
+          "text": "Hello I am looking for some help here"
         },
         {
-          "text": "Do I need to evacuate?"
+          "text": "Hello"
         },
         {
-          "text": "How can I survive a flood?"
+          "text": "Hey how are you doing"
         },
         {
-          "text": "What do I do during a flood?"
+          "text": "Hey there all"
+        },
+        {
+          "text": "Hey there"
+        },
+        {
+          "text": "Hey twin"
+        },
+        {
+          "text": "Hey you"
+        },
+        {
+          "text": "Hi advisor"
+        },
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "How are you today?"
+        },
+        {
+          "text": "How have you been?"
+        },
+        {
+          "text": "How is it going?"
+        },
+        {
+          "text": "How r u?"
+        },
+        {
+          "text": "Looking good eve"
+        },
+        {
+          "text": "Ok take me back"
+        },
+        {
+          "text": "What's new?"
+        },
+        {
+          "text": "What's up?"
+        },
+        {
+          "text": "Who is this?"
+        },
+        {
+          "text": "You there"
         }
       ],
-      "description": "Surviving during a flood"
+      "description": "Greet the bot."
     },
     {
-      "intent": "Flood_Before",
+      "intent": "Covid_Case_Count",
       "examples": [
         {
-          "text": "Do I need a plan?"
+          "text": "what is the count of coronavirus infected people?"
         },
         {
-          "text": "What safety precautions do I need to take?"
+          "text": "Where are cases?"
         },
         {
-          "text": "Can I plan ahead?"
+          "text": "Are there any cases near me?"
         },
         {
-          "text": "How can I reduce the impact?"
+          "text": "covid number in my state?"
         },
         {
-          "text": "How do I prepare?"
+          "text": "Does MA have a confirmed COVID case?"
         },
         {
-          "text": "What do I need to do before a flood?"
+          "text": "Does the US have a confirmed COVID case?"
         },
         {
-          "text": "what happens before a flood"
+          "text": "How many cases of the virus are there in the world?"
         },
         {
-          "text": "What do you recommend I do to be ready?"
+          "text": "has anyone died of coronavirus in my state?"
         },
         {
-          "text": "Tell me what I need before a flood warning"
+          "text": "How many cases of COVID-19 are in the US?"
         },
         {
-          "text": "Any guidance on how to prepare?"
+          "text": "How many coronavirus cases are there in my area?"
         },
         {
-          "text": "How do I know I am ready for a flood?"
+          "text": "how many people are infected in the us?"
+        },
+        {
+          "text": "how many people are sick in the US?"
+        },
+        {
+          "text": "is anyone near me sick"
         }
       ],
-      "description": "Preparing for a flood"
+      "description": "Information on number of Covid 19 cases."
     },
     {
-      "intent": "Flood_Travel",
+      "intent": "General_About_You",
       "examples": [
         {
-          "text": "Should I walk through flood waters"
+          "text": "What's your name?"
         },
         {
-          "text": "Should I travel across a flood zone?"
+          "text": "Can I use another language?"
         },
         {
-          "text": "Should I pass through a flooded roadway?"
+          "text": "Describe your self"
         },
         {
-          "text": "Is it safe to swim in flood waters?"
+          "text": "Do you have a name?"
         },
         {
-          "text": "How do I cross a flooded area?"
+          "text": "Do you know who you are?"
         },
         {
-          "text": "Can i bike through the flood?"
+          "text": "How can I configure you?"
         },
         {
-          "text": "Can I drive though a flooded area?"
+          "text": "How do you function?"
+        },
+        {
+          "text": "How old are you?"
+        },
+        {
+          "text": "Why are you here?"
+        },
+        {
+          "text": "Who are you?"
+        },
+        {
+          "text": "Where were you born?"
+        },
+        {
+          "text": "Where are you from?"
+        },
+        {
+          "text": "I want to set up the chat bot for my shop"
+        },
+        {
+          "text": "What should I know about you?"
+        },
+        {
+          "text": "What languages do you speak?"
+        },
+        {
+          "text": "Tell me something about yourself"
+        },
+        {
+          "text": "Tell me about your life"
+        },
+        {
+          "text": "Let us talk about you"
+        },
+        {
+          "text": "Introduce your self"
+        },
+        {
+          "text": "About you"
         }
       ],
-      "description": "Passing through a flood zone"
+      "description": "Request generic personal attributes."
     },
     {
       "intent": "General_Ending",
       "examples": [
         {
-          "text": "Have a nice day?"
+          "text": "It was nice chatting with you"
         },
         {
-          "text": "Bye bye"
+          "text": "I'm leaving now"
         },
         {
-          "text": "Bye now"
+          "text": "Im good thank you"
         },
         {
-          "text": "Catch you later"
-        },
-        {
-          "text": "Cya later"
-        },
-        {
-          "text": "End trial"
-        },
-        {
-          "text": "Ending this session"
-        },
-        {
-          "text": "Finished now, good bye"
-        },
-        {
-          "text": "Get lost"
-        },
-        {
-          "text": "Go away"
-        },
-        {
-          "text": "Go off"
-        },
-        {
-          "text": "Going now"
-        },
-        {
-          "text": "Good. bye."
-        },
-        {
-          "text": "Goodbye"
-        },
-        {
-          "text": "Hey bot go away"
+          "text": "Time to go"
         },
         {
           "text": "I am leaving"
@@ -247,247 +310,827 @@
           "text": "Im done"
         },
         {
-          "text": "Im good thank you"
+          "text": "Hey bot go away"
         },
         {
-          "text": "I'm leaving now"
+          "text": "Goodbye"
         },
         {
-          "text": "It was nice chatting with you"
+          "text": "Good. bye."
         },
         {
-          "text": "Ok goodbye"
+          "text": "Going now"
         },
         {
-          "text": "See you later"
+          "text": "Go off"
         },
         {
-          "text": "See you"
+          "text": "Go away"
         },
         {
-          "text": "Shut up"
+          "text": "Get lost"
         },
         {
-          "text": "Stop doing this"
+          "text": "Finished now, good bye"
         },
         {
-          "text": "Stop talking to me"
+          "text": "Ending this session"
         },
         {
-          "text": "Thank you for your time"
+          "text": "End trial"
         },
         {
-          "text": "Thanks, bye!"
+          "text": "Cya later"
         },
         {
-          "text": "Thanks very much, bye!"
+          "text": "Catch you later"
         },
         {
-          "text": "That is all"
+          "text": "Bye now"
+        },
+        {
+          "text": "Bye bye"
+        },
+        {
+          "text": "Have a nice day?"
         },
         {
           "text": "That's everything"
         },
         {
-          "text": "Time to go"
+          "text": "That is all"
+        },
+        {
+          "text": "Thanks very much, bye!"
+        },
+        {
+          "text": "Thanks, bye!"
+        },
+        {
+          "text": "Thank you for your time"
+        },
+        {
+          "text": "Stop talking to me"
+        },
+        {
+          "text": "Stop doing this"
+        },
+        {
+          "text": "Shut up"
+        },
+        {
+          "text": "See you"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "Ok goodbye"
         }
       ],
       "description": "End the conversation."
     },
     {
-      "intent": "Flood_About",
+      "intent": "supplies_needed",
       "examples": [
         {
-          "text": "Do you know about floods?"
+          "text": "Who has some cleaning supplies",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                13,
+                30
+              ]
+            }
+          ]
         },
         {
-          "text": "What can you say about floods?"
+          "text": "Anyone have a mask",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                14,
+                18
+              ]
+            }
+          ]
         },
         {
-          "text": "flood"
+          "text": "Anyone have an xyz",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                15,
+                18
+              ]
+            }
+          ]
         },
         {
-          "text": "What is a flood?"
+          "text": "Anyone have extra gloves",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                18,
+                24
+              ]
+            }
+          ]
         },
         {
-          "text": "Describe floods"
+          "text": "Anyone have some canned fruits",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                17,
+                30
+              ]
+            }
+          ]
         },
         {
-          "text": "How does flooding happen?"
+          "text": "Can I get a gallon of milk",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                12,
+                26
+              ]
+            }
+          ]
         },
         {
-          "text": "What causes floods?"
+          "text": "Can I get an box of cereal",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                13,
+                26
+              ]
+            }
+          ]
         },
         {
-          "text": "Tell me about floods"
+          "text": "Can I get bread",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                10,
+                15
+              ]
+            }
+          ]
         },
         {
-          "text": "I want to know more about floods"
+          "text": "Can I get some gloves",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                15,
+                21
+              ]
+            }
+          ]
         },
         {
-          "text": "What do I need to know about floods?"
+          "text": "Does anyone have a mask",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                19,
+                23
+              ]
+            }
+          ]
         },
         {
-          "text": "Why does flooding occur?"
+          "text": "Does anyone have any paper towel",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                21,
+                32
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Does anyone have some canned vegetables",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                22,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I need a bag of ice",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                9,
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I need hand sanitizer",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                7,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I need some toilet paper",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                12,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I want a bag of ice",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                9,
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I want some canned food",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                12,
+                23
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I want vegetables",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                7,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the closest location that has apples or bananas",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                38,
+                44
+              ]
+            },
+            {
+              "entity": "supplies",
+              "location": [
+                48,
+                55
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the closest location that has fruits",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                38,
+                44
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the closest location that has some water bottles",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                43,
+                56
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the nearest location that has a gallon of milk",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                40,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the nearest location that has disinfectant wipes",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                38,
+                56
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the nearest location that has some batteries",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                43,
+                52
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Where can I get a bag of rice",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                18,
+                29
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Where can I get milk and eggs",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                16,
+                20
+              ]
+            },
+            {
+              "entity": "supplies",
+              "location": [
+                25,
+                29
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Where can I get some clorox",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                21,
+                27
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Who has a bottle of hand sanitizer",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                20,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Who has fruits",
+          "mentions": [
+            {
+              "entity": "supplies",
+              "location": [
+                8,
+                14
+              ]
+            }
+          ]
         }
-      ],
-      "description": "General flood information"
+      ]
     },
     {
-      "intent": "General_About_You",
+      "intent": "Covid_Protecting_Against_Infection",
       "examples": [
         {
-          "text": "Why are you here?"
+          "text": "prevent the spread of the virus"
         },
         {
-          "text": "How old are you?"
+          "text": "How do I avoid covid-19?"
         },
         {
-          "text": "How do you function?"
+          "text": "how do I ensure my family is safe?"
         },
         {
-          "text": "How can I configure you?"
+          "text": "How do I protect myself?"
         },
         {
-          "text": "Do you know who you are?"
+          "text": "How often should I wash my hands?"
         },
         {
-          "text": "Do you have a name?"
+          "text": "How do I prevent myself from getting sick?"
         },
         {
-          "text": "Describe your self"
+          "text": "Is it even possible to avoid the virus?"
         },
         {
-          "text": "Can I use another language?"
+          "text": "What is the risk of my child becoming sick with COVID-19?"
         },
         {
-          "text": "About you"
+          "text": "How can I protect my family from the spread of coronavirus?"
         },
         {
-          "text": "What's your name?"
+          "text": "What’s the best way to prevent coronavirus?"
         },
         {
-          "text": "Introduce your self"
+          "text": "How to Prevent the Spread of the Virus"
         },
         {
-          "text": "Let us talk about you"
+          "text": "Do I need to wear a face mask?"
         },
         {
-          "text": "Tell me about your life"
-        },
-        {
-          "text": "Tell me something about yourself"
-        },
-        {
-          "text": "What languages do you speak?"
-        },
-        {
-          "text": "What should I know about you?"
-        },
-        {
-          "text": "I want to set up the chat bot for my shop"
-        },
-        {
-          "text": "Where are you from?"
-        },
-        {
-          "text": "Where were you born?"
-        },
-        {
-          "text": "Who are you?"
+          "text": "what should i do to contain the spread of the virus"
         }
       ],
-      "description": "Request generic personal attributes."
+      "description": "How to prevent infection."
     },
     {
-      "intent": "General_Greetings",
+      "intent": "Covid_School_Shutdown",
       "examples": [
         {
-          "text": "You there"
+          "text": "When will the schools open?"
         },
         {
-          "text": "Who is this?"
+          "text": "Are schools shut down?"
         },
         {
-          "text": "What's up?"
+          "text": "How can I get the latest news on my school closure?"
         },
         {
-          "text": "What's new?"
+          "text": "How will the shutdown impact my child's attendance records?"
         },
         {
-          "text": "Ok take me back"
+          "text": "are schools open?"
         },
         {
-          "text": "Looking good eve"
+          "text": "Should my child stay home from school?"
         },
         {
-          "text": "How r u?"
+          "text": "What does the ordered school closure mean for report cards?"
         },
         {
-          "text": "How is it going?"
+          "text": "What happens after the ordered three-week closure period ends?"
         },
         {
-          "text": "How have you been?"
+          "text": "Will students still graduate this year?"
         },
         {
-          "text": "How are you today?"
-        },
-        {
-          "text": "How are things going?"
-        },
-        {
-          "text": "Hi there"
-        },
-        {
-          "text": "Hi advisor"
-        },
-        {
-          "text": "Hey you"
-        },
-        {
-          "text": "Hey twin"
-        },
-        {
-          "text": "Hey there"
-        },
-        {
-          "text": "Hey there all"
-        },
-        {
-          "text": "Hey how are you doing"
-        },
-        {
-          "text": "Hello"
-        },
-        {
-          "text": "Hello I am looking for some help here"
-        },
-        {
-          "text": "Hello Agent"
-        },
-        {
-          "text": "Have you been well?"
-        },
-        {
-          "text": "Greetings"
-        },
-        {
-          "text": "Good to see you"
-        },
-        {
-          "text": "Good morning"
-        },
-        {
-          "text": "Good evening"
-        },
-        {
-          "text": "Good day"
+          "text": "Can my child go to school?"
         }
       ],
-      "description": "Greet the bot."
+      "description": "Information on local schools."
+    },
+    {
+      "intent": "Covid_Travel_Restrictions",
+      "examples": [
+        {
+          "text": "do i need to stay home"
+        },
+        {
+          "text": "I just travelled. What do I do?"
+        },
+        {
+          "text": "Is it safe to fly to Seattle?"
+        },
+        {
+          "text": "Should I cancel my flight to Denver?"
+        },
+        {
+          "text": "What if I urgently need to take a flight?"
+        },
+        {
+          "text": "Are there any travel restrictions in place yet?"
+        },
+        {
+          "text": "Can I travel?"
+        },
+        {
+          "text": "Do I need a doctor's note to travel?"
+        }
+      ],
+      "description": "Information on travel during Covid 19 pandemic."
+    },
+    {
+      "intent": "Covid_Testing_Results",
+      "examples": [
+        {
+          "text": "Who will give me my COVID test results?"
+        },
+        {
+          "text": "My doctor hasn't given me my test results back yet."
+        },
+        {
+          "text": "test outcomes?"
+        },
+        {
+          "text": "When can I get my results?"
+        },
+        {
+          "text": "Its been a week. Who can I call to get my test results?"
+        },
+        {
+          "text": "How can I get my test results?"
+        },
+        {
+          "text": "Do my test results come in the mail?"
+        }
+      ],
+      "description": "How to get Covid 19 test results."
+    },
+    {
+      "intent": "Covid_Symptoms",
+      "examples": [
+        {
+          "text": "should i get tested"
+        },
+        {
+          "text": "should I get tested if I have a cough?"
+        },
+        {
+          "text": "I have travled recently. What do I do?"
+        },
+        {
+          "text": "I think I might have the virus."
+        },
+        {
+          "text": "am i sick"
+        },
+        {
+          "text": "What are symptoms?"
+        },
+        {
+          "text": "How do i know if I'm sick"
+        },
+        {
+          "text": "Do I need to get tested?"
+        },
+        {
+          "text": "I think I'm infected"
+        },
+        {
+          "text": "I traveled to Italy recently. What do I do?"
+        }
+      ],
+      "description": "Symptoms related to Covid 19."
+    },
+    {
+      "intent": "Covid_Testing_Locations",
+      "examples": [
+        {
+          "text": "testing spots for coronavirus?"
+        },
+        {
+          "text": "Can I get tested at my doctors?"
+        },
+        {
+          "text": "Where can I get tested?"
+        },
+        {
+          "text": "testing locations?"
+        },
+        {
+          "text": "How do I get tested?"
+        },
+        {
+          "text": "Can I test myself at my house?"
+        },
+        {
+          "text": "Can I get tested at Walgreens?"
+        }
+      ],
+      "description": "Where to get tested for Covid 19."
+    },
+    {
+      "intent": "Covid_Event_Shutdowns",
+      "examples": [
+        {
+          "text": "What sports are being cancelled?"
+        },
+        {
+          "text": "When will the NHL return?"
+        },
+        {
+          "text": "When will the NCAA championships be held?"
+        },
+        {
+          "text": "Should I feel safe going to the movies?"
+        },
+        {
+          "text": "What is the maximum number of people allowed to meet right now?"
+        },
+        {
+          "text": "Why is the government shutting down my event?"
+        },
+        {
+          "text": "Will I get a refund for a ticket I purchased?"
+        },
+        {
+          "text": "events and large gatherings"
+        },
+        {
+          "text": "Are events being shut down?"
+        },
+        {
+          "text": "Are groups of people allowed to meet?"
+        },
+        {
+          "text": "How do I know if my concert is cancelled?"
+        }
+      ],
+      "description": "Information on events and large groups."
     }
   ],
-  "entities": [],
+  "entities": [
+    {
+      "entity": "supplies",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "box of cereal",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "hand sanitizer",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "mask",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "xyz",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "gloves",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "bread",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "vegetables",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "bananas",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "canned fruits",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "paper towel",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "gallon of milk",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "canned vegetables",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "water bottles",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "batteries",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "bag of ice",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "toilet paper",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "canned food",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "apples",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "bag of rice",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "fruits",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "disinfectant wipes",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "milk",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "eggs",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "clorox",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "cleaning supplies",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
   "metadata": {
     "api_version": {
       "major_version": "v2",
@@ -497,13 +1140,28 @@
   },
   "dialog_nodes": [
     {
-      "type": "standard",
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "What supplies do you need"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_10_1584231342659",
+      "conditions": "true",
+      "dialog_node": "response_6_1585168432295",
+      "previous_sibling": "response_7_1585167995210"
+    },
+    {
+      "type": "response_condition",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Do not walk, swim, or drive through flood waters. Never cross any barriers that are put in place by emergency officials. You likely will not know the depth of the water or the condition of the ground. Road beds may be washed out under flood waters."
+                "text": "The supplies you need are <? @supplies.values ?>"
               }
             ],
             "response_type": "text",
@@ -511,138 +1169,12 @@
           }
         ]
       },
-      "conditions": "#Flood_Travel",
-      "dialog_node": "node_7_1584394345975",
-      "previous_sibling": "node_2_1584231537199"
-    },
-    {
-      "type": "standard",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "OK. See you later."
-              },
-              {
-                "text": "Take care"
-              },
-              {
-                "text": "Bye"
-              },
-              {
-                "text": "Stay safe"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "random"
-          }
-        ]
+      "parent": "node_10_1584231342659",
+      "context": {
+        "supplies_needed_in": "@supplies"
       },
-      "conditions": "#General_Ending",
-      "dialog_node": "node_4_1584218971201",
-      "previous_sibling": "node_8_1584231697399"
-    },
-    {
-      "type": "standard",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Floods can cause outages, disrupt transportation, damage buildings, and create landslides."
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "conditions": "#Flood_Danger",
-      "dialog_node": "node_9_1584393013683",
-      "previous_sibling": "node_5_1584231112927"
-    },
-    {
-      "type": "standard",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Flooding is a temporary overflow of water onto land that is normally dry. It results from rain, snow, coastal storms, storm surges, and overflows of dams and other water systems. Floods can cause outages, disrupt transportation, damage buildings, and create landslides."
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "conditions": "#Flood_About",
-      "dialog_node": "node_5_1584231112927",
-      "previous_sibling": "node_4_1584218872946"
-    },
-    {
-      "type": "standard",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "- Know the flood risk in your area\n- Sign up for your community’s warning system and be ready to follow all emergency alerts\n- Learn and practice evacuation routes, shelter plans, and flash flood response\n- Gather supplies (e.g., medication, batteries, etc.) in case you have to leave immediately or lose services\n- Store valuables and important documents in a safe, dry place\n- Make plans on what to do with your animals and pets if you are required to evacuate"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "conditions": "#Flood_Before",
-      "dialog_node": "node_10_1584231342659",
-      "previous_sibling": "node_9_1584393013683"
-    },
-    {
-      "type": "standard",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Hello"
-              },
-              {
-                "text": "Hi"
-              },
-              {
-                "text": "Hey"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "random"
-          }
-        ]
-      },
-      "conditions": "#General_Greetings",
-      "dialog_node": "node_4_1584218872946",
-      "previous_sibling": "Welcome"
-    },
-    {
-      "type": "standard",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Even though a flood warning may have been cancelled continue to stay informed and follow the directions of emergency officials. During clean up from a flood wear heavy gloves, boots, and other protective gear and be aware snakes and other animals that may be in your home. Also, do not touch electrical equipment if it is wet or if you are standing in water. And return home only when local authorities say it is safe."
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "conditions": "#Flood_After",
-      "dialog_node": "node_8_1584231697399",
-      "previous_sibling": "node_7_1584394345975"
+      "conditions": "@supplies",
+      "dialog_node": "response_7_1585167995210"
     },
     {
       "type": "standard",
@@ -678,16 +1210,61 @@
           {
             "values": [
               {
-                "text": "It is important to stay informed with what is happening and to follow instructions given by emergency officials. If there is a flood warning, find safe shelter right away! Go to a safe location you previously identified. If told to evacuate, do so immediately. Do not walk, swim, or drive through flood waters. Failing to evacuate flooded areas or entering flood waters can result in injury or death. If trapped in a building, get to the highest level. Do not climb into a closed attic and go on the roof only if necessary."
+                "text": "Hello"
+              },
+              {
+                "text": "Hi"
+              },
+              {
+                "text": "Hey"
               }
             ],
             "response_type": "text",
-            "selection_policy": "sequential"
+            "selection_policy": "random"
           }
         ]
       },
-      "conditions": "#Flood_During",
-      "dialog_node": "node_2_1584231537199",
+      "conditions": "#General_Greetings",
+      "dialog_node": "node_4_1584218872946",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#supplies_needed",
+      "dialog_node": "node_10_1584231342659",
+      "previous_sibling": "node_4_1584218872946"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "OK. See you later."
+              },
+              {
+                "text": "Take care"
+              },
+              {
+                "text": "Bye"
+              },
+              {
+                "text": "Stay safe"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#General_Ending",
+      "dialog_node": "node_4_1584218971201",
       "previous_sibling": "node_10_1584231342659"
     },
     {
@@ -698,7 +1275,7 @@
           {
             "values": [
               {
-                "text": "Hello. I am a disaster resiliency virtual agent. I can help answer your questions about flood preparedness, survival, and recovery. How can I help you?"
+                "text": "Hello. I am a community cooperation virtual agent. I can help answer your questions about what is available in your community. How can I help you?"
               }
             ],
             "response_type": "text",
@@ -732,7 +1309,7 @@
     "spelling_auto_correct": true
   },
   "learning_opt_out": false,
-  "name": "starter-kit-flood-dialog-skill",
+  "name": "starter-kit-jrt-test",
   "language": "en",
   "description": ""
 }
