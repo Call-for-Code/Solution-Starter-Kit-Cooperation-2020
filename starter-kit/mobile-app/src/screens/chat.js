@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView, View, Text, TextInput, Button } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, ScrollView, View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import Config from 'react-native-config';
 
 const styles = StyleSheet.create({
@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#D0E2FF',
     padding: 10,
     alignSelf: 'flex-start',
-    maxWidth: '80%'
+    maxWidth: '85%'
   },
   myText: {
     fontFamily: 'IBMPlexSans-Medium',
     backgroundColor: '#F1F0EE',
     padding: 10,
     alignSelf: 'flex-end',
-    maxWidth: '75%'
+    maxWidth: '80%'
   },
   inputContainer: {
     backgroundColor: '#F1F0EE',
@@ -62,25 +62,48 @@ const styles = StyleSheet.create({
     right: 24,
     bottom: 47
   },
+  anchorLink: {
+    fontFamily: 'IBMPlexSans-Medium',
+    color: '#1062FE',
+    textDecorationLine: 'underline',
+    padding: 2.5
+  },
+  chatText: {
+    fontFamily: 'IBMPlexSans-Medium'
+  }
 });
 
 const serverUrl = Config.STARTER_KIT_SERVER_URL;
 // const serverUrl = 'http://localhost:3000';
 
-const Message = (props) => {
-  const style = props.fromInput ? styles.myText : styles.waText;
-
-  return (
-    <View style={styles.messageContainer}>
-      <Text style={style}>{props.text}</Text>
-    </View>
-  );
-};
-
 const Chat = function ({ navigation }) {
   const [input, setInput] = React.useState('');
   const [session, setSession] = React.useState('');
   const [messages, setMessages] = React.useState([]);
+
+  const Supply = (props) => {
+    return (
+      <TouchableOpacity onPress={() => { navigation.navigate('Map', { item: props }); }}>
+        <Text> - <Text style={styles.anchorLink}>{props.name}</Text> ({props.quantity})</Text>
+      </TouchableOpacity>
+    )
+  };
+  
+  const Message = (props) => {
+    const style = props.fromInput ? styles.myText : styles.waText;
+  console.log('message ==> ', props)
+    return (
+      <View style={styles.messageContainer}>
+        <View style={style}>
+          <Text style={styles.chatText}>{props.text}</Text>
+            { props.supplies.map((supply, i) => {
+              supply.key = `sup-${(new Date()).getTime()}-${i}`;
+              return <Supply {...supply} />
+            })}
+        </View>
+      </View>
+    );
+  };
 
   const getSession = () => {
     return fetch(`${serverUrl}/api/session`)
@@ -94,7 +117,7 @@ const Chat = function ({ navigation }) {
       .then(sessionId => {
         setSession(sessionId);
         return sessionId;
-      })
+      });
   };
 
   const fetchMessage = (payload) => {
@@ -114,7 +137,7 @@ const Chat = function ({ navigation }) {
       throw new Error(response.statusText || response.message || response.status);
     } else {
       return response.json().then(response => {
-        addMessages(response.generic);
+        addMessages(response.generic, false, response.supplies);
       })
     }
   }
@@ -149,12 +172,13 @@ const Chat = function ({ navigation }) {
       });
   };
 
-  const addMessages = (messages, fromInput) => {
+  const addMessages = (msgs, fromInput, supplies) => {
     const date = (new Date()).getTime();
-    const result = messages.map((r, i) => {
+    const result = msgs.map((r, i) => {
       return {
         text: r.text,
-        fromInput: fromInput
+        fromInput: fromInput,
+        supplies: supplies || []
       };
     });
 
@@ -167,7 +191,7 @@ const Chat = function ({ navigation }) {
   React.useEffect(() => {
     navigation.addListener('focus', () => {
       getSession();
-    })
+    });
   }, []);
 
   return (
@@ -181,7 +205,7 @@ const Chat = function ({ navigation }) {
         })} >
         <ScrollView contentContainerStyle={styles.scrollContainer}>
           {messages.map((message, i) => {
-            message.key = `${(new Date()).getTime()}-${i}`;
+            message.key = `msg-${(new Date()).getTime()}-${i}`;
             return <Message {...message} />
           })}
         </ScrollView>
