@@ -1,13 +1,22 @@
 import Config from 'react-native-config';
 
+import DeviceInfo from 'react-native-device-info';
+
 const serverUrl = Config.STARTER_KIT_SERVER_URL;
 // const serverUrl = 'http://localhost:3000';
+
+const uniqueid = DeviceInfo.getUniqueId();
+
+export const userID = () => {
+  return uniqueid;
+}
 
 export const search = (query) => {
   const type = query.type ? `type=${query.type}` : ''
   const name = query.name ? `name=${query.name}` : ''
+  const userID = query.userID ? `userID=${query.userID}` : ''
 
-  return fetch(`${serverUrl}/api/supplies?${name}&${type}`, {
+  return fetch(`${serverUrl}/api/supplies?${name}&${type}&${userID}`, {
     method: 'GET',
     mode: 'no-cors',
     cache: 'no-cache',

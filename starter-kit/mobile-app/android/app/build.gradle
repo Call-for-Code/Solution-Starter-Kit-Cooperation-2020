@@ -183,6 +183,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-device-info')
     implementation project(':@react-native-community_geolocation')
     implementation project(':react-native-webview')
     implementation fileTree(dir: "libs", include: ["*.jar"])
