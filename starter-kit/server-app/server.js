@@ -29,17 +29,55 @@ app.get('/api/session', (req, res) => {
     .catch(err => handleError(res, err));
 });
 
+function post_process_assistant(result) {
+  return new Promise((resolve, reject) => {
+    let resource
+    if (result.intents.length > 0 ) {
+      result.entities.forEach(item => {
+        if ((item.entity == "supplies") &&  (item.confidence > 0.3)) {
+          resource = item.value
+        }
+      })
+    }
+    if (!resource) {
+      resolve(result)
+    } else {
+      cloudant
+        .find('', resource)
+        .then(data => {
+          let processed_result = result
+          if (data.statusCode == 200) {
+            console.log("adding in " + data.data)
+            processed_result["resources"] = data.data
+            processed_result["generic"][0]["text"] = 'There is' + '\xa0' + resource + " available"
+          } else {
+            processed_result["generic"][0]["text"] = "Sorry, no" + '\xa0' + resource + " is available"           
+          }
+          resolve(processed_result)
+        })
+        .catch(err => reject(err));
+    }
+  })
+}
+
 app.post('/api/message', (req, res) => {
   const text = req.body.text || '';
   const sessionid = req.body.sessionid;
 
   assistant
     .message(text, sessionid)
-    .then(result => res.json(result))
+    .then(result => {
+      console.log(result)
+      post_process_assistant(result)
+        .then(new_result => {
+          res.json(new_result)
+        })
+        .catch(err => handleError(res, err));
+    })
     .catch(err => handleError(res, err));
 });
 
-// GET should support a query string of ?name="tomatoes"
+
 app.get('/api/supplies', (req, res) => {
   const type = req.query.type;
   const name = req.query.name;
