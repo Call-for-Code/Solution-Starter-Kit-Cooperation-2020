@@ -71,13 +71,13 @@ const TabLayout = () => (
 
 const DonateStackLayout = () => (
   <Stack.Navigator>
-    <Stack.Screen name='Donate Supplies' component={DonateSupplies} />
+    <Stack.Screen name='Donate Resources' component={DonateSupplies} />
   </Stack.Navigator>
 );
 
 const SearchStackLayout = () => (
   <Stack.Navigator>
-    <Stack.Screen name='Search Supplies' component={SearchSupplies} options={ItemsStackOptions} />
+    <Stack.Screen name='Search Resources' component={SearchSupplies} options={ItemsStackOptions} />
     <Stack.Screen name='Chat' component={Chat} />
     <Stack.Screen name='Map' component={Map} />
   </Stack.Navigator>
