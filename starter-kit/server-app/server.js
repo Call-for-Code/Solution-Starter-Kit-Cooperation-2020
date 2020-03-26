@@ -42,7 +42,7 @@ function post_process_assistant(result) {
     return Promise.resolve(result)
   } else {
     return cloudant
-      .find('', resource)
+      .find('', resource, '')
       .then(data => {
         let processed_result = result
         if (data.statusCode == 200) {
