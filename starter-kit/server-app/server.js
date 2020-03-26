@@ -45,7 +45,13 @@ app.get('/api/supplies', (req, res) => {
   const name = req.query.name;
   cloudant
     .find(type, name)
-    .then(data => res.send(data))
+    .then(data => {
+      if (data.statusCode != 200) {
+        res.sendStatus(data.statusCode)
+      } else {
+        res.send(data.data)
+      }
+    })
     .catch(err => handleError(res, err));
 });
 
@@ -72,7 +78,13 @@ app.post('/api/supplies', (req, res) => {
 
   cloudant
     .create(type, name, description, quantity, location, contact)
-    .then(data => res.send(data))
+    .then(data => {
+      if (data.statusCode != 201) {
+        res.sendStatus(data.statusCode)
+      } else {
+        res.send(data.data)
+      }
+    })
     .catch(err => handleError(res, err));
 });
 
