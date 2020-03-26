@@ -187,6 +187,14 @@ To run the mobile application (using the Xcode iOS Simulator):
     1. Return to the `mobile-app` directory: `cd ../`.
     1. Launch the app in the simulator: `npm run ios`.
 
+You should be able to navigate to the screens to donate and find resources:
+
+![Donate](/images/0-screen-home.png)
+![Donate](/images/1-screen-donate.png)
+![Donate](/images/4-screen-search.png)
+![Donate](/images/2-screen-map.png)
+![Donate](/images/3-screen-map.png)
+
 ## Resources
 
 - [IBM Cloud](https://www.ibm.com/cloud)
