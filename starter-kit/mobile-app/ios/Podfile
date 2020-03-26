@@ -38,6 +38,8 @@ target 'SolutionStarterKitCooperation2020App' do
 
   pod 'react-native-geolocation', :path => '../node_modules/@react-native-community/geolocation'
 
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
   target 'SolutionStarterKitCooperation2020AppTests' do
     inherit! :search_paths
     # Pods for testing

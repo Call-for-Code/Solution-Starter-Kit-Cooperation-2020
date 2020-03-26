@@ -10,8 +10,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoadingScreen from './src/screens/loading';
 import Home from './src/screens/home';
 import Chat from './src/screens/chat';
-import SearchSupplies from './src/screens/supplies-search';
-import DonateSupplies from './src/screens/supplies-donate';
+import SearchResources from './src/screens/resources-search';
+import DonateResource from './src/screens/resource-donate';
+import EditResource from './src/screens/resource-edit';
+import MyResources from './src/screens/resources-my';
 import Map from './src/screens/map';
 
 import { HomeIcon, DonateIcon, ChatIcon, SearchIcon } from './src/images/svg-icons';
@@ -19,12 +21,23 @@ import { HomeIcon, DonateIcon, ChatIcon, SearchIcon } from './src/images/svg-ico
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const ItemsStackOptions = ({ navigation }) => {
+const ResourcesStackOptions = ({ navigation }) => {
   return ({
     headerRight: () => (
       <Button
         onPress={() => navigation.navigate('Chat')}
         title='Chat '
+      />
+    )
+  });
+};
+
+const DonationsStackOptions = ({ navigation }) => {
+  return ({
+    headerRight: () => (
+      <Button
+        onPress={() => navigation.navigate('Add Donation')}
+        title='Add '
       />
     )
   });
@@ -71,13 +84,15 @@ const TabLayout = () => (
 
 const DonateStackLayout = () => (
   <Stack.Navigator>
-    <Stack.Screen name='Donate Resources' component={DonateSupplies} />
+  <Stack.Screen name='My Donations' component={MyResources} options={DonationsStackOptions} />
+    <Stack.Screen name='Add Donation' component={DonateResource} />
+    <Stack.Screen name='Edit Donation' component={EditResource} />
   </Stack.Navigator>
 );
 
 const SearchStackLayout = () => (
   <Stack.Navigator>
-    <Stack.Screen name='Search Resources' component={SearchSupplies} options={ItemsStackOptions} />
+    <Stack.Screen name='Search Resources' component={SearchResources} options={ResourcesStackOptions} />
     <Stack.Screen name='Chat' component={Chat} />
     <Stack.Screen name='Map' component={Map} />
   </Stack.Navigator>

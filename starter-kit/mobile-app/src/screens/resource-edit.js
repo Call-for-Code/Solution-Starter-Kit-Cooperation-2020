@@ -5,7 +5,7 @@ import PickerSelect from 'react-native-picker-select';
 import { CheckedIcon, UncheckedIcon } from '../images/svg-icons';
 import Geolocation from '@react-native-community/geolocation';
 
-import { add } from '../lib/utils'
+import { add, userID } from '../lib/utils'
 
 const styles = StyleSheet.create({
   container: {
@@ -58,22 +58,22 @@ const styles = StyleSheet.create({
   }
 });
 
-const DonateSupplies = function ({ navigation }) {
-  const clearItem = { type: 'Food', name: '', description: '', location: '', contact: '', quantity: '1' }
+const EditResource = (props) => {
+  const clearItem = { userID: userID(), e: 'Food', name: '', description: '', location: '', contact: '', quantity: '1' }
   const [item, setItem] = React.useState(clearItem);
-  const [useLocation, setUseLocation] = React.useState(true);
+  const [useLocation, setUseLocation] = React.useState(false);
   const [position, setPosition] = React.useState({})
 
   React.useEffect(() => {
-    navigation.addListener('focus', () => {
+    props.navigation.addListener('focus', () => {
+      const item = props.route.params.item;
+      setItem({ 
+        ...item,
+        quantity: item.quantity.toString()
+       });
+
       Geolocation.getCurrentPosition((pos) => {
-        setPosition(pos)
-        if (useLocation) {
-          setItem({
-            ...item,
-            location: `${pos.coords.latitude},${pos.coords.longitude}`
-          })
-        }
+        setPosition(pos);
       });
     })
   }, []);
@@ -88,7 +88,7 @@ const DonateSupplies = function ({ navigation }) {
     setUseLocation(!useLocation);
   };
 
-  const sendItem = () => {
+  const updateItem = () => {
     const payload = {
       ...item,
       quantity: isNaN(item.quantity) ? 1 : parseInt(item.quantity)
@@ -96,8 +96,7 @@ const DonateSupplies = function ({ navigation }) {
 
     add(payload)
       .then(() => {
-        alert('Thank you! You item has been uploaded.');
-        setItem(clearItem);
+        alert('You item has been updated.');
       })
       .catch(err => {
         console.log(err)
@@ -132,7 +131,7 @@ const DonateSupplies = function ({ navigation }) {
             style={styles.textInput}
             value={item.quantity}
             onChangeText={(t) => setItem({ ...item, quantity: t})}
-            onSubmitEditing={sendItem}
+            onSubmitEditing={updateItem}
             returnKeyType='send'
             enablesReturnKeyAutomatically={true}
             placeholder='e.g., 10'
@@ -145,7 +144,7 @@ const DonateSupplies = function ({ navigation }) {
         style={styles.textInput}
         value={item.name}
         onChangeText={(t) => setItem({ ...item, name: t})}
-        onSubmitEditing={sendItem}
+        onSubmitEditing={updateItem}
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='e.g., Tomotatoes'
@@ -156,7 +155,7 @@ const DonateSupplies = function ({ navigation }) {
         style={styles.textInput}
         value={item.contact}
         onChangeText={(t) => setItem({ ...item, contact: t})}
-        onSubmitEditing={sendItem}
+        onSubmitEditing={updateItem}
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='user@domain.com'
@@ -166,7 +165,7 @@ const DonateSupplies = function ({ navigation }) {
         style={styles.textInput}
         value={item.description}
         onChangeText={(t) => setItem({ ...item, description: t})}
-        onSubmitEditing={sendItem}
+        onSubmitEditing={updateItem}
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='e.g., 100 cans of tomatoes'
@@ -188,7 +187,7 @@ const DonateSupplies = function ({ navigation }) {
         style={useLocation ? styles.textInputDisabled : styles.textInput}
         value={item.location}
         onChangeText={(t) => setItem({ ...item, location: t})}
-        onSubmitEditing={sendItem}
+        onSubmitEditing={updateItem}
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='street address, city, state'
@@ -196,12 +195,12 @@ const DonateSupplies = function ({ navigation }) {
       />
       {
         item.type !== '' && item.name.trim() !== '' && item.contact.trim() !== '' &&
-        <TouchableOpacity onPress={sendItem}>
-          <Text style={styles.button}>Add item</Text>
+        <TouchableOpacity onPress={updateItem}>
+          <Text style={styles.button}>Update item</Text>
         </TouchableOpacity>
       }
     </ScrollView>
   );
 };
 
-export default DonateSupplies;
+export default EditResource;

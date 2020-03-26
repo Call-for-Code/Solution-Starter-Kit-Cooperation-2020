@@ -114,7 +114,6 @@ const Chat = function ({ navigation }) {
   
   const Message = (props) => {
     const style = props.fromInput ? styles.myText : styles.waText;
-  console.log('message ==> ', props)
     return (
       <View style={styles.messageContainer}>
         <View style={style}>

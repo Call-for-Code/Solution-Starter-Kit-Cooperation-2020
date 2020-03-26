@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const SearchSupplies = function ({ route, navigation }) {
+const SearchResources = function ({ route, navigation }) {
   const [query, setQuery] = React.useState({ type: 'Food', name: '' });
   const [items, setItems] = React.useState([]);
 
@@ -83,9 +83,7 @@ const SearchSupplies = function ({ route, navigation }) {
       <View>
         <TouchableOpacity style={styles.itemContainer}
           onPress={() => {
-            navigation.navigate('Map', {
-              item: props
-            });
+            navigation.navigate('Map', { item: props });
           }}
         >
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -159,4 +157,4 @@ const SearchSupplies = function ({ route, navigation }) {
   );
 };
 
-export default SearchSupplies;
+export default SearchResources;
