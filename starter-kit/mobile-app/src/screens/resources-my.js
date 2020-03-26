@@ -66,7 +66,7 @@ const MyResources = function ({ navigation }) {
       <View>
         <TouchableOpacity style={styles.itemContainer}
           onPress={() => {
-            // navigation.navigate('Edit Donation', { item: props });
+            navigation.navigate('Edit Donation', { item: props });
             // navigation.navigate('Search', { screen: 'Map', params: { item: props }});
           }}
         >

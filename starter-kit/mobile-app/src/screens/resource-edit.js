@@ -5,7 +5,7 @@ import PickerSelect from 'react-native-picker-select';
 import { CheckedIcon, UncheckedIcon } from '../images/svg-icons';
 import Geolocation from '@react-native-community/geolocation';
 
-import { add, userID } from '../lib/utils'
+import { update, userID } from '../lib/utils'
 
 const styles = StyleSheet.create({
   container: {
@@ -14,8 +14,9 @@ const styles = StyleSheet.create({
   },
   textInput: {
     fontFamily: 'IBMPlexSans-Medium',
+    // backgroundColor: '#fff',
+    backgroundColor: '#eee',
     flex: 1,
-    backgroundColor: '#fff',
     padding: 16,
     elevation: 2,
     marginBottom: 25
@@ -94,7 +95,7 @@ const EditResource = (props) => {
       quantity: isNaN(item.quantity) ? 1 : parseInt(item.quantity)
     };
 
-    add(payload)
+    update(payload)
       .then(() => {
         alert('You item has been updated.');
       })
@@ -109,10 +110,15 @@ const EditResource = (props) => {
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <View style={styles.typeArea}>
           <Text style={styles.label}>Type</Text>
-          <PickerSelect
+          <TextInput
+            style={styles.textInput}
+            value={item.type}
+            editable={false}
+          />
+          {/* <PickerSelect
             style={{ inputIOS: {
               fontFamily: 'IBMPlexSans-Medium',
-              backgroundColor: '#fff',
+              backgroundColor: '#eee',
               padding: 16,
               marginBottom: 25
             } }}
@@ -123,7 +129,7 @@ const EditResource = (props) => {
                 { label: 'Help', value: 'Help' },
                 { label: 'Other', value: 'Other' }
             ]}
-          />
+          /> */}
         </View>
         <View style={styles.quantityArea}>
           <Text style={styles.label}>Quantity</Text>
@@ -136,6 +142,7 @@ const EditResource = (props) => {
             enablesReturnKeyAutomatically={true}
             placeholder='e.g., 10'
             keyboardType='numeric'
+            editable={false}
           />
         </View>
       </View>
@@ -149,6 +156,7 @@ const EditResource = (props) => {
         enablesReturnKeyAutomatically={true}
         placeholder='e.g., Tomotatoes'
         blurOnSubmit={false}
+        editable={false}
       />
       <Text style={styles.label}>Contact</Text>
       <TextInput
@@ -159,6 +167,7 @@ const EditResource = (props) => {
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='user@domain.com'
+        editable={false}
       />
       <Text style={styles.label}>Description</Text>
       <TextInput
@@ -169,9 +178,10 @@ const EditResource = (props) => {
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='e.g., 100 cans of tomatoes'
+        editable={false}
       />
       <Text style={styles.label}>Location</Text>
-      <View style={styles.checkboxContainer}>
+      {/* <View style={styles.checkboxContainer}>
         <TouchableOpacity onPress={toggleUseLocation}>
           {
             (useLocation)
@@ -182,7 +192,7 @@ const EditResource = (props) => {
           }
         </TouchableOpacity>
         <Text> Use my current location </Text>
-      </View>
+      </View> */}
       <TextInput
         style={useLocation ? styles.textInputDisabled : styles.textInput}
         value={item.location}
@@ -191,14 +201,14 @@ const EditResource = (props) => {
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='street address, city, state'
-        editable={!useLocation}
+        editable={false}
       />
-      {
+      {/* {
         item.type !== '' && item.name.trim() !== '' && item.contact.trim() !== '' &&
         <TouchableOpacity onPress={updateItem}>
           <Text style={styles.button}>Update item</Text>
         </TouchableOpacity>
-      }
+      } */}
     </ScrollView>
   );
 };
