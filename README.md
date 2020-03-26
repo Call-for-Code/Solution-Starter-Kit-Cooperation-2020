@@ -204,6 +204,7 @@ With the application running in the simulator, you should be able to navigate th
 - [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
 - [HERE Location Services](https://developer.here.com/documentation)
 - [React Native](https://reactnative.dev/)
+- [IBM Blockchain for Developers](https://developer.ibm.com/technologies/blockchain/)
 
 ## License
 
