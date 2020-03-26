@@ -81,9 +81,17 @@ const Chat = function ({ navigation }) {
   const [messages, setMessages] = React.useState([]);
 
   const MapLink = (props) => {
+    let locationText = ''
+    const loc = (typeof props.location === 'string') ? props.location.split(',') : props.location;
+    if (loc.length !== 2 || isNaN(loc[0]) || isNaN(loc[1])) {
+      locationText = loc;
+    } else {
+      locationText = 'this location';
+    }
+
     return (
       <TouchableOpacity onPress={() => { navigation.navigate('Map', { item: props }); }}>
-        <Text style={styles.chatText}>  {props.quantity} at <Text style={styles.anchorLink}>{props.location}</Text> </Text>
+        <Text style={styles.chatText}>  {props.quantity} at <Text style={styles.anchorLink}>{locationText}</Text> </Text>
       </TouchableOpacity>
     )
   };

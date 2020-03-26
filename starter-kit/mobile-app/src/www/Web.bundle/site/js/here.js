@@ -57,7 +57,7 @@ const formatItemInfo = (item) => {
 `.trim();
 };
 const getCoordinates = (location) => {
-  const coords = (typeof location === 'string') ?location.split(',') : location;
+  const coords = (typeof location === 'string') ? location.split(',') : location;
 
   if (coords.length !== 2 || isNaN(coords[0]) || isNaN(coords[1])) {
     return geocodeSearch(location);
