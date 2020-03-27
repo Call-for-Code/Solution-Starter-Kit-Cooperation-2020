@@ -134,7 +134,7 @@ function find(type, partialName, userID) {
             if (err) {
                 reject(err);
             } else {
-                resolve({ data: JSON.stringify(documents.docs), statusCode: (documents.docs.length > 0) ? 200 : 404 });
+                resolve({ data: JSON.stringify(documents.docs), statusCode: 200});
             }
         });
     });
