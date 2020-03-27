@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, FlatList, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TextInput, FlatList, View, TouchableOpacity, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import PickerSelect from 'react-native-picker-select';
 
@@ -109,8 +109,8 @@ const SearchResources = function ({ route, navigation }) {
         setItems(results);
       })
       .catch(err => {
-        console.log(err)
-        alert('ERROR: Please try again. If the problem persists contact an administrator.');
+        console.log(err);
+        Alert.alert('ERROR', 'Please try again. If the problem persists contact an administrator.', [{text: 'OK'}]);
       });
   };
 

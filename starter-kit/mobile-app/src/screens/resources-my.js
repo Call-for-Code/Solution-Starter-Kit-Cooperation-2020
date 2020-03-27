@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, FlatList, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, FlatList, View, Text, TouchableOpacity, Alert } from 'react-native';
 
 import { search, userID } from '../lib/utils'
 
@@ -54,7 +54,8 @@ const MyResources = function ({ navigation }) {
       search({ userID: userID() })
         .then(setItems)
         .catch(err => {
-          alert('ERROR: Please try again. If the problem persists contact an administrator.');
+          console.log(err);
+          Alert.alert('ERROR', 'Please try again. If the problem persists contact an administrator.', [{text: 'OK'}]);
         });
     })
   }, []);
