@@ -188,7 +188,7 @@ const Chat = function ({ navigation }) {
           .catch(err => {
             console.log(err)
             addMessages([{
-              text: 'ERROR: Please try again. If the poblem persists contact an administrator.'
+              text: 'ERROR: Please try again. If the problem persists contact an administrator.'
             }]);
           });
       });

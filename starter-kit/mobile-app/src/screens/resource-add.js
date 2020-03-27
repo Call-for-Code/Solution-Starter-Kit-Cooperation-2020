@@ -114,7 +114,7 @@ const AddResource = function ({ navigation }) {
       })
       .catch(err => {
         console.log(err)
-        alert('ERROR: Please try again. If the poblem persists contact an administrator.');
+        alert('ERROR: Please try again. If the problem persists contact an administrator.');
       });
   };
   
@@ -209,7 +209,7 @@ const AddResource = function ({ navigation }) {
         item.name.trim() !== '' &&
         item.contact.trim() !== '' &&
         <TouchableOpacity onPress={sendItem}>
-          <Text style={styles.button}>Add item</Text>
+          <Text style={styles.button}>Add</Text>
         </TouchableOpacity>
       }
     </ScrollView>

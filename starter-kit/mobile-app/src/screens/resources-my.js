@@ -54,7 +54,7 @@ const MyResources = function ({ navigation }) {
       search({ userID: userID() })
         .then(setItems)
         .catch(err => {
-          alert('ERROR: Please try again. If the poblem persists contact an administrator.');
+          alert('ERROR: Please try again. If the problem persists contact an administrator.');
         });
     })
   }, []);
