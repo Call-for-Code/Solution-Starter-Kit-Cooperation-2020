@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
   });
 });
 
+/**
+ * Get a session ID
+ *
+ * Returns a session ID that can be used in subsequent message API calls.
+ */
 app.get('/api/session', (req, res) => {
   assistant
     .session()
@@ -42,9 +47,16 @@ app.get('/api/session', (req, res) => {
 function post_process_assistant(result) {
   let resource
   // First we look to see if a) Watson did identify an intent (as opposed to not
-  // understadning at all), and if it did, then b) see if it matched a supplies entity
-  // with resonasble confidence. That's our trigger to do a lookup - and the name
-  // of the resource/supply will be in the value field of the entity return by Watson.
+  // understanding it at all), and if it did, then b) see if it matched a supplies entity
+  // with reasonable confidence. "supplies" is the term our trained Watson skill uses
+  // to identify the target of a question about resources, i.e.:
+  //
+  // "Where can i find face-masks?"
+  //
+  // ....should return with an enitity == "supplies" and entitty.value = "face-masks"
+  //
+  // That's our trigger to do a lookup - using the entitty.value as the name of resource
+  // to to a datbase lookup.
   if (result.intents.length > 0 ) {
     result.entities.forEach(item => {
       if ((item.entity == "supplies") &&  (item.confidence > 0.3)) {
@@ -86,11 +98,9 @@ app.post('/api/message', (req, res) => {
   assistant
     .message(text, sessionid)
     .then(result => {
-      console.log(result)
       return post_process_assistant(result)
     })
     .then(new_result => {
-      console.log(new_result)
       res.json(new_result)
     })
     .catch(err => handleError(res, err));
@@ -107,7 +117,7 @@ app.post('/api/message', (req, res) => {
  *
  * A list of resource objects will be returned (which can be an empty list)
  */
-app.get(['/api/supplies','/api/resource'], (req, res) => {
+app.get('/api/resource', (req, res) => {
   const type = req.query.type;
   const name = req.query.name;
   const userID = req.query.userID;
@@ -138,10 +148,10 @@ app.get(['/api/supplies','/api/resource'], (req, res) => {
  * - description
  * - quantity (which will default to 1 if not included)
  * 
- * The ID and rev of the resource will be return if successful
+ * The ID and rev of the resource will be returned if successful
  */
 let types = ["Food", "Other", "Help"]
-app.post(['/api/supplies','/api/resource'], (req, res) => {
+app.post('/api/resource', (req, res) => {
   if (!req.body.type) {
     return res.status(422).json({ errors: "Type of item must be provided"});
   }
@@ -177,13 +187,13 @@ app.post(['/api/supplies','/api/resource'], (req, res) => {
 /**
  * Update new resource
  *
- * The body may also contain any of the valid attribute with its new value. Attributes
+ * The body may contain any of the valid attributes, with their new values. Attributes
  * not included will be left unmodified.
  * 
- * The ID and rev of the resource will be return if successful
+ * The new rev of the resource will be returned if successful
  */
 
-app.patch(['/api/supplies/:id','/api/resource/:id'], (req, res) => {
+app.patch('/api/resource/:id', (req, res) => {
   const type = req.body.type || '';
   const name = req.body.name || '';
   const description = req.body.description || '';
@@ -207,7 +217,7 @@ app.patch(['/api/supplies/:id','/api/resource/:id'], (req, res) => {
 /**
  * Delete a resource
  */
-app.delete(['/api/supplies/:id','/api/resource/:id'], (req, res) => {
+app.delete('/api/resource/:id', (req, res) => {
   cloudant
     .deleteById(req.params.id)
     .then(statusCode => res.sendStatus(statusCode))
