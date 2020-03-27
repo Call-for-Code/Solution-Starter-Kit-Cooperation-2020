@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
     borderColor: '#D0E2FF',
     borderWidth: 2,
-    backgroundColor: '#f4f4f4',
     padding: 14,
     elevation: 2,
     marginBottom: 25
@@ -119,12 +118,14 @@ const EditResource = (props) => {
   const updateItem = () => {
     const payload = {
       ...item,
-      quantity: isNaN(item.quantity) ? 1 : parseInt(item.quantity)
+      quantity: isNaN(item.quantity) ? 1 : parseInt(item.quantity),
+      id: item.id || item['_id']
     };
 
     update(payload)
       .then(() => {
         Alert.alert('Done', 'Your item has been updated.', [{text: 'OK'}]);
+        props.navigation.goBack();
       })
       .catch(err => {
         console.log(err);
@@ -144,7 +145,12 @@ const EditResource = (props) => {
   }
 
   const deleteItem = () => {
-    remove(item)
+    const payload = {
+      ...item,
+      id: item.id || item['_id']
+    };
+
+    remove(payload)
       .then(() => {
         Alert.alert('Done', 'Your item has been deleted.', [{text: 'OK'}]);
         props.navigation.goBack();
@@ -160,12 +166,7 @@ const EditResource = (props) => {
       <View style={styles.splitView}>
         <View style={styles.typeArea}>
           <Text style={styles.label}>Type</Text>
-          <TextInput
-            style={styles.textInput}
-            value={item.type}
-            editable={false}
-          />
-          {/* <PickerSelect
+          <PickerSelect
             style={{ inputIOS: styles.selector }}
             value={item.type}
             onValueChange={(t) => setItem({ ...item, type: t })}
@@ -174,7 +175,7 @@ const EditResource = (props) => {
                 { label: 'Help', value: 'Help' },
                 { label: 'Other', value: 'Other' }
             ]}
-          /> */}
+          />
         </View>
         <View style={styles.quantityArea}>
           <Text style={styles.label}>Quantity</Text>
@@ -187,7 +188,6 @@ const EditResource = (props) => {
             enablesReturnKeyAutomatically={true}
             placeholder='e.g., 10'
             keyboardType='numeric'
-            editable={false}
           />
         </View>
       </View>
@@ -202,7 +202,6 @@ const EditResource = (props) => {
         enablesReturnKeyAutomatically={true}
         placeholder='e.g., Tomotatoes'
         blurOnSubmit={false}
-        editable={false}
       />
       <Text style={styles.label}>Contact</Text>
       <TextInput
@@ -213,7 +212,6 @@ const EditResource = (props) => {
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='user@domain.com'
-        editable={false}
       />
       <Text style={styles.label}>Description</Text>
       <TextInput
@@ -223,8 +221,7 @@ const EditResource = (props) => {
         onSubmitEditing={updateItem}
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
-        placeholder='e.g., 100 cans of tomatoes'
-        editable={false}
+        placeholder='e.g., small baskets of cherry tomatoes'
       />
       <Text style={styles.label}>Location</Text>
       <View style={styles.checkboxContainer}>
@@ -247,17 +244,16 @@ const EditResource = (props) => {
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
         placeholder='street address, city, state'
-        editable={false}
       />
 
-      {/* {
+      {
         item.type !== '' &&
         item.name.trim() !== '' &&
         item.contact.trim() !== '' &&
         <TouchableOpacity onPress={updateItem}>
           <Text style={styles.updateButton}>Update</Text>
         </TouchableOpacity>
-      } */}
+      }
 
       <TouchableOpacity onPress={confirmDelete}>
         <Text style={styles.deleteButton}>Delete</Text>

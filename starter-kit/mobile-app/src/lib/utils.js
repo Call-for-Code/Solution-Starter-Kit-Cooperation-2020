@@ -52,7 +52,7 @@ export const add = (item) => {
 
 export const update = (item) => {
   return fetch(`${serverUrl}/api/supplies/${item.id}`, {
-    method: 'PUT',
+    method: 'PATCH',
     mode: 'no-cors',
     cache: 'no-cache',
     headers: {

@@ -78,7 +78,7 @@ const MyResources = function ({ navigation }) {
       <FlatList style={styles.flatListView}
         data={items}
         renderItem={({ item }) => <Item {...item} />}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id || item['_id']}
       />
     )
   } else {
