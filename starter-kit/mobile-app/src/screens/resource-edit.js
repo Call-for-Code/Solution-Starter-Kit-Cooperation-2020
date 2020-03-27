@@ -8,33 +8,57 @@ import Geolocation from '@react-native-community/geolocation';
 import { update, userID } from '../lib/utils'
 
 const styles = StyleSheet.create({
-  container: {
+  outerView: {
     flex: 1,
-    padding: 22
+    padding: 22,
+    backgroundColor: '#FFF'
   },
-  textInput: {
-    fontFamily: 'IBMPlexSans-Medium',
-    // backgroundColor: '#fff',
-    backgroundColor: '#eee',
-    flex: 1,
-    padding: 16,
-    elevation: 2,
-    marginBottom: 25
+  splitView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-  textInputDisabled: {
-    fontFamily: 'IBMPlexSans-Medium',
-    backgroundColor: '#eee',
-    color: '#999',
-    flex: 1,
-    padding: 16,
-    elevation: 2,
-    marginBottom: 25
+  typeArea: {
+    width: '40%'
   },
   label: {
     fontFamily: 'IBMPlexSans-Medium',
     color: '#000',
     fontSize: 18,
     paddingBottom: 5
+  },
+  selector: {
+    fontFamily: 'IBMPlexSans-Medium',
+    borderColor: '#D0E2FF',
+    borderWidth: 2,
+    padding: 16,
+    marginBottom: 25
+  },
+  quantityArea: {
+    width: '40%'
+  },
+  textInput: {
+    fontFamily: 'IBMPlexSans-Medium',
+    flex: 1,
+    borderColor: '#D0E2FF',
+    borderWidth: 2,
+    backgroundColor: '#f4f4f4',
+    padding: 16,
+    elevation: 2,
+    marginBottom: 25
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom: 10
+  },
+  textInputDisabled: {
+    fontFamily: 'IBMPlexSans-Medium',
+    backgroundColor: '#f4f4f4',
+    color: '#999',
+    flex: 1,
+    padding: 16,
+    elevation: 2,
+    marginBottom: 25
   },
   button: {
     backgroundColor: '#1062FE',
@@ -45,17 +69,6 @@ const styles = StyleSheet.create({
     padding: 12,
     textAlign:'center',
     marginTop: 15
-  },
-  checkboxContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    marginBottom: 10
-  },
-  typeArea: {
-    width: '40%'
-  },
-  quantityArea: {
-    width: '40%'
   }
 });
 
@@ -106,8 +119,8 @@ const EditResource = (props) => {
   };
   
   return (
-    <ScrollView style={styles.container}>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <ScrollView style={styles.outerView}>
+      <View style={styles.splitView}>
         <View style={styles.typeArea}>
           <Text style={styles.label}>Type</Text>
           <TextInput
@@ -116,12 +129,7 @@ const EditResource = (props) => {
             editable={false}
           />
           {/* <PickerSelect
-            style={{ inputIOS: {
-              fontFamily: 'IBMPlexSans-Medium',
-              backgroundColor: '#eee',
-              padding: 16,
-              marginBottom: 25
-            } }}
+            style={{ inputIOS: styles.selector }}
             value='Food'
             onValueChange={(t) => setItem({ ...item, type: t })}
             items={[
@@ -146,6 +154,7 @@ const EditResource = (props) => {
           />
         </View>
       </View>
+
       <Text style={styles.label}>Name</Text>
       <TextInput
         style={styles.textInput}
@@ -203,8 +212,11 @@ const EditResource = (props) => {
         placeholder='street address, city, state'
         editable={false}
       />
+
       {/* {
-        item.type !== '' && item.name.trim() !== '' && item.contact.trim() !== '' &&
+        item.type !== '' &&
+        item.name.trim() !== '' &&
+        item.contact.trim() !== '' &&
         <TouchableOpacity onPress={updateItem}>
           <Text style={styles.button}>Update item</Text>
         </TouchableOpacity>

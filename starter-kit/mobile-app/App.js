@@ -11,7 +11,7 @@ import LoadingScreen from './src/screens/loading';
 import Home from './src/screens/home';
 import Chat from './src/screens/chat';
 import SearchResources from './src/screens/resources-search';
-import DonateResource from './src/screens/resource-donate';
+import AddResource from './src/screens/resource-add';
 import EditResource from './src/screens/resource-edit';
 import MyResources from './src/screens/resources-my';
 import Map from './src/screens/map';
@@ -85,7 +85,7 @@ const TabLayout = () => (
 const DonateStackLayout = () => (
   <Stack.Navigator>
   <Stack.Screen name='My Donations' component={MyResources} options={DonationsStackOptions} />
-    <Stack.Screen name='Add Donation' component={DonateResource} />
+    <Stack.Screen name='Add Donation' component={AddResource} />
     <Stack.Screen name='Edit Donation' component={EditResource} />
   </Stack.Navigator>
 );

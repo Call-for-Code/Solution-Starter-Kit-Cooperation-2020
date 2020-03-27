@@ -1,39 +1,38 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TextInput, FlatList, View, TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import PickerSelect from 'react-native-picker-select';
 
 import { search } from '../lib/utils';
 
 const styles = StyleSheet.create({
-  outerContainer: {
+  outerView: {
     backgroundColor: '#FFF',
     width: '100%',
     height: '100%'
   },
-  inputContainer: {
+  inputsView: {
     backgroundColor: '#F1F0EE',
     padding: 16,
     padding: 22,
-  },
-  scrollContainer: {
-    width: '100%',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    paddingHorizontal: 16,
-    backgroundColor: '#FFF'
-  },
-  textInput: {
-    fontFamily: 'IBMPlexSans-Medium',
-    backgroundColor: '#fff',
-    padding: 8,
-    marginBottom: 10
   },
   label: {
     fontFamily: 'IBMPlexSans-Medium',
     color: '#000',
     fontSize: 14,
     paddingBottom: 5
+  },
+  selector: {
+    fontFamily: 'IBMPlexSans-Medium',
+    backgroundColor: '#fff',
+    padding: 8,
+    marginBottom: 10
+  },
+  textInput: {
+    fontFamily: 'IBMPlexSans-Medium',
+    backgroundColor: '#fff',
+    padding: 8,
+    marginBottom: 10
   },
   button: {
     backgroundColor: '#1062FE',
@@ -45,7 +44,15 @@ const styles = StyleSheet.create({
     textAlign:'center',
     marginTop: 15
   },
-  itemContainer: {
+  searchResultText: {
+    fontFamily: 'IBMPlexSans-Bold',
+    padding: 10,
+    color: '#1062FE'
+  },
+  flatListView: {
+    backgroundColor: '#FFF'
+  },
+  itemTouchable: {
     flexDirection: 'column',
     padding: 15,
     justifyContent: 'flex-start',
@@ -53,46 +60,41 @@ const styles = StyleSheet.create({
     borderBottomColor: '#dddddd',
     borderBottomWidth: 0.25
   },
+  itemView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
   itemName: {
     fontSize: 24,
     fontFamily: 'IBMPlexSans-Medium',
-  },
-  itemDescription: {
-    fontSize: 14,
-    fontFamily: 'IBMPlexSans-Medium',
-    color: 'gray'
   },
   itemQuantity: {
     fontSize: 14,
     fontFamily: 'IBMPlexSans-Medium',
     color: 'gray'
   },
-  textResult: {
-    fontFamily: 'IBMPlexSans-Bold',
-    paddingTop: 10,
-    color: '#1062FE'
+  itemDescription: {
+    fontSize: 14,
+    fontFamily: 'IBMPlexSans-Medium',
+    color: 'gray'
   }
 });
 
 const SearchResources = function ({ route, navigation }) {
   const [query, setQuery] = React.useState({ type: 'Food', name: '' });
   const [items, setItems] = React.useState([]);
+  const [info, setInfo] = React.useState('');
 
   const Item = (props) => {
     return (
-      <View>
-        <TouchableOpacity style={styles.itemContainer}
-          onPress={() => {
-            navigation.navigate('Map', { item: props });
-          }}
-        >
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={styles.itemName}>{props.name}</Text>
-            <Text style={styles.itemQuantity}> ( {props.quantity} ) </Text>
-          </View>
-          <Text style={styles.itemDescription}>{props.description}</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.itemTouchable}
+          onPress={() => { navigation.navigate('Map', { item: props }); }}>
+        <View style={styles.itemView}>
+          <Text style={styles.itemName}>{props.name}</Text>
+          <Text style={styles.itemQuantity}> ( {props.quantity} ) </Text>
+        </View>
+        <Text style={styles.itemDescription}>{props.description}</Text>
+      </TouchableOpacity>
     );
   };
 
@@ -102,7 +104,10 @@ const SearchResources = function ({ route, navigation }) {
     };
 
     search(payload)
-      .then(setItems)
+      .then((results) => {
+        setInfo(`${results.length} result(s)`)
+        setItems(results);
+      })
       .catch(err => {
         console.log(err)
         alert('ERROR: Please try again. If the poblem persists contact an administrator.');
@@ -110,16 +115,11 @@ const SearchResources = function ({ route, navigation }) {
   };
 
   return (
-    <View style={styles.outerContainer}>
-      <View style={styles.inputContainer}>
+    <View style={styles.outerView}>
+      <View style={styles.inputsView}>
         <Text style={styles.label}>Type</Text>
         <PickerSelect
-          style={{ inputIOS: {
-            fontFamily: 'IBMPlexSans-Medium',
-            backgroundColor: '#fff',
-            padding: 8,
-            marginBottom: 10
-          } }}
+          style={{ inputIOS: styles.selector }}
           value='Food'
           onValueChange={(t) => setQuery({ ...query, type: t })}
           items={[
@@ -139,20 +139,18 @@ const SearchResources = function ({ route, navigation }) {
           placeholder='e.g., Tomotatoes'
           blurOnSubmit={false}
         />
-        {
-          query.type !== '' &&
-          <TouchableOpacity onPress={searchItem}>
-            <Text style={styles.button}>Search</Text>
-          </TouchableOpacity>
-        }
+        <TouchableOpacity onPress={searchItem}>
+          <Text style={styles.button}>Search</Text>
+        </TouchableOpacity>
       </View>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        { items.length > 0 && <Text style={styles.textResult}>Search results</Text> }
-        {items.map((item, i) => {
-          item.key = `${(new Date()).getTime()}-${i}`;
-          return <Item {...item} />
-        })}
-      </ScrollView>
+
+      <Text style={styles.searchResultText}>{info}</Text>
+
+      <FlatList style={styles.flatListView}
+        data={items}
+        renderItem={({ item }) => <Item {...item} />}
+        keyExtractor={item => item.id}
+      />
     </View>
   );
 };
