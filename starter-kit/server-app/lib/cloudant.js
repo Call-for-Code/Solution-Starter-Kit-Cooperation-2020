@@ -71,16 +71,16 @@ const dbCloudantConnect = () => {
 })();
 
 /**
- * Find all objects that match the specified partial name.
+ * Find all resources that match the specified partial name.
  * 
  * @param {String} type
  * @param {String} partialName
  * @param {String} userID
  * 
  * @return {Promise} Promise - 
- *  resolve(): all Item objects that contain the partial
- *          name provided or an empty array if nothing
- *          could be located for that partialName 
+ *  resolve(): all resource objects that contain the partial
+ *          name, type or userID provided, or an empty array if nothing
+ *          could be located that matches. 
  *  reject(): the err object from the underlying data store
  */
 function find(type, partialName, userID) {
@@ -111,7 +111,7 @@ function find(type, partialName, userID) {
 }
 
 /**
- * Delete an object that matches a ID.
+ * Delete a resource that matches a ID.
  * 
  * @param {String} id
  * 
@@ -138,7 +138,7 @@ function deleteById(id, rev) {
 }
 
 /**
- * Create an entry with the specified description
+ * Create a resource with the specified attributes
  * 
  * @param {String} type - the type of the item
  * @param {String} name - the name of the item
@@ -179,9 +179,12 @@ function create(type, name, description, quantity, location, contact, userID) {
 }
 
 /**
- * Create an entry with the specified description
+ * Update a resource with the requested new attribute values
  * 
- * @param {String} id - the ID of the item
+ * @param {String} id - the ID of the item (required)
+ * 
+ * The following parameters can be null
+ * 
  * @param {String} type - the type of the item
  * @param {String} name - the name of the item
  * @param {String} description - the description of the item
