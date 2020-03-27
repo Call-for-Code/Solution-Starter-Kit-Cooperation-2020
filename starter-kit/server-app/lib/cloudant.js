@@ -168,6 +168,33 @@ function findByType(type) {
 }
 
 /**
+ * Delete an object that matches a ID.
+ * 
+ * @param {String} id
+ * 
+ * @return {Promise} Promise - 
+ *  resolve(): Status code as to whether to the object was deleted
+ *  reject(): the err object from the underlying data store
+ */
+function deleteById(id, rev) {
+    return new Promise((resolve, reject) => {
+        db.get(id, (err, document) => {
+            if (err) {
+                resolve(err.statusCode);
+            } else {
+                db.destroy(id, document._rev, (err) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(200);
+                    }
+                })
+            }            
+        })
+    });
+}
+
+/**
  * Create an entry with the specified description
  * 
  * @param {String} type - the type of the item
@@ -217,7 +244,7 @@ const test = () => {
 }
 
 module.exports = {
-    findByName: findByName,
+    deleteById: deleteById,
     create: create,
     find: find
   };

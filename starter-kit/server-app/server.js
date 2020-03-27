@@ -124,6 +124,13 @@ app.post('/api/supplies', (req, res) => {
     .catch(err => handleError(res, err));
 });
 
+app.delete('/api/supplies/:id', (req, res) => {
+  cloudant
+    .deleteById(req.params.id)
+    .then(statusCode => res.sendStatus(statusCode))
+    .catch(err => handleError(res, err));
+});
+
 const server = app.listen(port, () => {
    const host = server.address().address;
    const port = server.address().port;
