@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, KeyboardAvoidingView, ScrollView, View, Text, TextInput, Button, TouchableOpacity, Linking } from 'react-native';
-import Config from 'react-native-config';
+
+import { session, message } from '../lib/utils';
 
 const styles = StyleSheet.create({
   outerContainer: {
@@ -72,12 +73,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const serverUrl = Config.STARTER_KIT_SERVER_URL;
-// const serverUrl = 'http://localhost:3000';
-
 const Chat = function ({ navigation }) {
   const [input, setInput] = React.useState('');
-  const [session, setSession] = React.useState('');
+  const [sessionId, setSessionId] = React.useState('');
   const [messages, setMessages] = React.useState([]);
 
   const MapLink = (props) => {
@@ -128,31 +126,12 @@ const Chat = function ({ navigation }) {
   };
 
   const getSession = () => {
-    return fetch(`${serverUrl}/api/session`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(response.statusText);
-        } else {
-          return response.text();
-        }
-      })
-      .then(sessionId => {
-        setSession(sessionId);
-        return sessionId;
+    return session()
+      .then(sid => {
+        setSessionId(sid);
+        return sid;
       });
   };
-
-  const fetchMessage = (payload) => {
-    return fetch(`${serverUrl}/api/message`, {
-      method: 'POST',
-      mode: 'no-cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-  }
 
   const handleMessageResponse = (response) => {
     if (!response.ok) {
@@ -167,21 +146,21 @@ const Chat = function ({ navigation }) {
   const sendMessage = () => {
     const payload = {
       text: input.trim(),
-      sessionid: session
+      sessionid: sessionId
     };
 
     addMessages([{ text: input }], true);
 
     setInput('');
 
-    fetchMessage(payload)
+    message(payload)
       .then(handleMessageResponse)
       .catch(e => {
         getSession()
-          .then((sessionId) => {
-            return fetchMessage({
+          .then((sid) => {
+            return message({
               text: payload.text,
-              sessionid: sessionId
+              sessionid: sid
             });
           })
           .then(handleMessageResponse)
@@ -226,9 +205,9 @@ const Chat = function ({ navigation }) {
           android: 0
         })} >
         <ScrollView contentContainerStyle={styles.scrollContainer}>
-          {messages.map((message, i) => {
-            message.key = `msg-${(new Date()).getTime()}-${i}`;
-            return <Message {...message} />
+          {messages.map((msg, i) => {
+            msg.key = `msg-${(new Date()).getTime()}-${i}`;
+            return <Message {...msg} />
           })}
         </ScrollView>
         <View style={styles.inputContainer}>

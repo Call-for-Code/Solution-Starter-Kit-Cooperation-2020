@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, FlatList, View, TouchableOpacity, Alert } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
 import PickerSelect from 'react-native-picker-select';
 
 import { search } from '../lib/utils';

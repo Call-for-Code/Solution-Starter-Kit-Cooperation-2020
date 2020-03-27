@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 
-import { View, Button, Image, StyleSheet } from 'react-native';
+import { Button } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -16,7 +16,7 @@ import EditResource from './src/screens/resource-edit';
 import MyResources from './src/screens/resources-my';
 import Map from './src/screens/map';
 
-import { HomeIcon, DonateIcon, ChatIcon, SearchIcon } from './src/images/svg-icons';
+import { HomeIcon, DonateIcon, SearchIcon } from './src/images/svg-icons';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();

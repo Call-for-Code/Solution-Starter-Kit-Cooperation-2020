@@ -88,3 +88,26 @@ export const remove = (item) => {
     }
   });
 };
+
+export const session = () => {
+  return fetch(`${serverUrl}/api/session`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      } else {
+        return response.text();
+      }
+    });
+};
+
+export const message = (payload) => {
+  return fetch(`${serverUrl}/api/message`, {
+    method: 'POST',
+    mode: 'no-cors',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+};
