@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: 'IBMPlexSans-Medium',
     color: '#000',
-    fontSize: 18,
+    fontSize: 14,
     paddingBottom: 5
   },
   selector: {
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     borderColor: '#D0E2FF',
     borderWidth: 2,
     backgroundColor: '#f4f4f4',
-    padding: 16,
+    padding: 14,
     elevation: 2,
     marginBottom: 25
   },
@@ -50,6 +50,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     marginBottom: 10
+  },
+  checkboxLabel: {
+    fontFamily: 'IBMPlexSans-Light',
+    fontSize: 13
   },
   textInputDisabled: {
     fontFamily: 'IBMPlexSans-Medium',
@@ -233,7 +237,7 @@ const EditResource = (props) => {
               <UncheckedIcon height='18' width='18'/>
           }
         </TouchableOpacity>
-        <Text> Use my current location </Text>
+        <Text style={styles.checkboxLabel}> Use my current location </Text>
       </View>
       <TextInput
         style={useLocation ? styles.textInputDisabled : styles.textInput}

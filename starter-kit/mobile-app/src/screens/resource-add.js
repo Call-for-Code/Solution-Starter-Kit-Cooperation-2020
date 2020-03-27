@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: 'IBMPlexSans-Medium',
     color: '#000',
-    fontSize: 18,
+    fontSize: 14,
     paddingBottom: 5
   },
   selector: {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderColor: '#D0E2FF',
     borderWidth: 2,
-    padding: 16,
+    padding: 14,
     elevation: 2,
     marginBottom: 25
   },
@@ -49,6 +49,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     marginBottom: 10
+  },
+  checkboxLabel: {
+    fontFamily: 'IBMPlexSans-Light',
+    fontSize: 13
   },
   textInputDisabled: {
     fontFamily: 'IBMPlexSans-Medium',
@@ -110,7 +114,7 @@ const AddResource = function ({ navigation }) {
     add(payload)
       .then(() => {
         Alert.alert('Thank you!', 'Your item has been added.', [{text: 'OK'}]);
-        setItem(clearItem);
+        setItem({ ...clearItem, location: payload.location });
       })
       .catch(err => {
         console.log(err);
@@ -191,7 +195,7 @@ const AddResource = function ({ navigation }) {
               <UncheckedIcon height='18' width='18'/>
           }
         </TouchableOpacity>
-        <Text> Use my current location </Text>
+        <Text style={styles.checkboxLabel}> Use my current location </Text>
       </View>
       <TextInput
         style={useLocation ? styles.textInputDisabled : styles.textInput}

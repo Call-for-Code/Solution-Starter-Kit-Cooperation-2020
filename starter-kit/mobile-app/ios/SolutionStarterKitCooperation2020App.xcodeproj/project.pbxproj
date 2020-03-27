@@ -22,9 +22,8 @@
 		6E8CC6D6C7804333DFE8BDDF /* libPods-SolutionStarterKitCooperation2020AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0EACA7FCEC26D3912818C6 /* libPods-SolutionStarterKitCooperation2020AppTests.a */; };
 		76A45FB26EB14F76A9C87B67 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35180C132AEA4BB482084281 /* IBMPlexSans-Medium.ttf */; };
 		914382AC963EC72D8FB01339 /* libPods-SolutionStarterKitCooperation2020App-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BE188D872B2C503E529135 /* libPods-SolutionStarterKitCooperation2020App-tvOS.a */; };
-		A46B9372CD954CBA9A5B05BC /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57DBEBC691D4F76BC65C6C6 /* IBMPlexMono-Medium.ttf */; };
-		D458BDFC86324769BD0887B8 /* IBMPlexMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90D76D9FEA424F6CB85A492F /* IBMPlexMono-Bold.ttf */; };
 		FE2ED2F5239F7550D8F1AF02 /* libPods-SolutionStarterKitCooperation2020App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DDE067226BFFA99A2E6768 /* libPods-SolutionStarterKitCooperation2020App.a */; };
+		4BC542CB5F2B4A31A2630548 /* IBMPlexSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2E79746D6344889B9CB8200 /* IBMPlexSans-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,14 +68,13 @@
 		70F4F4F88629B2CDA08BD45F /* Pods-SolutionStarterKitCooperation2020App-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App-tvOSTests/Pods-SolutionStarterKitCooperation2020App-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7CA756A30F2D95EFAD4CA087 /* Pods-SolutionStarterKitCooperation2020AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020AppTests.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020AppTests/Pods-SolutionStarterKitCooperation2020AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		82BE188D872B2C503E529135 /* libPods-SolutionStarterKitCooperation2020App-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitCooperation2020App-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		90D76D9FEA424F6CB85A492F /* IBMPlexMono-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexMono-Bold.ttf"; path = "../src/fonts/IBMPlex/IBMPlexMono-Bold.ttf"; sourceTree = "<group>"; };
-		B57DBEBC691D4F76BC65C6C6 /* IBMPlexMono-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexMono-Medium.ttf"; path = "../src/fonts/IBMPlex/IBMPlexMono-Medium.ttf"; sourceTree = "<group>"; };
 		BA9D31708EEBE5ABA7A50732 /* Pods-SolutionStarterKitCooperation2020App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App/Pods-SolutionStarterKitCooperation2020App.release.xcconfig"; sourceTree = "<group>"; };
 		C62E4843910E5DB3E758A37E /* Pods-SolutionStarterKitCooperation2020App-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App-tvOS/Pods-SolutionStarterKitCooperation2020App-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		C833CFE227BF6177EFCF21CB /* Pods-SolutionStarterKitCooperation2020App-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolutionStarterKitCooperation2020App-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SolutionStarterKitCooperation2020App-tvOS/Pods-SolutionStarterKitCooperation2020App-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DC0EACA7FCEC26D3912818C6 /* libPods-SolutionStarterKitCooperation2020AppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SolutionStarterKitCooperation2020AppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		E2E79746D6344889B9CB8200 /* IBMPlexSans-Light.ttf */ = {isa = PBXFileReference; name = "IBMPlexSans-Light.ttf"; path = "../src/fonts/IBMPlex/IBMPlexSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,10 +176,9 @@
 		5A665369896C4DEEBE3D9FD3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				90D76D9FEA424F6CB85A492F /* IBMPlexMono-Bold.ttf */,
-				B57DBEBC691D4F76BC65C6C6 /* IBMPlexMono-Medium.ttf */,
 				62563C8814DD4A9DBC844369 /* IBMPlexSans-Bold.ttf */,
 				35180C132AEA4BB482084281 /* IBMPlexSans-Medium.ttf */,
+				E2E79746D6344889B9CB8200 /* IBMPlexSans-Light.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -362,10 +359,9 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				152DD0D4241F0CD20039AF48 /* Web.bundle in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				D458BDFC86324769BD0887B8 /* IBMPlexMono-Bold.ttf in Resources */,
-				A46B9372CD954CBA9A5B05BC /* IBMPlexMono-Medium.ttf in Resources */,
 				3E58C862A227432692D9AAC8 /* IBMPlexSans-Bold.ttf in Resources */,
 				76A45FB26EB14F76A9C87B67 /* IBMPlexSans-Medium.ttf in Resources */,
+				4BC542CB5F2B4A31A2630548 /* IBMPlexSans-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
