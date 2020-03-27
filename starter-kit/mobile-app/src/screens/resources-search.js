@@ -120,7 +120,7 @@ const SearchResources = function ({ route, navigation }) {
         <Text style={styles.label}>Type</Text>
         <PickerSelect
           style={{ inputIOS: styles.selector }}
-          value='Food'
+          value={query.type}
           onValueChange={(t) => setQuery({ ...query, type: t })}
           items={[
               { label: 'Food', value: 'Food' },

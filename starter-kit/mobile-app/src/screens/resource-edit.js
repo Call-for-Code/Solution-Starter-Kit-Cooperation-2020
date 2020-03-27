@@ -163,7 +163,7 @@ const EditResource = (props) => {
           />
           {/* <PickerSelect
             style={{ inputIOS: styles.selector }}
-            value='Food'
+            value={item.type}
             onValueChange={(t) => setItem({ ...item, type: t })}
             items={[
                 { label: 'Food', value: 'Food' },
