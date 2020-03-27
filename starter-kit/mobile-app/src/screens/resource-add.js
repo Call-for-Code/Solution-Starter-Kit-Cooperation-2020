@@ -125,7 +125,7 @@ const AddResource = function ({ navigation }) {
           <Text style={styles.label}>Type</Text>
           <PickerSelect
             style={{ inputIOS: styles.selector }}
-            value='Food'
+            value={item.type}
             onValueChange={(t) => setItem({ ...item, type: t })}
             items={[
                 { label: 'Food', value: 'Food' },
@@ -178,7 +178,7 @@ const AddResource = function ({ navigation }) {
         onSubmitEditing={sendItem}
         returnKeyType='send'
         enablesReturnKeyAutomatically={true}
-        placeholder='e.g., 100 cans of tomatoes'
+        placeholder='e.g., cans of tomatoes'
       />
       <Text style={styles.label}>Location</Text>
       <View style={styles.checkboxContainer}>
