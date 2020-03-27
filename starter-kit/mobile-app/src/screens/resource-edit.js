@@ -5,7 +5,7 @@ import PickerSelect from 'react-native-picker-select';
 import { CheckedIcon, UncheckedIcon } from '../images/svg-icons';
 import Geolocation from '@react-native-community/geolocation';
 
-import { update, userID } from '../lib/utils'
+import { update, remove, userID } from '../lib/utils'
 
 const styles = StyleSheet.create({
   outerView: {
@@ -60,8 +60,18 @@ const styles = StyleSheet.create({
     elevation: 2,
     marginBottom: 25
   },
-  button: {
+  updateButton: {
     backgroundColor: '#1062FE',
+    color: '#FFFFFF',
+    fontFamily: 'IBMPlexSans-Medium',
+    fontSize: 16,
+    overflow: 'hidden',
+    padding: 12,
+    textAlign:'center',
+    marginTop: 15
+  },
+  deleteButton: {
+    backgroundColor: '#da1e28',
     color: '#FFFFFF',
     fontFamily: 'IBMPlexSans-Medium',
     fontSize: 16,
@@ -110,11 +120,28 @@ const EditResource = (props) => {
 
     update(payload)
       .then(() => {
-        alert('You item has been updated.');
+        alert('Your item has been updated.');
       })
       .catch(err => {
         console.log(err)
-        alert('ERROR: Please try again. If the poblem persists contact an administrator.');
+        alert('ERROR: Please try again. If the problem persists contact an administrator.');
+      });
+  };
+
+  const deleteItem = () => {
+    const payload = {
+      ...item,
+      quantity: isNaN(item.quantity) ? 1 : parseInt(item.quantity)
+    };
+
+    remove(payload)
+      .then(() => {
+        alert('Your item has been deleted.');
+        props.navigation.goBack();
+      })
+      .catch(err => {
+        console.log(err)
+        alert('ERROR: Please try again. If the problem persists contact an administrator.');
       });
   };
   
@@ -190,7 +217,7 @@ const EditResource = (props) => {
         editable={false}
       />
       <Text style={styles.label}>Location</Text>
-      {/* <View style={styles.checkboxContainer}>
+      <View style={styles.checkboxContainer}>
         <TouchableOpacity onPress={toggleUseLocation}>
           {
             (useLocation)
@@ -201,7 +228,7 @@ const EditResource = (props) => {
           }
         </TouchableOpacity>
         <Text> Use my current location </Text>
-      </View> */}
+      </View>
       <TextInput
         style={useLocation ? styles.textInputDisabled : styles.textInput}
         value={item.location}
@@ -218,9 +245,13 @@ const EditResource = (props) => {
         item.name.trim() !== '' &&
         item.contact.trim() !== '' &&
         <TouchableOpacity onPress={updateItem}>
-          <Text style={styles.button}>Update item</Text>
+          <Text style={styles.updateButton}>Update</Text>
         </TouchableOpacity>
-      } */}
+      }
+
+      <TouchableOpacity onPress={deleteItem}>
+        <Text style={styles.deleteButton}>Delete</Text>
+      </TouchableOpacity> */}
     </ScrollView>
   );
 };

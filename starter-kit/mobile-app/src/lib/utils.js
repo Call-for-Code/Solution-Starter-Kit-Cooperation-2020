@@ -51,7 +51,7 @@ export const add = (item) => {
 };
 
 export const update = (item) => {
-  return fetch(`${serverUrl}/api/supplies`, {
+  return fetch(`${serverUrl}/api/supplies/${item.id}`, {
     method: 'PUT',
     mode: 'no-cors',
     cache: 'no-cache',
@@ -66,4 +66,21 @@ export const update = (item) => {
       return response.json();
     }
   });
-}
+};
+
+export const remove = (item) => {
+  return fetch(`${serverUrl}/api/supplies/${item.id}`, {
+    method: 'DELETE',
+    mode: 'no-cors',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error(response.statusText || response.message || response.status);
+    } else {
+      return response.json();
+    }
+  });
+};
