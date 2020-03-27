@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import PickerSelect from 'react-native-picker-select';
 import { CheckedIcon, UncheckedIcon } from '../images/svg-icons';
@@ -109,12 +109,12 @@ const AddResource = function ({ navigation }) {
 
     add(payload)
       .then(() => {
-        alert('Thank you! Your item has been uploaded.');
+        Alert.alert('Thank you!', 'Your item has been added.', [{text: 'OK'}]);
         setItem(clearItem);
       })
       .catch(err => {
-        console.log(err)
-        alert('ERROR: Please try again. If the problem persists contact an administrator.');
+        console.log(err);
+        Alert.alert('ERROR', 'Please try again. If the problem persists contact an administrator.', [{text: 'OK'}]);
       });
   };
   

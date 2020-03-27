@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Alert } from 'react-native';
 import { WebView } from 'react-native-webview';
 import Config from 'react-native-config';
 import Geolocation from '@react-native-community/geolocation';
@@ -35,7 +35,7 @@ const Map = (props) => {
         })
         .catch(err => {
           console.log(err)
-          alert('ERROR: Please try again. If the problem persists contact an administrator.');
+          Alert.alert('ERROR', 'Please try again. If the problem persists contact an administrator.', [{text: 'OK'}]);
         });
     }
   };

@@ -61,9 +61,11 @@ export const update = (item) => {
     body: JSON.stringify(item)
   }).then((response) => {
     if (!response.ok) {
-      throw new Error(response.statusText || response.message || response.status);
-    } else {
-      return response.json();
+      if (response.status === 404) {
+        throw new Error('Item not found');
+      } else {
+        throw new Error('Please try again. If the problem persists contact an administrator.');
+      }
     }
   });
 };

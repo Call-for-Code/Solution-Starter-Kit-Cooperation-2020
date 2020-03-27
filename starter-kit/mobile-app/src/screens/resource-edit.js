@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import PickerSelect from 'react-native-picker-select';
 import { CheckedIcon, UncheckedIcon } from '../images/svg-icons';
@@ -120,23 +120,34 @@ const EditResource = (props) => {
 
     update(payload)
       .then(() => {
-        alert('Your item has been updated.');
+        Alert.alert('Done', 'Your item has been updated.', [{text: 'OK'}]);
       })
       .catch(err => {
-        console.log(err)
-        alert('ERROR: Please try again. If the problem persists contact an administrator.');
+        console.log(err);
+        Alert.alert('ERROR', err.message, [{text: 'OK'}]);
       });
   };
+
+  const confirmDelete = () => {
+    Alert.alert(
+      'Delete',
+      'Are you sure you want to delete this item?',
+      [
+        { text: 'Cancel' },
+        { text: 'Delete', onPress: () => deleteItem() }
+      ]
+    )
+  }
 
   const deleteItem = () => {
     remove(item)
       .then(() => {
-        alert('Your item has been deleted.');
+        Alert.alert('Done', 'Your item has been deleted.', [{text: 'OK'}]);
         props.navigation.goBack();
       })
       .catch(err => {
-        console.log(err)
-        alert(`ERROR: ${err.message}`);
+        console.log(err);
+        Alert.alert('ERROR', err.message, [{text: 'OK'}]);
       });
   };
   
@@ -244,7 +255,7 @@ const EditResource = (props) => {
         </TouchableOpacity>
       } */}
 
-      <TouchableOpacity onPress={deleteItem}>
+      <TouchableOpacity onPress={confirmDelete}>
         <Text style={styles.deleteButton}>Delete</Text>
       </TouchableOpacity>
     </ScrollView>
