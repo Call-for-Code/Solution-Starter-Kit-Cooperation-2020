@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity, Button, Linking } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({
   center: {
@@ -7,11 +8,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFFFFF'
+  },
+  scroll: {
     paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 10,
-    paddingTop: 50
+    paddingBottom: 25,
+    paddingTop: 75
   },
   image: {
     alignSelf: 'flex-start',
@@ -26,23 +29,25 @@ const styles = StyleSheet.create({
     paddingBottom: 15
   },
   subtitle: {
-    fontFamily: 'IBMPlexSans-Medium',
+    fontFamily: 'IBMPlexSans-Light',
     fontSize: 24,
     color: '#323232',
     textDecorationColor: '#D0E2FF',
     textDecorationLine: 'underline',
     paddingBottom: 5,
-    paddingTop: 30
+    paddingTop: 20
   },
   content: {
-    fontFamily: 'IBMPlexSans-Medium',
+    fontFamily: 'IBMPlexSans-Light',
     color: '#323232',
-    marginTop: 8,
-    marginBottom: 8
+    marginTop: 10,
+    marginBottom: 10,
+    fontSize: 16
   },
   buttonGroup: {
     flex: 1,
-    paddingTop: 15
+    paddingTop: 15,
+    width: 175
   },
   button: {
     backgroundColor: '#1062FE',
@@ -58,33 +63,38 @@ const styles = StyleSheet.create({
 
 const Home = () => (
   <View style={styles.center}>
-    <Image
-      style={styles.image}
-      source={require('../images/2020-cfc-512.png')}
-    />
-    <Text style={styles.subtitle}>Starter Kit</Text>
-    <Text style={styles.title}>Community Collaboration</Text>
-    <Text style={styles.content}>
-      In times of crisis, such as COVID-19, while federal and local government
-      may be rolling out broad programs, cooperation at the local level is
-      usually the most effectibe way of getting help to where it is most needed.
-      While traditional social media is one way of communicating within a
-      community, this is (by its very design) not locally focused, and often not
-      sufficently structured to enable rapid discover of help needed.
-    </Text>
-    <Text style={styles.content}>
-      This solution starter kit builds out a community cooperation application
-      that could address the local needs in aspects of food, equipment and
-      resources scarcity.
-    </Text>
-    <View style={styles.buttonGroup}>
-      <TouchableOpacity onPress={() => Linking.openURL('https://developer.ibm.com/callforcode')}>
-        <Text style={styles.button}>Learn more</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Call-for-Code/Solution-Starter-Kit-Cooperation-2020')}>
-        <Text style={styles.button}>Get the code</Text>
-      </TouchableOpacity>
-    </View>
+    <ScrollView style={styles.scroll}>
+      <Image
+        style={styles.image}
+        source={require('../images/2020-cfc-512.png')}
+      />
+      <Text style={styles.subtitle}>Starter Kit</Text>
+      <Text style={styles.title}>Community Collaboration</Text>
+      <Text style={styles.content}>
+        There is a growing interest in enabling communities to cooperate among
+        themselves to solve problems in times of crisis, whether it be to
+        advertise where supplies are held, offer assistance for collections, or
+        other local services like volunteer deliveries.
+      </Text>
+      <Text style={styles.content}>
+        What is needed is a solution that empowers communities to easily connect
+        and provide this information to each other.
+      </Text>
+      <Text style={styles.content}>
+        This solution starter kit provides a mobile application, along with
+        server-side components, that serves as the basis for developers to build
+        out a community cooperation application that addresses local needs for
+        food, equipment, and resources.
+      </Text>
+      <View style={styles.buttonGroup}>
+        <TouchableOpacity onPress={() => Linking.openURL('https://developer.ibm.com/callforcode')}>
+          <Text style={styles.button}>Learn more</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Call-for-Code/Solution-Starter-Kit-Cooperation-2020')}>
+          <Text style={styles.button}>Get the code</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   </View>
 );
 
