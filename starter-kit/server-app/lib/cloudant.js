@@ -73,36 +73,6 @@ const dbCloudantConnect = () => {
 /**
  * Find all objects that match the specified partial name.
  * 
- * @param {String} partialName
- * 
- * @return {Promise} Promise - 
- *  resolve(): all Item objects that contain the partial
- *          name provided or an empty array if nothing
- *          could be located for that partialName 
- *  reject(): the err object from the underlying data store
- */
-function findByName(partialName) {
-    return new Promise((resolve, reject) => {
-        let search = `.*${partialName}.*`;
-        db.find({ 
-            'selector': { 
-                'name': {
-                    '$regex': search 
-                }
-            } 
-        }, (err, documents) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ data: JSON.stringify(documents.docs), statusCode: (documents.docs.length > 0) ? 200 : 404 });
-            }
-        });
-    });
-}
-
-/**
- * Find all objects that match the specified partial name.
- * 
  * @param {String} type
  * @param {String} partialName
  * @param {String} userID
@@ -127,7 +97,7 @@ function find(type, partialName, userID) {
         if (userID) {
             selector['userID'] = userID;
         }
-        console.log(selector)
+        
         db.find({ 
             'selector': selector
         }, (err, documents) => {
@@ -135,33 +105,6 @@ function find(type, partialName, userID) {
                 reject(err);
             } else {
                 resolve({ data: JSON.stringify(documents.docs), statusCode: 200});
-            }
-        });
-    });
-}
-
-/**
- * Find all objects that match a type.
- * 
- * @param {String} type
- * 
- * @return {Promise} Promise - 
- *  resolve(): all Item objects that contain the type
- *          provided or an empty array if nothing
- *          could be located for that type 
- *  reject(): the err object from the underlying data store
- */
-function findByType(type) {
-    return new Promise((resolve, reject) => {
-        db.find({ 
-            'selector': { 
-                'type': type
-            } 
-        }, (err, documents) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ data: JSON.stringify(documents.docs), statusCode: (documents.docs.length > 0) ? 200 : 404 });
             }
         });
     });
@@ -268,8 +211,6 @@ function update(id, type, name, description, quantity, location, contact, userID
                 if (contact) {item["contact"] = contact} else {item["contact"] = document.contact};
                 if (userID) {item["userID"] = userID} else {item["userID"] = document.userID};
  
-                console.log("attempting update")
-                console.log(item)
                 db.insert(item, (err, result) => {
                     if (err) {
                         console.log('Error occurred: ' + err.message, 'create()');
@@ -281,14 +222,6 @@ function update(id, type, name, description, quantity, location, contact, userID
             }            
         })
     });
-}
-
-const dbList= () => {
-    return 
-}
-
-const test = () => {
-    return "hello"
 }
 
 module.exports = {
