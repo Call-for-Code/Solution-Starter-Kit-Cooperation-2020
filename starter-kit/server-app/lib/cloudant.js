@@ -226,12 +226,60 @@ function create(type, name, description, quantity, location, contact, userID) {
         };
         db.insert(item, (err, result) => {
             if (err) {
-                logger.error('Error occurred: ' + err.message, 'create()');
+                console.log('Error occurred: ' + err.message, 'create()');
                 reject(err);
             } else {
                 resolve({ data: { createdId: result.id, createdRevId: result.rev }, statusCode: 201 });
             }
         });
+    });
+}
+
+/**
+ * Create an entry with the specified description
+ * 
+ * @param {String} id - the ID of the item
+ * @param {String} type - the type of the item
+ * @param {String} name - the name of the item
+ * @param {String} description - the description of the item
+ * @param {String} quantity - the quantity available 
+ * @param {String} location - the GPS location of the item
+ * @param {String} contact - the contact info 
+ * @param {String} userID - the ID of the user 
+ * 
+ * @return {Promise} - promise that will be resolved (or rejected)
+ * when the call to the DB completes
+ */
+function update(id, type, name, description, quantity, location, contact, userID) {
+    return new Promise((resolve, reject) => {
+        db.get(id, (err, document) => {
+            if (err) {
+                resolve({statusCode: err.statusCode});
+            } else {
+                let item = {
+                    _id: document._id,
+                    _rev: document._rev,            // Specifiying the _rev turns this into an update
+                }
+                if (type) {item["type"] = type} else {item["type"] = document.type};
+                if (name) {item["name"] = name} else {item["name"] = document.name};
+                if (description) {item["description"] = description} else {item["description"] = document.description};
+                if (quantity) {item["quantity"] = quantity} else {item["quantity"] = document.quantity};
+                if (location) {item["location"] = location} else {item["location"] = document.location};
+                if (contact) {item["contact"] = contact} else {item["contact"] = document.contact};
+                if (userID) {item["userID"] = userID} else {item["userID"] = document.userID};
+ 
+                console.log("attempting update")
+                console.log(item)
+                db.insert(item, (err, result) => {
+                    if (err) {
+                        console.log('Error occurred: ' + err.message, 'create()');
+                        reject(err);
+                    } else {
+                        resolve({ data: { updatedRevId: result.rev }, statusCode: 200 });
+                    }
+                });
+            }            
+        })
     });
 }
 
@@ -246,5 +294,6 @@ const test = () => {
 module.exports = {
     deleteById: deleteById,
     create: create,
+    update: update,
     find: find
   };

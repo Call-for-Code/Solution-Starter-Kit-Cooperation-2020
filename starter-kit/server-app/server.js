@@ -124,6 +124,27 @@ app.post('/api/supplies', (req, res) => {
     .catch(err => handleError(res, err));
 });
 
+app.patch('/api/supplies/:id', (req, res) => {
+  const type = req.body.type || '';
+  const name = req.body.name || '';
+  const description = req.body.description || '';
+  const userID = req.body.userID || '';
+  const quantity = req.body.quantity || '';
+  const location = req.body.location || '';
+  const contact = req.body.contact || '';
+
+  cloudant
+    .update(req.params.id, type, name, description, quantity, location, contact, userID)
+    .then(data => {
+      if (data.statusCode != 200) {
+        res.sendStatus(data.statusCode)
+      } else {
+        res.send(data.data)
+      }
+    })
+    .catch(err => handleError(res, err));
+});
+
 app.delete('/api/supplies/:id', (req, res) => {
   cloudant
     .deleteById(req.params.id)
