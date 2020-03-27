@@ -16,7 +16,7 @@ export const search = (query) => {
   const name = query.name ? `name=${query.name}` : ''
   const userID = query.userID ? `userID=${query.userID}` : ''
 
-  return fetch(`${serverUrl}/api/supplies?${name}&${type}&${userID}`, {
+  return fetch(`${serverUrl}/api/resource?${name}&${type}&${userID}`, {
     method: 'GET',
     mode: 'no-cors',
     cache: 'no-cache',
@@ -33,7 +33,7 @@ export const search = (query) => {
 };
 
 export const add = (item) => {
-  return fetch(`${serverUrl}/api/supplies`, {
+  return fetch(`${serverUrl}/api/resource`, {
     method: 'POST',
     mode: 'no-cors',
     cache: 'no-cache',
@@ -51,7 +51,7 @@ export const add = (item) => {
 };
 
 export const update = (item) => {
-  return fetch(`${serverUrl}/api/supplies/${item.id}`, {
+  return fetch(`${serverUrl}/api/resource/${item.id}`, {
     method: 'PATCH',
     mode: 'no-cors',
     cache: 'no-cache',
@@ -71,7 +71,7 @@ export const update = (item) => {
 };
 
 export const remove = (item) => {
-  return fetch(`${serverUrl}/api/supplies/${item.id}`, {
+  return fetch(`${serverUrl}/api/resource/${item.id}`, {
     method: 'DELETE',
     mode: 'no-cors',
     cache: 'no-cache',
