@@ -129,19 +129,14 @@ const EditResource = (props) => {
   };
 
   const deleteItem = () => {
-    const payload = {
-      ...item,
-      quantity: isNaN(item.quantity) ? 1 : parseInt(item.quantity)
-    };
-
-    remove(payload)
+    remove(item)
       .then(() => {
         alert('Your item has been deleted.');
         props.navigation.goBack();
       })
       .catch(err => {
         console.log(err)
-        alert('ERROR: Please try again. If the problem persists contact an administrator.');
+        alert(`ERROR: ${err.message}`);
       });
   };
   
@@ -247,11 +242,11 @@ const EditResource = (props) => {
         <TouchableOpacity onPress={updateItem}>
           <Text style={styles.updateButton}>Update</Text>
         </TouchableOpacity>
-      }
+      } */}
 
       <TouchableOpacity onPress={deleteItem}>
         <Text style={styles.deleteButton}>Delete</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
     </ScrollView>
   );
 };
