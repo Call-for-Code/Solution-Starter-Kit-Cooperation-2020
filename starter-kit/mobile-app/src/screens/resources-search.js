@@ -149,7 +149,7 @@ const SearchResources = function ({ route, navigation }) {
       <FlatList style={styles.flatListView}
         data={items}
         renderItem={({ item }) => <Item {...item} />}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id || item['_id']}
       />
     </View>
   );
