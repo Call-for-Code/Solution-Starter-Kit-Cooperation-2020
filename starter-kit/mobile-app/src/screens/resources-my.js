@@ -1,29 +1,23 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { StyleSheet, FlatList, View, Text, TouchableOpacity } from 'react-native';
 
 import { search, userID } from '../lib/utils'
 
 const styles = StyleSheet.create({
-  outerContainer: {
-    backgroundColor: '#FFF',
-    width: '100%',
-    height: '100%'
-  },
-  scrollContainer: {
-    width: '100%',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    paddingHorizontal: 16,
+  flatListView: {
     backgroundColor: '#FFF'
   },
-  itemContainer: {
+  itemTouchable: {
     flexDirection: 'column',
     padding: 15,
     justifyContent: 'flex-start',
     alignItems: 'stretch',
     borderBottomColor: '#dddddd',
     borderBottomWidth: 0.25
+  },
+  itemView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   itemName: {
     fontSize: 24,
@@ -39,12 +33,16 @@ const styles = StyleSheet.create({
     fontFamily: 'IBMPlexSans-Medium',
     color: 'gray'
   },
-  textResult: {
-    fontFamily: 'IBMPlexSans-Bold',
-    paddingTop: 24,
-    color: '#555',
+  emptyListView: {
+    backgroundColor: '#FFFFFF',
     flex: 1,
-    alignSelf: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  emptyListText: {
+    fontFamily: 'IBMPlexSans-Bold',
+    color: '#999999',
+    fontSize: 16
   }
 });
 
@@ -63,35 +61,32 @@ const MyResources = function ({ navigation }) {
 
   const Item = (props) => {
     return (
-      <View>
-        <TouchableOpacity style={styles.itemContainer}
-          onPress={() => {
-            navigation.navigate('Edit Donation', { item: props });
-            // navigation.navigate('Search', { screen: 'Map', params: { item: props }});
-          }}
-        >
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={styles.itemName}>{props.name}</Text>
-            <Text style={styles.itemQuantity}> ( {props.quantity} ) </Text>
-          </View>
-          <Text style={styles.itemDescription}>{props.description}</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.itemTouchable}
+          onPress={() => { navigation.navigate('Edit Donation', { item: props }); }}>
+        <View style={styles.itemView}>
+          <Text style={styles.itemName}>{props.name}</Text>
+          <Text style={styles.itemQuantity}> ( {props.quantity} ) </Text>
+        </View>
+        <Text style={styles.itemDescription}>{props.description}</Text>
+      </TouchableOpacity>
     );
   };
   
-  return (
-    <View style={styles.outerContainer}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        {
-          (items.length > 0 && items.map((item, i) => {
-            item.key = `${(new Date()).getTime()}-${i}`;
-            return <Item {...item} />
-          })) || (<Text style={styles.textResult}>You currently have no donations listed</Text>)
-        }
-      </ScrollView>
-    </View>
-  );
+  if (items.length > 0) {
+    return (
+      <FlatList style={styles.flatListView}
+        data={items}
+        renderItem={({ item }) => <Item {...item} />}
+        keyExtractor={item => item.id}
+      />
+    )
+  } else {
+    return (
+      <View style={styles.emptyListView}>
+        <Text style={styles.emptyListText}>You currently have no donations listed</Text>
+      </View>
+    )
+  }
 };
 
 export default MyResources;
