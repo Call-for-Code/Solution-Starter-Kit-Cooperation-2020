@@ -196,9 +196,9 @@ With the application running in the simulator, you should be able to navigate th
 ![Intro Screen](/images/0-screen-home.png)
 ![Donate Screen](/images/1-screen-donate.png)
 ![Search Screen](/images/2-screen-search.png)
+![Chat Screen](/images/5-screen-chat.png)
 ![Map1 Screen](/images/3-screen-map.png)
 ![Map2 Screen](/images/4-screen-map.png)
-![Chat Screen](/images/5-screen-chat.png)
 
 ## Resources
 
