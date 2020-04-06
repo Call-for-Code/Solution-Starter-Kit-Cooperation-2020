@@ -111,7 +111,7 @@ Trusted sources for COVID-19 Information:
 - Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) account.
 - Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) (for iOS).
     - [Node.js](https://nodejs.org/en/)
-    - [Watchman](https://facebook.github.io/watchman/docs/install.html)
+    - [Watchman](https://facebook.github.io/watchman/docs/install)
     - [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
     - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
 - Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Cooperation-2020).
