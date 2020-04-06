@@ -2,7 +2,10 @@ import Config from 'react-native-config';
 
 import DeviceInfo from 'react-native-device-info';
 
-const serverUrl = Config.STARTER_KIT_SERVER_URL;
+let serverUrl = Config.STARTER_KIT_SERVER_URL;
+if (serverUrl.endsWith('/')) {
+  serverUrl = serverUrl.slice(0, -1)
+}
 // const serverUrl = 'http://localhost:3000';
 
 const uniqueid = DeviceInfo.getUniqueId();
