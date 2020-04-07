@@ -72,11 +72,11 @@ function post_process_assistant(result) {
       .find('', resource, '')
       .then(data => {
         let processed_result = result
-        if (data.statusCode == 200) {
+        if ((data.statusCode == 200) && (data.data != "[]")) {
           processed_result["resources"] = JSON.parse(data.data)
           processed_result["generic"][0]["text"] = 'There is' + '\xa0' + resource + " available"
         } else {
-          processed_result["generic"][0]["text"] = "Sorry, no" + '\xa0' + resource + " is available"           
+          processed_result["generic"][0]["text"] = "Sorry, no" + '\xa0' + resource + " available"           
         }
         return processed_result
       })
