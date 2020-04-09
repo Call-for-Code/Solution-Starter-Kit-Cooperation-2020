@@ -96,8 +96,9 @@ Trusted sources for COVID-19 Information:
 - [Chat Bot Slack deployment](https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-slack)
 - [Node-RED Slack integration](https://www.ibm.com/cloud/blog/create-a-chatbot-on-ibm-cloud-and-integrate-with-slack-part-1)
 
-### HERE Location Services
+### HERE Technologies
 
+- [HERE.com API Key](https://developer.here.com/ref/IBM_starterkit_Covid?create=Freemium-Basic)
 - [HERE Maps](https://developer.here.com/products/maps)
 - [HERE Routing](https://developer.here.com/products/routing)
 - [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
@@ -108,7 +109,7 @@ Trusted sources for COVID-19 Information:
 
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
-- Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) account.
+- Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Covid?create=Freemium-Basic) account.
 - Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) (for iOS).
     - [Node.js](https://nodejs.org/en/)
     - [Watchman](https://facebook.github.io/watchman/docs/install)
@@ -150,7 +151,7 @@ Log into the IBM Cloud and provision a [CouchDB instance using Cloudant](https:/
 
 The application uses HERE Location Services for maps, searching, and routing.
 
-To access these services, you'll need an API key. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate a JavaScript API key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
+To access these services, you'll need an API key. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Covid?create=Freemium-Basic) to [generate a JavaScript API key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
 ### 4. Run the server
 
