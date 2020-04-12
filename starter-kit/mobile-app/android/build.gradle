@@ -36,9 +36,3 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
-
-android {
-  sourceSets { 
-    main { assets.srcDirs = ['src/main/assets', '../../html'] } 
-  }
-}
