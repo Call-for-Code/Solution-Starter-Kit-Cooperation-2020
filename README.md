@@ -110,11 +110,16 @@ Trusted sources for COVID-19 Information:
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 - Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Covid?create=Freemium-Basic) account.
-- Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) (for iOS).
+- Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html).
     - [Node.js](https://nodejs.org/en/)
     - [Watchman](https://facebook.github.io/watchman/docs/install)
-    - [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
-    - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
+    - **iOS only**
+        - [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+        - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
+    - **Android only**
+        - [Java Development Kit](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
+        - [Android Studio](https://developer.android.com/studio/index.html) - add Android 9 (Pie) SDK & configure `ANDROID_HOME`
+        - [Create an Android Virtual Device (AVD)](https://developer.android.com/studio/run/managing-avds.html) - with Pie image (API Level 28)
 - Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Cooperation-2020).
 
 ### Steps
@@ -176,23 +181,27 @@ To set up and launch the server application:
 
 ### 5. Run the mobile application
 
-To run the mobile application (using the Xcode iOS Simulator):
+To run the mobile application (using the Xcode iOS Simulator or Android Studio Emulator):
 
 1. Go to the `starter-kit/mobile-app` directory of the cloned repo.
 1. Copy the `.env.example` file in the `starter-kit/mobile-app` directory, and create a file named `.env`.
 1. Edit the newly created `.env` file:
     - Update the `STARTER_KIT_SERVER_URL` with the URL to the server app launched in the previous step.
+        > **Note**: If you are running the server locally and testing with the Android Emulator set the `STARTER_KIT_SERVER_URL` using the local machine's URL (e.g., `http://10.0.2.2:3000`) instead of `localhost`
     - Update the `HERE_APIKEY` with the API key generated in the HERE Developer Portal.
 1. From a terminal:
     1. Go to the `starter-kit/mobile-app` directory.
     1. Install the dependencies: `npm install`.
-    1. Go to the `ios` directory: `cd ios`.
-    1. Install pod dependencies: `pod install`.
-    1. Return to the `mobile-app` directory: `cd ../`.
-    1. Launch the app in the simulator: `npm run ios`. You should be running at least iOS 13.0.
-    1. The first time you launch the simulator, you should ensure that you set a Location in the Features menu.
+    1. **iOS only**: Go to the `ios` directory: `cd ios`.
+    1. **iOS only**: Install pod dependencies: `pod install`.
+    1. **iOS only**: Return to the `mobile-app` directory: `cd ../`.
+    1. Launch the app in the simulator/emulator: 
+        - **iOS only**: `npm run ios`
+            > **Note**: You should be running at least iOS 13.0. The first time you launch the simulator, you should ensure that you set a Location in the Features menu.
+        - **Android only**: `npm run android`
+            > **Note**: Your Android Studio needs to have the `Android 9 (Pie)` SDK and a `Pie API Level 28` virtual device
 
-With the application running in the simulator, you should be able to navigate through the various screens:
+With the application running in the simulator/emulator, you should be able to navigate through the various screens:
 
 ![Intro Screen](/images/0-screen-home.png)
 ![Donate Screen](/images/1-screen-donate.png)
