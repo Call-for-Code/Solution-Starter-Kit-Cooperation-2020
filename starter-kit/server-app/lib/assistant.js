@@ -12,6 +12,22 @@ const assistant = new AssistantV2({
   url: apiUrl
 });
 
+checkConnection(assistant)
+
+function checkConnection(assistant){
+  assistant.createSession({
+    assistantId: assistantId
+  })
+    .then(res =>{
+      console.log('✅ Watson Assistant correctly connected!')
+      console.log(res.result.session_id)
+    })
+    .catch(err => {
+      console.log('❌ an error occured while connecting to Watson Assistant. Please check your parameters.')
+      console.log(err)
+    });
+}
+
 const message = (text, sessionId) => {
   if (!assistantId || assistantId === '<assistant_id>') {
     return Promise.reject('ASSISTANT_ID has not been configured.')
