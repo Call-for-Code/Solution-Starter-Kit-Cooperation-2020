@@ -26,7 +26,7 @@ function checkConnection(assistant){
       console.log('❌ an error occured while connecting to Watson Assistant. Please check your parameters.')
       console.log(err)
     });
-}
+  }
 
 const message = (text, sessionId) => {
   if (!assistantId || assistantId === '<assistant_id>') {
