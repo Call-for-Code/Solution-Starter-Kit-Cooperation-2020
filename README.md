@@ -195,7 +195,7 @@ To run the mobile application (using the Xcode iOS Simulator or Android Studio E
     1. **iOS only**: Go to the `ios` directory: `cd ios`.
     1. **iOS only**: Install pod dependencies: `pod install`.
     1. **iOS only**: Return to the `mobile-app` directory: `cd ../`.
-    1. Launch the app in the simulator/emulator: 
+    1. Launch the app in the simulator/emulator:
         - **iOS only**: `npm run ios`
             > **Note**: You should be running at least iOS 13.0. The first time you launch the simulator, you should ensure that you set a Location in the Features menu.
         - **Android only**: `npm run android`
