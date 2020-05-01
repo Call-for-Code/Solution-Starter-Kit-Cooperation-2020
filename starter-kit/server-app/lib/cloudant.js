@@ -227,9 +227,18 @@ function update(id, type, name, description, quantity, location, contact, userID
     });
 }
 
+function info() {
+    return cloudant.db.get(db_name)
+        .then(res => {
+            console.log(res);
+            return res;
+        });
+};
+
 module.exports = {
     deleteById: deleteById,
     create: create,
     update: update,
-    find: find
+    find: find,
+    info: info
   };

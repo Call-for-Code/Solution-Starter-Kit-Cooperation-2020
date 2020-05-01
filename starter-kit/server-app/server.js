@@ -11,15 +11,39 @@ const cloudant = require('./lib/cloudant.js');
 const app = express();
 app.use(bodyParser.json());
 
+const testConnections = () => {
+  const status = {}
+  return assistant.session()
+    .then(sessionid => {
+      status['assistant'] = 'ok';
+      return status
+    })
+    .catch(err => {
+      console.error(err);
+      status['assistant'] = 'failed';
+      return status
+    })
+    .then(status => {
+      return cloudant.info();
+    })
+    .then(info => {
+      status['cloudant'] = 'ok';
+      return status
+    })
+    .catch(err => {
+      console.error(err);
+      status['cloudant'] = 'failed';
+      return status
+    });
+};
+
 const handleError = (res, err) => {
   const status = err.code !== undefined && err.code > 0 ? err.code : 500;
   return res.status(status).json(err);
 };
 
 app.get('/', (req, res) => {
-  return res.json({
-    status: 'ok'
-  });
+  testConnections().then(status => res.json({ status: status }));
 });
 
 /**
