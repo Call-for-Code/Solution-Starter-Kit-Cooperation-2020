@@ -2,5 +2,5 @@ applications:
 - name: solution-starter-kit-cooperation-2020-server
   command: npm start
   path: .
-  memory: 256M
+  memory: 128M
   instances: 1
