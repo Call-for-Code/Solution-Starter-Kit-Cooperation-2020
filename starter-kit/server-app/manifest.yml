@@ -1,5 +1,5 @@
 applications:
-- name: solution-starter-kit-cooperation-2020-server
+- name: hack-app
   command: npm start
   path: .
   memory: 128M
