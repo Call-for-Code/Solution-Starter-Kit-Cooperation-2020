@@ -111,12 +111,15 @@ Trusted sources for COVID-19 Information:
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 - Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Covid?create=Freemium-Basic) account.
 - Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html).
-    - [Node.js](https://nodejs.org/en/)
-    - [Watchman](https://facebook.github.io/watchman/docs/install)
-    - **iOS only**
+    - See the [React Native documentation](https://reactnative.dev/docs/environment-setup) for the exact steps and requirements based on your Operating System and Target OS. For example:
+    - **iOS on macOS**
+        - [Node.js](https://nodejs.org/en/)
+        - [Watchman](https://facebook.github.io/watchman/docs/install)
         - [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
         - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
-    - **Android only**
+    - **Android on Windows**
+        - [Node.js](https://nodejs.org/en/)
+        - [Python 2](https://www.python.org/downloads/)
         - [Java Development Kit](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
         - [Android Studio](https://developer.android.com/studio/index.html) - add Android 9 (Pie) SDK & configure `ANDROID_HOME`
         - [Create an Android Virtual Device (AVD)](https://developer.android.com/studio/run/managing-avds.html) - with Pie image (API Level 28)
